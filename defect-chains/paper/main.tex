@@ -1,0 +1,1095 @@
+% third23 paper draft — THE DEFECT-3 PAPER (opened 2026-08-16; matured 2026-08-18 after
+% round 38 banked the Three-Defect Chain Theorem). Source of truth for every theorem: the
+% campaign wiki entries + ASSEMBLY_LEDGER.md named in comments; every proof here is
+% assembled from those banked artifacts, never re-derived. Certificate corpora are cited
+% as machine-checkable proof objects with SHA-256 anchors (Section on proof objects).
+% Gates before submission: principal line-read + external cold-read referee.
+% TODO(acquire): Aigner 1985 deposited copy for the width-two equality citation.
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{booktabs}
+\usepackage[margin=1.2in]{geometry}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\pr}{\operatorname{Pr}}
+\DeclareMathOperator{\bal}{bal}
+
+\title{The $1/3$--$2/3$ Conjecture on the Defect Ladder:\\
+The Two- and Three-Defect Chain Theorems}
+\author{}% TODO(principal): authorship
+\date{Draft of August 18, 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+A finite poset is a \emph{$k$-defect chain} if it becomes a chain after the deletion of
+$k$ elements; equivalently, its maximum chain omits exactly $k$ elements. We prove the
+$1/3$--$2/3$ conjecture for all posets of defect at most three: every such poset that is
+not itself a chain has an incomparable pair $(u,v)$ with $1/3\le\pr(u\prec v)\le 2/3$.
+The class contains posets of width three and four, does not bound the number of
+incomparabilities per element, and we exhibit members escaping each previously proved
+class known to us. The two-defect case is proved by an explicit balance lemma for
+overlapping insertion windows; for it we also prove equality rigidity: every
+ordinal-sum-indecomposable poset of defect exactly two has a strictly balanced eligible
+count, and among chain-plus-two-incomparable-defect presentations the unique non-strict
+member is the three-element poset $Q$ (itself of defect one) --- extending Aigner's
+width-two equality classification to an infinite family of width-three posets. The
+three-defect case is proved by contradiction through a rigidity theory of \emph{closed-third
+avoidance}: if every incomparable orientation probability avoided the closed interval
+$[N/3,2N/3]$, the majority relation would be a strict total order, every defect would
+carry a unique \emph{heavy gap} holding more than a third of the extension mass, and the
+heavy gaps would align with the defect order. An exhaustive partition of the surviving
+configurations by defect shape (antichain, $V$, $\Lambda$, $Q$) and heavy-gap pattern is
+then closed cell by cell: by Helly-type coincidence and marginal monotonicity arguments,
+by weight-preserving reflection dualities, by vacuity theorems, and --- for the hardest
+cells --- by exhaustive weak-order chamber decompositions carrying exact rational
+nonnegative-coefficient certificates ($169$ chambers for the antichain common-heavy
+inequality; $31$ strict and $31$ boundary chambers with $62$ signed certificates for the
+tied-siblings $V$ cell and its one-relation corrections). All certificate corpora are
+exact, machine-checkable, independently replayed proof objects anchored by cryptographic
+hashes.
+\end{abstract}
+
+\section{Introduction}
+% Positioning per the banked novelty sweep (wiki: operator-novelty-sweep-two-defect-
+% theorem-new-rigidity-width). All class attributions verified against produced sources.
+The $1/3$--$2/3$ conjecture --- posed independently by Kislitsyn \cite{kislitsyn},
+Fredman \cite{fredman}, and Linial \cite{linial} in connection with sorting under partial
+information --- asserts that every finite poset $P$ that is not a chain contains an
+incomparable pair $(u,v)$ whose orientation probability under the uniform distribution on
+linear extensions satisfies $1/3\le\pr(u\prec v)\le 2/3$. Kahn and Saks \cite{kahn-saks}
+proved the first uniform positive bound; the strongest general bound is due to Brightwell,
+Felsner, and Trotter \cite{bft}. The conjecture is known for partial orders of width two
+(Linial \cite{linial}, sharpened by Sah \cite{sah}), height two \cite{tgf}, posets with at
+most $14$ elements \cite{deloof,gupta}, posets in which every element is incomparable to
+at most six others (Peczarski \cite{peczarski-thin}), series-parallel posets, $N$-free
+posets and polytrees (Zaguia \cite{zaguia-nfree,zaguia-polytree}), semiorders (Brightwell
+\cite{brightwell-semi}), several lattice and Young-diagram families (Olson and Sagan
+\cite{olson-sagan}), and is preserved by lexicographic sums \cite{dolores-cuenca}. Chan
+and Pak \cite{chan-pak} survey the area.
+
+Every finite poset becomes a chain after deleting some number of elements; call the least
+such number its \emph{defect}. Since the retained chain of a minimal deletion is a
+maximum chain, the defect of $P$ equals $|P\setminus C|$ for any maximum chain $C$. The
+conjecture restricted to defect $k$ interpolates, as $k$ grows, from the merging problems
+of the classical literature to the full conjecture. Defect one is contained in width two.
+This paper settles defects two and three completely, and classifies the extremal cases at
+defect two.
+
+Three subfamilies of the two-defect class were previously known and are not claimed here:
+members whose two defect windows coincide carry a defect-exchanging automorphism, a case
+settled by Peczarski's automorphism theorem \cite{peczarski-aut} (and, for cycle-free
+members, already by Ganter, H\"afner, and Poguntke \cite{ghp}, who obtain a $1/2$-balanced
+pair); members of width two are Linial--Sah; members whose windows have
+length at most two are semiorders. The class as a whole --- with windows of unbounded length, hence unboundedly many
+incomparabilities at a single element, and with genuine width-three members --- is
+contained in neither the width-two class nor any bounded-incomparability class, and its
+non-containment in the remaining listed classes is witnessed explicitly. With $m=2$ and
+windows $I=[0,1]$, $J=[1,2]$, the four elements $(x,c_1,c_2,y)$ induce an $N$ ($x<c_2$,
+$c_1<c_2$, $c_1<y$, all other pairs incomparable), both as an induced suborder and in
+the Hasse diagram --- so the class is contained in neither the series-parallel nor the
+$N$-free class. With $m=3$ and windows $I=[1,2]$, $J=[1,3]$, the Hasse diagram contains
+the cycle $c_1\,x\,c_3\,c_2$ --- so it is not contained in the forest-cover class.
+Unbounded windows exclude semiorders, and height excludes the height-two class. The incomparable-defect
+members are precisely the interval orders with exactly two nontrivial intervals; general
+interval orders remain open.
+
+Section~2 constructs the insertion-window model and its state bijection; Section~3
+proves the balance lemma; Section~4 assembles the Two-Defect Chain Theorem; Section~5
+proves the equality rigidity classification; Sections~6--7 enter the three-defect ladder
+through its exactly solvable chambers (the aligned $Q$ chamber, exactly at the boundary,
+and the adjacent one-endpoint chambers). Sections~8--13 prove the Three-Defect Chain
+Theorem: Section~8 develops the closed-third avoidance rigidity theory (strong order,
+heavy gaps, alignment), Section~9 the weighted gap-fiber model and the structural
+reductions, Sections~10--12 close the twelve shape-by-heavy-pattern cells (antichain;
+$V$ and $\Lambda$; $Q$), and Section~13 assembles the theorem. Section~14 documents the
+certificate corpora as verifiable proof objects, and Section~15 discusses the ladder
+ahead. Throughout, $e(P)$ is the number of linear extensions of $P$, $\pr(u\prec v)$ the
+fraction orienting $u$ before $v$, and $\#L(P;\,\cdot)$ the number of extensions with the
+displayed property; windows are integer intervals of insertion gaps against the fixed
+chain $C$.
+
+\section{The doubled-diagonal model}
+% Source: wiki doubled-diagonal-overlapping-interval-balance-decision (round 5, sol),
+% independently re-derived in round 6 (supervisor-verdict-work-d4e5c56a7791).
+Let $C=(c_1<\cdots<c_m)$ be a chain and let $x,y$ be two further elements with
+$x\parallel y$. Consistency with the chain forces the admissible insertion gaps of $x$ to
+form a window $I=[a,b]\subseteq\{0,\dots,m\}$ (gap $i$ meaning that exactly $i$ chain
+elements precede $x$): the relations are $c_t<x$ for $t\le a$ and $x<c_{t}$ for $t>b$.
+Similarly $y$ carries a window $J=[c,d]$.
+
+\begin{lemma}[Overlap]\label{lem:overlap}
+If $x\parallel y$ then $I\cap J\neq\emptyset$. Conversely, for any two nonempty
+overlapping windows $I,J$, imposing the chain order, the threshold relations of both
+windows, and no relation between $x$ and $y$ defines a valid poset in which $x\parallel y$
+and no hidden comparabilities arise.
+\end{lemma}
+
+\begin{proof}
+If $b<c$ then $x<c_{b+1}\le c_c<y$ by transitivity, contradicting $x\parallel y$; the case
+$d<a$ is symmetric. For the converse, every pair of gaps $(i,j)\in I\times J$ is realized
+by merging $x$ and $y$ into the chain at those gaps, and at a common gap both relative
+orders of $x,y$ occur, so $x\parallel y$ and the prescribed windows are exactly attained.
+% imported from: round-6 verdict items "Insertion-Gap Structural Model" and "Overlap
+% Converse for Two Insertion Intervals"
+\end{proof}
+
+\begin{lemma}[State bijection and counts]\label{lem:states}
+Let $p=|I|$, $q=|J|$, $K=I\cap J$, $h=|K|$. The linear extensions of $P$ are in bijection
+with the states $(i,j)\in I\times J$ with $i\ne j$, together with two ordered states for
+each common gap $i=j\in K$; hence
+\[
+N=e(P)=(pq-h)+2h=pq+h.
+\]
+The orientation counts of the incomparable pairs are
+\begin{align*}
+D&=\#\{(i,j)\in I\times J: i<j\}+h &&\text{for the pair }(x,y),\\
+A_t&=q\,\#\{i\in I: i<t\}+\#\{i\in K: i<t\} &&\text{for }(x,c_t),\ a<t\le b,\\
+B_t&=p\,\#\{j\in J: j<t\}+\#\{j\in K: j<t\} &&\text{for }(y,c_t),\ c<t\le d,
+\end{align*}
+and exactly the displayed thresholds correspond to incomparable pairs; outside them the
+orientation is forced.
+\end{lemma}
+
+\begin{proof}
+A linear extension is determined by the pair of gaps, except that when $x$ and $y$ occupy
+a common gap the two relative orders give two extensions --- the doubled diagonal. For
+$D$: every off-diagonal state with $i<j$ contributes, and exactly the $x$-before-$y$
+diagonal state contributes, giving the displayed count. For $A_t$ with $a<t\le b$: $x<c_t$
+exactly when the $x$-gap satisfies $i<t$; each such $i$ pairs with $q$ choices of $j$,
+plus one extra state when $i\in K$ (the doubled diagonal), and symmetrically for $B_t$.
+Incomparability of the displayed pairs is witnessed by explicit gap choices realizing both
+orientations.
+% imported from: r5 artifact section 1 (state model), verified against the m<=4
+% topological-sort audit (259 cases, 0 failures) recorded in the same artifact
+\end{proof}
+
+\section{The balance lemma}
+% Source: same r5/r6 entries; full derivation banked verbatim in the r5 artifact.
+\begin{theorem}[Overlapping Two-Interval Balance Lemma]\label{thm:balance}
+For every pair of nonempty overlapping windows, at least one of $D$, an eligible $A_t$,
+or an eligible $B_t$ lies in $[N/3,\,2N/3]$.
+\end{theorem}
+
+The proof rests on one discrete intermediate-value fact and exact jump accounting.
+
+\begin{lemma}[Discrete crossing lemma]\label{lem:crossing}
+Let $x_1<\cdots<x_r$ be integers with $x_1\le N/3$, $x_r\ge 2N/3$, and
+$x_{k+1}-x_k\le N/3$ for all $k$. Then some $x_k\in[N/3,\,2N/3]$.
+\end{lemma}
+
+\begin{proof}
+Take the first $k$ with $x_k\ge N/3$. If $k=1$ then $x_1=N/3$ exactly and we are done;
+otherwise $x_{k-1}<N/3$, so $x_k=x_{k-1}+(x_k-x_{k-1})<N/3+N/3=2N/3$.
+\end{proof}
+
+Exchanging the defect names replaces $D$ by $N-D$ and swaps the $A$ and $B$ families;
+translation and order reversal also preserve the assertion. After these symmetries exactly
+two canonical forms remain: \emph{crossing} ($a\le c\le b\le d$; then $h=p-s$ where $s=c$
+after translating $a$ to $0$, and $q\ge h$) and \emph{nested} ($J\subseteq I$; then
+$h=q$).
+
+\paragraph{The crossing form.} Direct summation gives
+\[
+N=pq+h,\qquad D=pq-\tfrac{h(h-1)}{2},\qquad
+A_t=qt+\max(0,t-s),\qquad B_{s+u}=pu+\min(u,h),
+\]
+with exact consecutive jumps $A_{t+1}-A_t\in\{q,q+1\}$ and
+$B_{s+u+1}-B_{s+u}\in\{p,p+1\}$. If $N\ge 3(q+1)$ then $p\ge2$, the $A$-sequence runs
+from $A_1\le q+1\le N/3$ to $A_{p-1}=N-(q+1)\ge 2N/3$ with jumps at most $q+1\le N/3$,
+and Lemma~\ref{lem:crossing} produces a balanced eligible $A_t$. Symmetrically, if
+$N\ge3(p+1)$ the $B$-sequence does the same. If neither large-case condition holds, the
+inequalities $q(p-3)<3-h$ and $p(q-3)<3-h$ with $1\le h\le\min(p,q)$ force exactly fifteen
+triples $(p,q,h)$, each of which carries an explicit balanced witness:
+
+\begin{center}
+\begin{tabular}{@{}lrrl@{}}\toprule
+$(p,q,h)$ & $s$ & $N$ & witness \\ \midrule
+$(1,1,1)$ & 0 & 2 & $D=1$\\
+$(1,2,1)$ & 0 & 3 & $D=2$\\
+$(1,3,1)$ & 0 & 4 & $B_{s+1}=2$\\
+$(1,4,1)$ & 0 & 5 & $B_{s+1}=2$\\
+$(2,1,1)$ & 1 & 3 & $D=2$\\
+$(2,2,1)$ & 1 & 5 & $A_1=2$\\
+$(2,2,2)$ & 0 & 6 & $D=3$\\
+$(2,3,1)$ & 1 & 7 & $A_1=3$\\
+$(2,3,2)$ & 0 & 8 & $D=5$\\
+$(3,1,1)$ & 2 & 4 & $A_2=2$\\
+$(3,2,1)$ & 2 & 7 & $A_2=4$\\
+$(3,2,2)$ & 1 & 8 & $D=5$\\
+$(3,3,1)$ & 2 & 10 & $A_2=6$\\
+$(3,3,2)$ & 1 & 11 & $A_2=7$\\
+$(4,1,1)$ & 3 & 5 & $A_2=2$\\ \bottomrule
+\end{tabular}
+\end{center}
+
+\paragraph{The nested form.} Here $N=(p+1)q$. If $q\ge2$, take $u=\lceil q/3\rceil$: then
+$1\le u\le q-1$ and $q\le 3u\le 2q$, so the eligible count $B_{s+u}=(p+1)u$ satisfies
+$N\le 3B_{s+u}\le 2N$ \emph{exactly} --- the factorization of $N$ makes the nested case
+rigid. If $q=1$ then $N=p+1$, $D=s+1$, and $A_t=t+\mathbf1_{\{s<t\}}$; for $p\ge5$ the
+$A$-sequence starts at most $2$, ends at least $p-1$, and jumps by $1$ or $2$, so
+Lemma~\ref{lem:crossing} applies, while $p\le4$ is a finite table of explicit witnesses.
+% imported from: r5 artifact sections 4-5; the closed interval is used throughout and no
+% continuity is invoked (r5 artifact section 6). Corroborating audits (r5/r6): all 5,551
+% overlapping endpoint tuples at m=12; adversarial canonical scan of 4,040,100 states
+% p,q<=200; zero failures. Audits are checks, not premises.
+
+\begin{remark}[$D$ alone does not suffice]
+The count $D$ alone is not always balanced: at $(p,q,h)=(2,2,1)$ one has $N=5$ and
+$D=4>2N/3$, while the eligible $A_1=2$ is balanced. Any proof must use the chain-cut
+counts. % source: r6 verdict, "D-Only Balance Route Refuted"
+\end{remark}
+
+\section{The two-defect chain theorem}
+\begin{theorem}[Two-Defect Chain Theorem]\label{thm:twodefect}
+Every finite non-chain poset $P$ containing a chain $C$ with $|P\setminus C|=2$ has an
+incomparable pair $(u,v)$ with $1/3\le\pr(u\prec v)\le 2/3$.
+\end{theorem}
+
+\begin{proof}
+Write $P\setminus C=\{x,y\}$. If $x$ and $y$ are comparable, then $C\cup\{x<y\}$ is a
+two-chain cover, so $P$ has width at most two and the theorem of Linial \cite{linial}
+(in the sharpened form of Sah \cite{sah}) applies. If $x\parallel y$, their windows
+overlap by Lemma~\ref{lem:overlap}; Lemma~\ref{lem:states} identifies the orientation
+counts of the genuine incomparable pairs, and Theorem~\ref{thm:balance} produces one in
+the middle third.
+\end{proof}
+
+\section{The extremal classification}
+% Sources: r7 (supervisor verdict "DD-EQ Rigidity Proved") + r8 independent re-derivation
+% (supervisor-verdict-work-5fbb947628b0). ATTRIBUTION: the width-two part is Aigner
+% \cite{aigner}: width-two posets with balance constant exactly 1/3 are the ordinal sums
+% of singletons and copies of Q. The width-three content is new; the order-14 census
+% \cite{gupta} observes it empirically and notes it is beyond Aigner's argument.
+Write $Q$ for the three-element poset with exactly one relation. Aigner \cite{aigner}
+proved that the width-two posets with balance constant exactly $1/3$ are precisely the
+ordinal sums of singletons and copies of $Q$. The census of Gupta \cite{gupta}
+determines the extremal balance data through order $14$: exactly $128$ classes attain
+$1/3$, every one an ordinal sum of singletons and copies of $Q$ --- in particular all of
+width two. The following theorem proves this non-attainment for the full (infinite,
+width-three-containing) class. Note the distinction between the \emph{presentation}
+(a chain plus two designated defects, the model of Section~2, which any poset of defect
+at most two admits) and the \emph{exact defect} $n-h(P)$ of the abstract: the extremal
+member $Q$ arises as a one-element chain plus two defects but has exact defect one.
+
+\begin{theorem}[Equality rigidity]\label{thm:rigidity}
+\emph{(a)} Every ordinal-sum-indecomposable poset of defect exactly two has an eligible
+orientation count strictly inside the open interval $(N/3,\,2N/3)$; in particular its
+balance constant exceeds $1/3$.
+\emph{(b)} Among ordinal-sum-indecomposable posets presented as a chain plus two
+incomparable defects, the unique member all of whose eligible counts avoid the open
+interval is $Q$ --- which has defect one. Every other member has an eligible count
+strictly inside.
+\end{theorem}
+
+The proof classifies the \emph{simultaneous avoiders} --- parameter tuples for which every
+eligible count $C$ satisfies $3C\le N$ or $3C\ge2N$ --- and intersects them with an
+indecomposability criterion:
+
+\begin{proposition}[Avoider classification]\label{prop:avoiders}
+In the canonical crossing form, simultaneous avoidance holds exactly for
+$(p,q,h,s)=(1,2,1,0)$ and $(2,1,1,1)$. In the nested form, exactly for
+$(p,q,s)=(2,1,0)$ and $(2,1,1)$.
+\end{proposition}
+
+\begin{proposition}[Indecomposability criterion]\label{prop:indec}
+The two-defect model with windows $I=[a,b]$, $J=[c,d]$ is ordinal-sum-indecomposable iff
+its incomparability graph is connected, iff every $t\in\{1,\dots,m\}$ satisfies $a<t\le b$
+or $c<t\le d$; under the overlap hypothesis this is equivalent to $\min(a,c)=0$ and
+$\max(b,d)=m$.
+\end{proposition}
+
+\begin{proof}[Proof of Proposition~\ref{prop:avoiders}]
+% transcribed from paper/derivations/r7_capture_02.md (r7, sol), independently
+% re-derived in r8 (r8_capture_01/02, luna) — two derivations on record.
+Write $\mathrm{AV}(C)$ for the condition $3C\le N$ or $3C\ge2N$. We first sharpen
+Lemma~\ref{lem:crossing} under avoidance: if $x_1\le N/3$, $x_r\ge2N/3$, all jumps are at
+most $N/3$, and \emph{every} term satisfies $\mathrm{AV}$, then the first term
+$\ge N/3$ equals $N/3$ exactly, and its successor equals $2N/3$ exactly (the predecessor
+of the first crossing term is strictly below $N/3$, so the jump bound puts that term
+strictly below $2N/3$; avoidance then forces equality at $N/3$, and the next term can
+neither be in the open middle nor overshoot $2N/3$).
+
+\emph{Large regimes.} In the crossing form the $A$-sequence has $A_1\le q+1$,
+$A_{p-1}=N-(q+1)$, and jumps in $\{q,q+1\}$. If $N\ge3(q+1)$, all-$A$ avoidance forces
+$N/3\in\{q,q+1\}$ by the sharpened lemma, hence $N=3(q+1)$, i.e.\ $q(p-3)=3-h$. With
+$1\le h\le\min(p,q)$ the solutions are $(p,q,h)=(3,q,3)$ for $q\ge3$, $(4,2,1)$, and
+$(5,1,1)$; the first is killed at $q=3$ by $D=6$, $N=12$ (strict middle) and for $q>3$
+by the symmetric $B$-argument (which would force $N=3(p+1)=12$, impossible), while the
+last two carry the strict witnesses $A_2=4$, $N=9$ and $A_3=3$, $N=6$. Symmetrically,
+$N\ge3(p+1)$ with all-$B$ avoidance forces $p(q-3)=3-h$, whose solutions
+$(p,3,3)_{p\ge3}$, $(2,4,1)$, $(1,5,1)$ are killed the same way. Hence every survivor
+satisfies $N<3(q+1)$ and $N<3(p+1)$.
+
+\emph{Residual list.} The strict inequalities $q(p-3)<3-h$ and $p(q-3)<3-h$ force
+$p,q\le4$ and exactly the fifteen triples of the table in
+Section~\ref{thm:balance}. All but two carry an eligible count strictly inside the open
+middle third:
+\[
+\begin{array}{llllll}
+(1,1,1)\!: D{=}1,N{=}2 & (1,3,1)\!: B_1{=}2,N{=}4 & (1,4,1)\!: B_1{=}2,N{=}5\\
+(2,2,1)\!: A_1{=}2,N{=}5 & (2,2,2)\!: D{=}3,N{=}6 & (2,3,1)\!: A_1{=}3,N{=}7\\
+(2,3,2)\!: D{=}5,N{=}8 & (3,1,1)\!: A_2{=}2,N{=}4 & (3,2,1)\!: A_2{=}4,N{=}7\\
+(3,2,2)\!: D{=}5,N{=}8 & (3,3,1)\!: A_2{=}6,N{=}10 & (3,3,2)\!: A_2{=}7,N{=}11\\
+(4,1,1)\!: A_2{=}2,N{=}5
+\end{array}
+\]
+(each displayed value $C$ satisfies $N<3C<2N$). The remaining two triples avoid: at
+$(1,2,1)$, $N=3$ with $D=B_1=2$, both at the boundary $3C=2N$; at $(2,1,1)$, $N=3$ with
+$D=2$ and $A_1=1$, at the boundaries $3C=2N$ and $3C=N$. Note $D-N/2=(pq-h^2)/2\ge0$
+throughout, so $D$ never realizes the low branch in this orientation.
+
+\emph{Nested form.} Here $N=(p+1)q$ and $B_{s+u}=(p+1)u$. If $q\ge2$ and $3\nmid q$,
+then $u=\lceil q/3\rceil$ gives $q<3u<2q$, a strict-middle $B$; if $q=3k\ge6$, take
+$u=k+1$. If $q=3$: $p=3$ gives $D=6$, $N=12$ strict middle, and for $p\ge4$ the
+$A$-sequence starts at most $4<N/3=p+1$, ends at least $3p-1>2N/3$, with jumps at most
+$4$, so Lemma~\ref{lem:crossing} gives a strict term. For $q=1$: $N=p+1$ and
+$\{D\}\cup\{A_t\}=\{1,\dots,p\}$; $p=1$ fails at $D=1$, $N=2$, $p\ge3$ contains an
+integer strictly inside, and $p=2$ survives for $s\in\{0,1\}$ with values $\{1,2\}$ at
+the boundaries of $N=3$.
+\end{proof}
+
+\begin{proof}[Proof of Proposition~\ref{prop:indec}]
+The incomparability graph has the edge $xy$, no edges among chain vertices, and $c_t$
+adjacent to $x$ exactly for $a<t\le b$, to $y$ exactly for $c<t\le d$. After exchange
+assume $a\le c$; overlap gives $c\le b$, so the union of the two adjacency windows is the
+single index interval $(a,\max(b,d)]$, and the graph is connected exactly when that
+interval is all of $\{1,\dots,m\}$ --- that is, $\min(a,c)=0$ and $\max(b,d)=m$.
+Connectedness of the incomparability graph is equivalent to ordinal-sum
+indecomposability, since the canonical ordinal-sum factors are precisely the
+incomparability components. % banked: canonical-ordinal-sum-factorization theorem
+\end{proof}
+
+Intersecting the avoider tuples (with their translations, defect exchanges, and order
+reversals) with the criterion leaves exactly the four interval presentations
+$(L,F),(F,L),(F,R),(R,F)$, where $L=[0,0]$, $R=[1,1]$, $F=[0,1]$ at $m=1$: endpoint
+coverage forces $m=s+q-1$, collapsing both survivor tuples to one-element chains with
+the displayed windows, each isomorphic to $Q$ (extensions $abc,acb,cab$; pair counts
+$(2,1)$ and $(1,2)$). Every other arithmetic survivor has a nontrivial chain prefix or
+suffix and is a chain--$Q$--chain ordinal sum, hence decomposable. This proves
+part~(b) of Theorem~\ref{thm:rigidity}.
+
+Part (a) follows. Let $P$ be indecomposable of defect exactly two, and let $C$ be a
+maximum chain, $P\setminus C=\{x,y\}$. If $x$ and $y$ are comparable, $C\cup\{x<y\}$ is
+a two-chain cover, so $P$ has width two; Linial \cite{linial} gives $\delta(P)\ge1/3$,
+and by Aigner's classification \cite{aigner} equality holds only for ordinal sums of
+singletons and copies of $Q$ --- all decomposable except $Q$ itself, whose defect is
+one. Hence $\delta(P)>1/3$: some incomparable pair lies strictly inside. If $x\parallel
+y$, part (b) applies to the presentation, and its unique avoider $Q$ has defect one,
+not two; so $P$ carries a strict eligible count.
+
+\begin{remark}
+An eligible count with $N/3<C<2N/3$ yields a strict witness; if all eligible counts avoid
+the open interval, Theorem~\ref{thm:balance} forces equality at $N/3$ or $2N/3$ --- which
+is the situation classified above. A corroborating exact scan through $p,q\le60$ (73{,}810
+canonical cases) found no further avoiders. % r7; audits are checks, not premises
+\end{remark}
+
+\section{Three defects: the aligned chamber}
+% Sources: r9 (supervisor verdict work_baac3d58cfc2), independently re-derived in r10
+% (supervisor-verdict-work-98553ea81246; wiki aligned-q-defect-chain-theorem and
+% siblings). DECIDED: two independent derivations.
+We now take three defects with the induced order $Q$ itself: $x<y$, and $z$ incomparable
+to both. Suppose first that all three insertion windows coincide in $I=[a,b]$ with
+$p=|I|\ge2$.
+
+\begin{lemma}[Triangular weighted-state model]\label{lem:tristate}
+The linear extensions are represented exactly by the triples $(i,j,k)\in I^3$ with
+$i\le j$ ($i,j,k$ the gaps of $x,y,z$), with multiplicity $1$ when the gaps are distinct
+or $i=j\ne k$, multiplicity $2$ when $k$ ties exactly one of $i,j$, and multiplicity $3$
+when $i=j=k$. In particular
+\[
+N=e(P)=\frac{p(p+1)(p+2)}{2}.
+\]
+\end{lemma}
+
+\begin{theorem}[Aligned $Q$-Defect Chain Theorem]\label{thm:aligned}
+In the aligned model, $\pr(x\prec z)=\pr(z\prec y)=2/3$ and
+$\pr(z\prec x)=\pr(y\prec z)=1/3$ exactly.
+\end{theorem}
+
+\begin{proof}[Proof (orbit argument)]
+Delete the relation $x<y$. The three defects become interchangeable, and relabeling
+symmetry partitions the extensions of the weakened poset equally among the six relative
+orders of $\{x,y,z\}$, each class of size $\binom{p+2}{3}$. Restoring $x<y$ retains
+exactly the classes $xyz$, $xzy$, $zxy$. Two of the three have $x\prec z$, and two have
+$z\prec y$; the counts are exact thirds of $N=3\binom{p+2}{3}$.
+% imported from: r9 verdict "Aligned Q Orbit Enumeration", re-derived r10
+\end{proof}
+
+\begin{proposition}[Chain-cut counts]\label{prop:cuts}
+For an eligible cut $c_t$ with $r=t-a\in\{1,\dots,p-1\}$, set
+$H_1=\binom{p+2}{3}-\binom{p-r+2}{3}$, $H_2=r(r+1)(3p-2r+2)/6$, $H_3=\binom{r+2}{3}$.
+Then $\#L(x<c_t)=2H_1+H_2$, $\#L(y<c_t)=H_2+2H_3$, $\#L(z<c_t)=H_1+H_2+H_3$, with
+complements $N-{}$these; outside the eligible interval the orientation is forced.
+\end{proposition}
+
+\begin{remark}
+The aligned family generalizes $Q$ ($p=2$, $m=1$ yields $Q$ together with one isolated
+element --- the chain element $c_1$, incomparable to all three defects) and sits exactly on
+the conjecture's boundary at its defect pairs for \emph{every} window size --- an infinite
+three-defect family of boundary-exact pairs. Whether any member's balance \emph{constant}
+equals $1/3$ is determined by Proposition~\ref{prop:cuts} and left to the discussion.
+\end{remark}
+
+\section{Three defects: the adjacent one-endpoint chambers}
+% Source: r10 (wiki adjacent-one-endpoint-feasible-state-model / -extension-totals /
+% -q-balance-theorem / -eligible-cut-atlas). Single-pair derivation with explicit
+% witness algebra; verification status per the record.
+Now break the symmetry minimally: keep the windows of $x,y$ equal to $I$ ($p\ge2$) and
+let the window $J$ of $z$ be $I$ with one endpoint gap added or deleted.
+
+\begin{lemma}[Feasible states]\label{lem:onepstate}
+In every admissible adjacent one-endpoint chamber the linear extensions are exactly the
+triples $(i,j,k)$ with $i,j\in I$, $i\le j$, $k\in J$, with weight
+$w(i,j,k)=1+\mathbf1_{\{k=i\}}+\mathbf1_{\{k=j\}}$. With $M=\binom{p+2}{3}$,
+$T=\binom{p+1}{2}$, $S=\binom{p+2}{2}$, the totals are
+\[
+N_+=3M+T=\frac{p(p+1)(p+3)}{2}\quad\text{(endpoint addition)},\qquad
+N_-=3M-S=\frac{(p-1)(p+1)(p+2)}{2}\quad\text{(endpoint deletion, $p\ge2$)}.
+\]
+\end{lemma}
+
+\begin{theorem}[Adjacent One-Endpoint $Q$ Balance Theorem]\label{thm:onep}
+Every admissible adjacent one-endpoint chamber has a balanced incomparable defect pair.
+Explicitly: right endpoint addition admits the witness $\{y,z\}$ with
+$\pr = \frac{p+5}{3(p+3)}$; left endpoint addition admits $\{x,z\}$ with
+$\pr = \frac{2(p+2)}{3(p+3)}$; right endpoint deletion admits $\{x,z\}$ with
+$\pr = \frac{p(2p+5)}{3(p+1)(p+2)}$; left endpoint deletion admits $\{y,z\}$ with
+$\pr = \frac{p^2+4p+6}{3(p+1)(p+2)}$. Each ratio lies in $[1/3,\,2/3]$ for every
+$p\ge2$.
+\end{theorem}
+
+\begin{proof}
+% transcribed from paper/derivations/r10_capture_03.md (the complete orientation table
+% with polynomial numerators; chain-cut atlas in the sibling banked entry).
+Write $R_x=\#L(z\prec x)$ and $R_y=\#L(z\prec y)$. Summing the weighted states of
+Lemma~\ref{lem:onepstate} fiber by fiber (a tied gap $k=i$ contributes both tied orders
+to $z\prec y$; the triple diagonal contributes its two $z$-before orders to $R_y$ and one
+to $R_x$) gives
+\[
+R_x=\sum_{i=0}^{p-1}(p-i)\,\#\{k\in J:k<i\}+\sum_{i\in K}(p-i),\qquad
+R_y=\sum_{j=0}^{p-1}(j+1)\,\#\{k\in J:k<j\}+\sum_{i\in K}(p-i-1)+\sum_{j\in K}(j+1)+h.
+\]
+Evaluating these sums in each chamber, with
+\[
+\begin{aligned}
+A_0&=\tfrac{p(p+1)(p+2)}{6}, & B_0&=\tfrac{p(p+1)(p+5)}{6}, & C_0&=\tfrac{p(p+1)(2p+7)}{6},
+& D_0&=\tfrac{p(p-1)(p+1)}{6},\\
+E_0&=\tfrac{p(p-1)(2p+5)}{6}, & F_0&=\tfrac{(p-1)(p^2+4p+6)}{6}, & G_0&=\tfrac{(p-1)(p+1)(p+3)}{3},
+\end{aligned}
+\]
+yields the complete orientation table (each orientation pair summing to $N$):
+\begin{center}
+\begin{tabular}{@{}lccccc@{}}\toprule
+chamber & $N$ & $\#L(x\prec z)$ & $\#L(z\prec x)$ & $\#L(y\prec z)$ & $\#L(z\prec y)$\\ \midrule
+right addition & $N_+$ & $C_0$ & $A_0$ & $B_0$ & $2A_0$\\
+left addition & $N_+$ & $2A_0$ & $B_0$ & $A_0$ & $C_0$\\
+right deletion & $N_-$ & $E_0$ & $F_0$ & $D_0$ & $G_0$\\
+left deletion & $N_-$ & $G_0$ & $D_0$ & $F_0$ & $E_0$\\ \bottomrule
+\end{tabular}
+\end{center}
+The displayed witnesses read off the table: $B_0/N_+=\frac{p+5}{3(p+3)}$ (balanced since
+$p+5\ge p+3$ and $p+5\le 2p+6$); $2A_0/N_+=\frac{2(p+2)}{3(p+3)}$ (since
+$2(p+2)\ge p+3$ and $2(p+2)\le2(p+3)$); $E_0/N_-=\frac{p(2p+5)}{3(p+1)(p+2)}$ (lower
+bound $\iff p^2+2p-2\ge0$, upper $\iff p+4\ge0$); and
+$F_0/N_-=\frac{p^2+4p+6}{3(p+1)(p+2)}$ (the same two inequalities exchanged). All hold
+for $p\ge2$; reverse orientations are complements, hence balanced as well.
+\end{proof}
+
+This is the first chamber in which the triple-diagonal machinery operates without full
+relabeling symmetry: the orbit argument no longer applies, and balance is carried by the
+explicit fixed witnesses above.
+
+\section{Closed-third avoidance: the rigidity theory}\label{sec:rigidity}
+% Sources: closed-third-strong-order-rigidity + corrected-strong-order-theorem-under-
+% closed-third-avoidance (r12); maximum-chain-heavy-gap-rigidity + heavy-gap-rigidity-
+% under-closed-third-avoidance; heavy-gap-alignment-corollary-under-closed-third-
+% avoidance + heavy-gap-probabilistic-alignment; maximum-chain-defect-windows-are-
+% nonsingleton. All banked with independent re-derivations (ledger rows S4-S6).
+From here on, the argument is a proof by contradiction, and this section builds the
+contradiction hypothesis into a rigid structure. Say that $P$ satisfies
+\emph{closed-third avoidance} if
+\[
+\pr(u\prec v)\notin[1/3,\,2/3]\qquad\text{for every orientation of every incomparable
+pair }\{u,v\}.
+\]
+The Three-Defect Chain Theorem is exactly the statement that no
+ordinal-sum-indecomposable non-chain poset with $|P\setminus C|\le3$ satisfies it.
+
+\begin{theorem}[Strong order]\label{thm:strongorder}
+Under closed-third avoidance, the relation $u\prec v\iff\pr(u\prec v)>2/3$ is a strict
+total order on $P$ extending the poset order. If $P$ is not a chain, some adjacent pair
+of this total order is incomparable in $P$.
+\end{theorem}
+
+\begin{proof}
+Totality: for comparable pairs the orientation probability is $1$; for incomparable
+pairs, $\pr(u\prec v)+\pr(v\prec u)=1$, and avoidance places exactly one of the two above
+$2/3$. Transitivity: if $A=\{L:x<_Ly\}$ and $B=\{L:y<_Lz\}$ have $|A|,|B|>2N/3$, then
+$|A\cap B|\ge|A|+|B|-N>N/3$, and every extension in $A\cap B$ has $x<_Lz$; so
+$\pr(x\prec z)>1/3$. If $z<_Px$ this event would be empty, a contradiction, so either
+$x<_Pz$ (whence $x\prec z$ directly) or $x\parallel z$, in which case avoidance excludes
+$[1/3,2/3]$ and the established lower bound forces $\pr(x\prec z)>2/3$. For the adjacent
+pair: if every adjacent pair of the total order were comparable in $P$, transitivity of
+$P$ would make every pair comparable, so $P$ would be a chain.
+\end{proof}
+
+\begin{remark}[The closed interval is exact]
+The open-interval analogue of avoidance is attainable: the four-element poset
+$r<a<b$, $r<c$ has three extensions and its two incomparable pairs sit exactly at
+$1/3$ and $2/3$. The conjecture's closed target $[1/3,2/3]$ is therefore the correct
+boundary convention, and it is the closed hypothesis that the assembly refutes.
+\end{remark}
+
+For a defect $u\notin C$ and an extension $L$, let $G_u(L)\in\{0,\dots,m\}$ be the
+\emph{gap} of $u$: the number of chain elements preceding $u$ in $L$. Legality confines
+$G_u$ to the window $I_u=[a_u,b_u]$, and the chain-cut events are gap events:
+$\{L:u<_Lc_t\}=\{G_u<t\}$. Write $\mu_u(r)=\#\{L:G_u(L)=r\}$.
+
+\begin{lemma}[Nonsingleton windows]\label{lem:nonsingleton}
+If $C$ is a maximum chain and $u\notin C$, then $|I_u|\ge2$.
+\end{lemma}
+
+\begin{proof}
+If $I_u=\{r\}$, then $u$ is comparable with every chain element and inserts at one
+position, so $C\cup\{u\}$ is a chain of size $m+1$, contradicting maximality.
+\end{proof}
+
+\begin{theorem}[Heavy-gap rigidity]\label{thm:heavygap}
+Under closed-third avoidance, every defect $u$ has a unique gap $\rho_u$ with
+$\mu_u(\rho_u)>N/3$, and both strict tails satisfy
+$\sum_{r<\rho_u}\mu_u(r)<N/3$ and $\sum_{r>\rho_u}\mu_u(r)<N/3$.
+\end{theorem}
+
+\begin{proof}
+The cumulative counts $F(t)=\#\{L:G_u<t\}$ run from $0$ to $N$ as $t$ crosses the window;
+by Lemma~\ref{lem:nonsingleton} the window has interior thresholds, and each interior
+value $F(t)$ is the orientation count of a genuine incomparable pair $\{u,c_t\}$, hence
+avoids $[N/3,2N/3]$. Let $t$ be the last threshold with $F(t)<N/3$ (window endpoints
+supply $F=0$). The next value cannot lie in the forbidden closed interval, so
+$F(t+1)>2N/3$, and the single gap $\rho_u=t$ between them has
+$\mu_u(\rho_u)=F(t+1)-F(t)>N/3$. Its lower tail is $F(t)<N/3$ and its upper tail is
+$N-F(t+1)<N/3$; any other gap sits inside one of the tails, so no second gap reaches
+$N/3$. Endpoint heavy gaps use the empty outside tail. % banked: maximum-chain-heavy-
+% gap-rigidity; the open-third analogue is DISPROVED (2-chain + isolated point realizes
+% CDF 0,1/3,2/3,1), recorded in maximum-chain-unique-heavy-gap-rigidity-result.
+\end{proof}
+
+\begin{theorem}[Heavy-gap alignment]\label{thm:alignment}
+Let $R=P[P\setminus C]$ be the induced defect order and let $u,v$ be defects with
+$\rho_u<\rho_v$. Under closed-third avoidance: (a) $v<_Ru$ is impossible; (b) if
+$u\parallel_Rv$ then $\pr(u\prec v)>2/3$.
+\end{theorem}
+
+\begin{proof}
+(a) If $v<_Ru$, isotonicity gives $G_v\le G_u$ in every extension, so
+$\{G_v=\rho_v\}\subseteq\{G_u\ge\rho_v\}\subseteq\{G_u>\rho_u\}$, whence
+$\mu_v(\rho_v)\le\sum_{r>\rho_u}\mu_u(r)<N/3$, contradicting heaviness.
+(b) On the complement of $\{G_u>\rho_u\}\cup\{G_v<\rho_v\}$ one has
+$G_u\le\rho_u<\rho_v\le G_v$, a strict gap inequality, which forces $u<_Lv$. Hence
+$\pr(v\prec u)<1/3+1/3=2/3$; avoidance excludes $[1/3,2/3]$, so $\pr(v\prec u)<1/3$ and
+$\pr(u\prec v)>2/3$.
+\end{proof}
+
+\section{The three-defect model and the case grid}\label{sec:model}
+% Sources: uniform-gap-map bijection + v-lambda-uniform-three-defect-foundation-audit-
+% round-28-corr (fiber model); three-defect-order-shape-classification; three-chain-
+% defect-width-two-reduction + strict-reduction-atlas-for-three-chain-defects;
+% canonical-ordinal-sum-factorization-theorem-for-finite-poset; round-29-two-equal-
+% cell-partition (ledger rows S2, S7, S8).
+Now let $|P\setminus C|=3$. A \emph{gap map} assigns to each defect $u$ a gap
+$g(u)\in I_u$, isotone with respect to $R$; extensions decompose into fibers over
+feasible gap maps, and with $B_r=g^{-1}(r)$ the fiber weight is
+$W(g)=\prod_re\!\left(P[B_r]\right)$, so that $N=\sum_gW(g)$. The block factors here are
+posets on at most three points, so $W\in\{1,2,3,6\}$; the weighted diagonals of
+Sections~2 and~6 are the two- and three-defect instances of this formula.
+
+\begin{proposition}[Shape classification]\label{prop:shapes}
+Up to order duality, the induced defect order $R$ on three elements is one of: the
+antichain $A$; the one-relation poset $Q$ ($x<y$, $z$ incomparable to both); the shape
+$V$ ($p<q$, $p<r$, $q\parallel r$) or its dual $\Lambda$; or the three-chain $T$.
+\end{proposition}
+
+\begin{proposition}[Three-chain reduction]\label{prop:threechain}
+If $R$ is the chain $x<y<z$, then $C\cup\{x<y<z\}$ is a two-chain cover of $P$, so $P$
+has width at most two and the width-two theorem of Linial \cite{linial} (sharpened by Sah
+\cite{sah}; the direct-sum exceptional family there is excluded by ordinal-sum
+indecomposability) supplies a balanced pair.
+\end{proposition}
+
+By Theorem~\ref{thm:heavygap} each defect carries a unique heavy gap; three values
+realize exactly one of three patterns: \emph{all-distinct} (D), \emph{exactly two equal}
+(2E), or \emph{all equal} (CH). Together with Proposition~\ref{prop:shapes} this yields
+the twelve-cell grid
+\[
+\{A,\,V,\,\Lambda,\,Q\}\times\{\mathrm{D},\,\mathrm{2E},\,\mathrm{CH}\},
+\]
+and the Three-Defect Chain Theorem is proved by showing every cell is empty under
+closed-third avoidance. Sections~10--12 do this shape by shape. We will also use:
+
+\begin{theorem}[Canonical factorization; balance under ordinal sums]\label{thm:factor}
+Every finite nonempty poset factors uniquely as the ordinal sum of the induced subposets
+on the connected components of its incomparability graph, each factor
+ordinal-sum-indecomposable; and a uniformly random extension of the sum restricts to
+independent uniform extensions of the factors, so every incomparable pair has the same
+orientation probabilities in the sum as in its factor.
+\end{theorem}
+
+\section{The antichain shape}\label{sec:antichain}
+% Sources: antichain-defect-distinct-heavy-index-exclusion (+ corrected derivation and
+% debt resolution, 2D); centered-three-interval-ch-chamber-specific-global-decision +
+% deepcheck-repaired-ch-global-residuals-next + exceptional-weak-chamber-ch-certificate
+% (rows A-D, A-2E, A-CH).
+\begin{theorem}[Heavy-gap coincidence for antichain defects]\label{thm:antichaincoincide}
+Let $x,y,z$ be pairwise incomparable defects. Under closed-third avoidance,
+$\rho_x=\rho_y=\rho_z$.
+\end{theorem}
+
+\begin{proof}[Proof sketch from the banked derivation]
+With no relations among the defects, the feasible gap maps form the product
+$I_x\times I_y\times I_z$, and the exact tied-fiber weights make each defect's marginal
+$\mu_u$ largest precisely on the common intersection $K=I_x\cap I_y\cap I_z$: a common
+gap acquires the tied-block multiplicities, and moving off $K$ strictly sheds them.
+Pairwise overlap of the three windows (Lemma~\ref{lem:overlap} applied pairwise) gives
+$K\neq\emptyset$ by Helly's theorem in one dimension. Heavy-gap uniqueness
+(Theorem~\ref{thm:heavygap}) then pins all three heavy gaps to the same point of $K$.
+\end{proof}
+
+This empties A-D and A-2E simultaneously --- any non-coincident pattern is impossible.
+The surviving cell is the common-heavy antichain, which is destroyed by an exact
+inequality. Translate the common heavy gap to $0$, write $I_u=[-a_u,b_u]$, and let
+$T_{\sigma}$ count extensions by the relative order $\sigma$ of $(x,y,z)$ (indices
+$1,2,3$), so $N=\sum_\sigma T_\sigma$. Under avoidance the strong order
+(Theorem~\ref{thm:strongorder}) orients the three defect pairs with probabilities
+$>2/3$; labeling so that $x\prec y\prec z$, adding the three inequalities
+$\#(x<y),\#(y<z),\#(x<z)>2N/3$ and subtracting $2N$ gives
+\[
+Q_A\;:=\;T_{123}-T_{231}-T_{312}-2T_{321}\;>\;0 .
+\]
+Meanwhile $L_1$ (the lower tail of the lowest window's defect) and $H_3$ (the upper tail
+of the highest) are strict heavy-gap tails, so $3L_1<N$ and $3H_3<N$.
+
+\begin{theorem}[Centered three-interval CH inequality]\label{thm:CH}
+For every nonnegative integer endpoint vector with $I_u=[-a_u,b_u]$: if $3L_1<N$ and
+$3H_3<N$, then $Q_A\le0$.
+\end{theorem}
+
+\begin{proof}[Proof by certificate corpus]
+Set $S_L=N-3L_1$, $S_H=N-3H_3$. The weak orderings of the two endpoint triples
+$(a_1,a_2,a_3)$ and $(b_1,b_2,b_3)$ partition parameter space into $13\times13=169$
+chambers, on each of which $N$, $L_1$, $H_3$, $Q_A$ are polynomials in the chamber's
+nonnegative coordinates. For $168$ chambers there are exact rational $\alpha,\beta\ge0$
+with
+\[
+-Q_A\;=\;\alpha S_L+\beta S_H+\mathrm{Rem},
+\]
+where every coefficient of $\mathrm{Rem}$ is nonnegative --- so $S_L,S_H>0$ forces
+$Q_A\le0$. The single exceptional chamber ($a$-pattern $12|0$, $b$-pattern $01|2$)
+carries the closed-form parametrization $a_2=a_3=p$, $a_1=p+1+u$, $b_1=b_2=q$,
+$b_3=q+1+v$, in which
+\[
+Q_A=-\tfrac{p+q+1}{2}\,R,\qquad
+R=p^2+2pq-pu-pv+3p+q^2-qu-qv+3q-2uv-4u-4v,
+\]
+and the exact expansion of $S_L+S_H$ is at most $-2$ when $u+v\ge1$ and strictly
+negative when $u=v=0$, $p+q\ge1$. Hence $S_L>0$, $S_H>0$ forces $p=q=u=v=0$, where
+$Q_A=0$. The full certificate table and its exact-coefficient audit are proof
+object~(i) of Section~\ref{sec:proofobjects}.
+\end{proof}
+
+Together, $Q_A>0$ and $Q_A\le0$ are the contradiction: the cell A-CH is empty.
+
+\section{The $V$ and $\Lambda$ shapes}\label{sec:vlambda}
+% Sources: v-lambda-uniform-three-defect-foundation-audit-round-28-corr (V-D, L-D);
+% every-realizable-gated-common-heavy-v-configuration-fails-cl + v-common-heavy-vacuity
+% + lambda-common-heavy-vacuity-by-duality (V-CH, L-CH); round-29-two-equal-cell-
+% partition; full-cone-te-2-1-theorem-closing-v-2e-tied-siblings + gated-te21-chamber-
+% atlas-and-exact-certificates + exact-d-f-facet-certificate-atlas-for-guarded-te-2-1 +
+% normalized-d-f-0-te-2-1-facet-certificate-atlas + independent-full-cone-te-2-1-
+% certificate-replay (V-2E); lambda-l-2e-exact-reflection-transfer(+-from-full-cone) +
+% independent-lambda-reflection-replay (L-2E).
+Let the defect order be $V$: $p<q$, $p<r$, $q\parallel r$, with windows
+$I_p=[A,B]$, $I_q=[C_0,D]$, $I_r=[E,F]$ (siblings exchanged so $D\le F$; realizability
+gives $A\le C_0$, $A\le E$, $B\le D$, $E\le D$). The feasible states and
+weights are
+\[
+\Gamma=\{(i,j,k)\in I_p\times I_q\times I_r:\ i\le j,\ i\le k\},\qquad
+W(i,j,k)=1+\mathbf1_{\{j=k\}} .
+\]
+
+\begin{theorem}[Sibling coincidence; V-D empty]\label{thm:vd}
+Under closed-third avoidance, the sibling heavy gaps coincide: $\rho_q=\rho_r=D$.
+Consequently the all-distinct pattern is impossible for $V$.
+\end{theorem}
+
+\begin{proof}
+The sibling marginal $M_q(j)=\sum_{i\in I_p,i\le j}|I_r\cap[i,m]|
++\mathbf1_{\{j\in I_r\}}|I_p\cap(-\infty,j]|$ is nondecreasing on $I_q$, so its unique
+heavy gap is the right endpoint $D$. The marginal $M_r$ is nondecreasing through $D$;
+beyond $D$ its first term is constant and its diagonal term vanishes, while at $D$ the
+diagonal contributes $|I_p|>0$, so $M_r(D)>M_r(k)$ for all $k>D$. Uniqueness pins
+$\rho_r=D=\rho_q$.
+\end{proof}
+
+\begin{theorem}[V-CH is vacuous]\label{thm:vch}
+No realizable $V$-configuration has a common heavy gap.
+\end{theorem}
+
+\begin{proof}
+For $i\in I_p$ put $Q_i=|I_q\cap[i,m]|$, $R_i=|I_r\cap[i,m]|$, $T_i=|I_q\cap I_r\cap[i,m]|$;
+fixing $i$, the feasible $(j,k)$ are the two suffixes and the diagonal contributes one
+extra extension, so the marginal mass of $p$ is $M_p(i)=Q_iR_i+T_i$ --- a product of
+suffix counts, hence \emph{nonincreasing} in $i$. The marginal of $q$,
+$M_q(j)=\sum_{i\in I_p,\,i\le j}|I_r\cap[i,m]|+\mathbf1_{\{j\in I_r\}}|I_p\cap(-\infty,j]|$,
+is \emph{nondecreasing} on $I_q$ (both terms are; the diagonal indicator switches on at
+$E$ and stays on through $D\le F$). Now suppose $h$ is heavy for all three defects. If
+$h<D$, then the upper tail of $q$ at $h$ contains $M_q(D)\ge M_q(h)>N/3$, contradicting
+the tail bound of Theorem~\ref{thm:heavygap}; so $h=D$. If $h>A$, the lower tail of $p$
+at $h$ contains $M_p(A)\ge M_p(h)>N/3$; so $h=A$. Hence $A=D$, and realizability's
+$A\le C_0\le D$ forces $C_0=D$: the window $I_q=\{D\}$ is a singleton, contradicting
+Lemma~\ref{lem:nonsingleton}.
+\end{proof}
+
+\begin{theorem}[Two-equal partition]\label{thm:partition}
+The exactly-two-equal dispatch for the three shapes with relations partitions into $14$
+cells: $5$ for $V$, $5$ for $\Lambda$, $4$ for $Q$. Eight are closed by the coincidence
+and alignment exclusions above and their duals; the survivors are the \emph{tied-siblings}
+$V$ cell ($\rho_q=\rho_r>\rho_p$), its $\Lambda$ dual ($\rho_q=\rho_r<\rho_p$), and four
+$Q$ cells treated in Section~\ref{sec:q}.
+\end{theorem}
+
+In the tied-siblings cell the defect $p$'s marginal decreases in $i$ (larger $i$ shrinks
+the feasible $(j,k)$-region), so $\rho_p=A$, the left endpoint of $I_p$. The two pinned
+quantities are the strict heavy-gap tails
+\[
+H=\#\{\text{weighted states with }i>A\},\qquad
+L=\#\{\text{weighted states with }j<D\},
+\]
+and avoidance gives $3H<N$ and $3L<N$. The cell is emptied by:
+
+\begin{theorem}[Full-Cone TE$(2{=}1)$ Theorem]\label{thm:fullcone}
+Every canonical realizable tied-siblings instance satisfies $N\le3\max(H,L)$.
+\end{theorem}
+
+\begin{proof}[Proof by certificate corpus]
+Canonical sibling exchange gives $D\le F$, splitting the cone into the disjoint facets
+$D<F$ and $D=F$. Translating $D$ to $0$, realizability confines the endpoint parameters
+to a four-variable integer cone whose weak orderings give exactly $31$ chambers on each
+facet (of the $75$ ordered weak partitions of four labels, $31$ satisfy $x>y$). On the
+strict facet, each chamber carries two exact signed certificates ($62$ in total)
+expressing the branch identities
+$3H-N=\alpha(N-3L)+\beta(N-3H)+R_H$ and $3L-N=\alpha(N-3L)+\beta(N-3H)+R_L$ with
+$\alpha,\beta\ge0$ rational and residuals coefficientwise nonnegative, which force
+$N\le3\max(H,L)$ chamber by chamber. On the boundary facet $D=F$ the stronger inequality
+holds: all $31$ residual identities $3L-N=R_L$ have coefficientwise nonnegative $R_L$
+($391$ nonzero monomials, minimum nonzero coefficient $1/2$), so $N\le3L$ outright. The
+full-cone partition of the realizable domain into the two facets is exhaustive and
+disjoint. Certificates, generators, and independent replays are proof objects~(ii)--(iv)
+of Section~\ref{sec:proofobjects}.
+\end{proof}
+
+Since $\max(H,L)\ge N/3$ contradicts both strict tails, V-2E is empty --- and with it
+the last $V$ cell. The $\Lambda$ shape now falls by an exact duality.
+
+\begin{theorem}[Reflection transfer; $\Lambda$ empty]\label{thm:reflection}
+Reflection of chain gaps by $R_m(x)=m-x$ (reversing the chain) bijects the feasible
+$\Lambda$ states $\{(i,j,k):j\le i,\ k\le i\}$ with the canonical $V$ states, preserves
+the fiber weight $1+\mathbf1_{\{j=k\}}$ and hence $N$, maps windows $[a,b]$ to
+$[m-b,m-a]$, exchanges strict lower and upper tails, and sends every same-label
+orientation numerator $S$ to $N-S$ --- so closed-third avoidance, realizability, and
+heavy-gap data transfer exactly. Consequently: $\Lambda$-D is empty by
+Theorem~\ref{thm:vd}, $\Lambda$-CH by Theorem~\ref{thm:vch}, and the tied-siblings
+$\Lambda$ cell maps onto the $V$ TE$(2{=}1)$ cone, where Theorem~\ref{thm:fullcone}
+contradicts the two transferred strict guards. All of $\Lambda$ is empty.
+\end{theorem}
+
+\section{The $Q$ shape}\label{sec:q}
+% Sources: pairwise-distinct-heavy-q-exclusion + q-distinct-heavy-chamber-certificate;
+% common-heavy-q-exclusion + q-common-heavy-closure-decision-round-23-repaired;
+% q1-q2-two-equal-structural-exclusion (r30); q3-l-and-q4-r-diagonal-correction +
+% corrected-q3-l-q4-r-full-diagonal-transfer + aligned-corrected-q3-l-q4-r-formulas +
+% corrected-ordered-partition-audit-and-final-verdict-for-q-2e + independent-q-2e-34-
+% certificate-replay (rows Q-D, Q-CH, Q-2E).
+Let the defect order be $Q$: $x<y$, $z$ incomparable to both. The feasible states are
+$(i,j,k)\in I_x\times I_y\times I_z$ with $i\le j$, weighted
+$W=1+\mathbf1_{\{i=k\}}+\mathbf1_{\{j=k\}}$ (the full diagonal $i=j=k$ has weight $3$).
+
+\begin{theorem}[Q-D empty]\label{thm:qd}
+Under closed-third avoidance, pairwise-distinct heavy gaps are impossible: the three
+interval chambers $b<c$, $b=c$, $c<b$ of the comparable pair's windows $[a,b],[c,d]$
+exhaust the legal systems, and each either forces coincidence or degeneracy of heavy
+indices or yields a genuine defect--chain cut whose orientation numerator lies strictly
+inside $(N/3,\,2N/3)$.
+\end{theorem}
+
+\begin{theorem}[Q-CH empty]\label{thm:qch}
+If $x,y,z$ share a heavy gap $r$, then one of the strict tails $L_x(r)$, $H_y(r)$ is the
+orientation numerator of a genuine incomparable defect--chain pair and satisfies
+$N/3<T<2N/3$; the complementary side's heavy atom ($>N/3$) supplies the upper bound.
+\end{theorem}
+
+\begin{theorem}[Q1, Q2 empty]\label{thm:q12}
+In the two two-equal cells whose tied pair is the comparable pair $\{x,y\}$, the equal
+heavy gaps $\rho_x=\rho_y$ are excluded structurally: the $Q$ state set has no
+constraint $i\le k$, and the exact unique-mode separation of the $x$ and $y$ marginals
+forces $\rho_x\neq\rho_y$.
+\end{theorem}
+
+The remaining cells Q3, Q4 tie $z$ with one of the comparable defects: Q3 is
+$\rho_x=\rho_z<\rho_y$ (tied $\{x,z\}$, $y$'s heavy gap above), Q4 is
+$\rho_x<\rho_y=\rho_z$. Write $X=[a,b]$, $Y=[c,d]$, $Z=[e,f]$ for the windows, with
+lengths $n_x,n_y,n_z\ge2$ (Lemma~\ref{lem:nonsingleton}). The comparable pair's windows
+meet in exactly one of three chambers, and the exact marginal mode analysis of the
+banked classification disposes of each: if $b=c$ (one-point overlap), a nonsingleton
+$Z$ creates a two-point maximal plateau in the tied marginals, so no \emph{unique}
+heavy gap exists and the cell is infeasible; if $b<c$ (\emph{disjoint}), the cell is
+killed by Lemma~\ref{lem:qdisjoint} below; if $c<b$ (\emph{genuine overlap}), the tied
+coincidence forces the endpoint chamber ($Z=[e,c]$, $X=Y=[c,b]$ for Q3; $Z=[b,f]$,
+$X=Y=[c,b]$ for Q4), which transfers to the guarded-$V$ cone of
+Section~\ref{sec:vlambda} with a one-unit correction (Theorems~\ref{thm:qtransfer}
+and~\ref{thm:q34}).
+
+\begin{lemma}[Disjoint-branch closure]\label{lem:qdisjoint}
+In the disjoint chamber $b<c$, both cells are impossible under closed-third avoidance.
+\end{lemma}
+
+\begin{proof}
+Here mode uniqueness forces $Z=[b,c]$ with $\rho_x=b$, $\rho_y=c$, and the tie
+determines the cell: $\rho_z=b$ (cell Q3) exactly when $n_y>n_x$, and $\rho_z=c$ (cell
+Q4) exactly when $n_x>n_y$. The exact extension count is $N=n_zn_xn_y+n_x+n_y$. For Q3
+select the genuine chain pair $\{x,c_b\}$ (eligible since $a<b$); its orientation
+numerator is the strict lower tail of $x$ at its heavy gap,
+\[
+A=(n_x-1)(n_zn_y+1),\qquad
+3A-N=n_zn_y(2n_x-3)+2n_x-n_y-3,
+\]
+which is positive for $n_y>n_x\ge2$: at $n_x=2$ it equals $(n_z-1)n_y+1>0$, and for
+$n_x\ge3$ it is at least $n_y(4n_x-7)+2n_x-3>0$. The complementary mass contains the
+heavy atom, $N-A\ge\mu_x(b)>N/3$, so $A<2N/3$. Thus $N/3<A<2N/3$, contradicting
+avoidance. For Q4, symmetrically, the pair $\{c_{c+1},y\}$ (eligible since $c<d$) has
+numerator $A=(n_y-1)(n_zn_x+1)$, the strict upper tail of $y$ at $c$, with
+$3A-N=n_zn_x(2n_y-3)+2n_y-n_x-3>0$ for $n_x>n_y\ge2$ by the same two-case check, and
+$A<2N/3$ from the heavy atom again.
+\end{proof}
+
+\begin{theorem}[Corrected full-diagonal transfer]\label{thm:qtransfer}
+For every realizable corrected Q3-L or Q4-R overlap instance, gap reversal (Q3-L) or
+direct relabeling (Q4-R) identifies the $Q$ state set with a canonical guarded-$V$ state
+set, and the fiber weights agree except at the full diagonal, where $Q$ carries weight
+$3$ against $V$'s $2$. The exact count relations are
+\[
+N_Q=N_V+1,\qquad H_Q=H_V+1,\qquad L_Q=L_V,
+\]
+with the extra unit on a single named sibling orientation.
+\end{theorem}
+
+\begin{theorem}[Q3, Q4 empty]\label{thm:q34}
+Under closed-third avoidance the corrected overlap branches are impossible.
+\end{theorem}
+
+\begin{proof}[Proof from the certificate atlases]
+Failure of both corrected bounds means $N_Q>3H_Q$ and $N_Q>3L_Q$; by
+Theorem~\ref{thm:qtransfer} and integrality this is equivalent to
+\[
+N_V-3H_V\ge3\qquad\text{and}\qquad N_V-3L_V\ge0 .
+\]
+If $H_V\ge L_V$, Theorem~\ref{thm:fullcone} gives $3H_V\ge N_V$, contradicting the first
+inequality. If $L_V>H_V$, the theorem gives $3L_V\ge N_V$ and only equality
+$N_V=3L_V$ survives; the certificates exclude it. On strict-facet chambers whose residual
+$R_L$ has a positive constant term, equality is immediate; on the zero-constant chambers
+the signed identity $3L_V-N_V=\alpha(N_V-3L_V)+\beta(N_V-3H_V)+R_L$ with $\beta>0$
+evaluates, at $N_V=3L_V$ and $L_V>H_V$, to a strictly positive right side against a zero
+left side. On the boundary facet the equality-face audit gives the strict floor
+$3L_V-N_V\ge1$ on every realizable point. Integrality then supplies the missing unit in
+each case, including the tied case $L_V=H_V+1$, where $H_Q=L_Q=L_V$ and
+$N_Q=N_V+1\le3L_V=3\max(H_Q,L_Q)$. Finally the \emph{aligned} family
+($A=C_0$, $B=D=E$, $D<F$) admits closed forms with $n=D-A+1\ge2$, $m=F-D+1\ge2$:
+\[
+N_Q=\tfrac{mn(n+1)}2+n+1,\quad H_Q=\tfrac{mn(n-1)}2+n,\quad L_Q=\tfrac{mn(n-1)}2,
+\]
+whence $3H_Q-N_Q=mn(n-2)+2n-1\ge3$ directly. The corrected chamber-by-chamber and
+boundary certificates, with their independent replay, are proof object~(v) of
+Section~\ref{sec:proofobjects}.
+\end{proof}
+
+\section{The Three-Defect Chain Theorem}\label{sec:assembly}
+% Source: three-defect-chain-theorem + three-defect-chain-theorem-audited-final-assembly
+% (r38); the slug-cited acyclic dependency walk over the validated ASSEMBLY_LEDGER.
+\begin{theorem}[Three-Defect Chain Theorem]\label{thm:threedefect}
+Every finite ordinal-sum-indecomposable non-chain poset $P$ with a maximum chain $C$ and
+$|P\setminus C|\le3$ has an incomparable pair $\{u,v\}$ with $1/3\le\pr(u\prec v)\le2/3$.
+\end{theorem}
+
+\begin{proof}
+Assume closed-third avoidance. If $|P\setminus C|\le2$, Theorem~\ref{thm:twodefect}
+already yields a balanced pair (defect $0$ contradicts non-chain; defect $1$ has width
+two). Let $|P\setminus C|=3$. If the defects form a chain,
+Proposition~\ref{prop:threechain} applies. Otherwise, by
+Proposition~\ref{prop:shapes} the defect order is (up to duality) $A$, $V$, $\Lambda$,
+or $Q$, and by Theorem~\ref{thm:heavygap} the heavy pattern is D, 2E, or CH. Every cell
+of the resulting grid is empty:
+A-D and A-2E by Theorem~\ref{thm:antichaincoincide}, A-CH by Theorem~\ref{thm:CH};
+V-D by Theorem~\ref{thm:vd}, V-CH by Theorem~\ref{thm:vch}, V-2E by
+Theorems~\ref{thm:partition} and~\ref{thm:fullcone}; all of $\Lambda$ by
+Theorem~\ref{thm:reflection}; Q-D by Theorem~\ref{thm:qd}, Q-CH by
+Theorem~\ref{thm:qch}, Q-2E by Theorem~\ref{thm:q12} (cells Q1, Q2),
+Lemma~\ref{lem:qdisjoint} (the disjoint and one-point chambers of Q3, Q4), and
+Theorem~\ref{thm:q34} (their overlap chambers). The
+contradiction hypothesis is untenable, so some incomparable pair lands in the closed
+middle third. The dependency walk is acyclic: each cell closure consumes only the
+rigidity theory of Section~\ref{sec:rigidity}, the model of Section~\ref{sec:model}, and
+its own certificates.
+\end{proof}
+
+\begin{corollary}[Defect at most three]\label{cor:defect3}
+Every finite non-chain poset of defect at most three has an incomparable pair
+$\{u,v\}$ with $1/3\le\pr(u\prec v)\le2/3$.
+\end{corollary}
+
+\begin{proof}
+Chains of the canonical factorization $P=P_1\oplus\cdots\oplus P_k$
+(Theorem~\ref{thm:factor}) concatenate: a maximum chain of $P$ is the concatenation of
+maximum chains of the factors, so the defect of $P$ is the sum of the defects of the
+factors. Since $P$ is not a chain, some indecomposable factor $P_i$ is not a chain, and
+its defect is between $1$ and $3$; Theorem~\ref{thm:threedefect} gives a balanced pair
+in $P_i$, and Theorem~\ref{thm:factor} preserves its orientation probabilities in $P$.
+\end{proof}
+
+\section{Proof objects and verification}\label{sec:proofobjects}
+% The certificate-corpus discipline: exact rational symbolic identities, coefficientwise
+% checks, independent replays, SHA-256 anchors. Corpus hashes verbatim from the banked
+% artifacts (r26-r38).
+The chamber theorems above are proved by finite families of \emph{exact symbolic
+identities}: on each chamber, the quantities $N,H,L$ (or $N,L_1,H_3,Q_A$) are
+polynomials with rational coefficients in the chamber's nonnegative integer coordinates,
+and each certificate is an identity between such polynomials whose validity is checked
+coefficientwise in exact rational arithmetic --- no floating point, no sampling, no
+interpolation in the checker. The corpora are machine-readable artifacts; each was
+re-derived by an \emph{independent replay} (a separately written checker that
+reconstructs the identities from the raw definitions), and the artifacts are anchored by
+SHA-256 hashes. The load-bearing corpora are:
+\begin{itemize}
+\item[(i)] \textbf{CH atlas} (Theorem~\ref{thm:CH}): $169$ weak-order chambers, $168$
+exact $(\alpha,\beta)$ certificates plus the exceptional-chamber identity; exact
+coefficient audit of every residual. Decision artifact:\\
+{\footnotesize\texttt{9eb6031fecf65abb51f16ed73adc8d166bb3582ecd94467f4415220f8d94a87e}}
+\item[(ii)] \textbf{TE$(2{=}1)$ strict-facet atlas} (Theorem~\ref{thm:fullcone}): $31$
+chambers, $62$ signed certificates; replay executed $49{,}152$ exact identity-component
+checks and $142{,}125$ numeric spot checks. Atlas / exact coefficient data:\\
+{\footnotesize\texttt{3541901a46c6e9603933d95546d3adb075df15570e6cc6134c7a67ed2c8777a7}}\\
+{\footnotesize\texttt{59e2b841ce2cb653d900a73092165f1b78547f4bf6023c4b04adf677a878174d}}
+\item[(iii)] \textbf{TE$(2{=}1)$ boundary-facet atlas} ($D{=}F$): $31$ chambers, $391$
+nonnegative residual monomials, equality-face audit with minimum residual $1$ on all
+$\{0,1\}$-faces and $2{,}304$ finite-envelope rows. Atlas / exact coefficient data:\\
+{\footnotesize\texttt{e5cdb27fb431b3e0ef84c6edbc95dd2e525585ec665278cf67564aab6ab3f219}}\\
+{\footnotesize\texttt{7aad8e7378dfe5475ba1dc3b8283e8250adf64dafe3359a0a0460b23c6288a5a}}
+\item[(iv)] \textbf{Full-cone replay and $\Lambda$ reflection replay}
+(Theorems~\ref{thm:fullcone},~\ref{thm:reflection}): fresh checkers partitioned $6{,}048$
+canonical rows exhaustively into $5{,}292$ strict and $756$ boundary rows with no gap or
+overlap, and verified the reflection on $173{,}613$ interval triples, $6{,}355{,}899$
+tail identities, and $3{,}751{,}704$ chain-cut identities, plus actual linear-extension
+duality on all realizable cases through $m=3$. Replay record / reflection log:\\
+{\footnotesize\texttt{6fce15f9b70e629b175f0175a07fe76f69fabc7b0c118ee431491f219271bca2}}\\
+{\footnotesize\texttt{a9c266e2bd909c33368a10602d4588ea874c8d6c5c02de44ad53633feef0e193}}
+\item[(v)] \textbf{Corrected $Q$ replay} (Theorem~\ref{thm:q34}): $31$ strict chambers,
+$62$ signed certificates, $31$ boundary identities, $7{,}776$ strict and $2{,}304$
+boundary coverage rows, no negative coefficient and no failed identity. Replay record:\\
+{\footnotesize\texttt{58c6d5909596794f2561882c625afb3193d077b92f9918dc0fce656a0cbd1e8e}}
+\end{itemize}
+All hashes are SHA-256 of the artifact files exactly as published. The complete corpora
+--- certificate tables, exact rational coefficient data, generators, independent
+checkers, and a \texttt{SHA256SUMS} manifest covering every file --- accompany this
+preprint in a public artifact repository, together with a supplementary document
+% TODO(url): insert the public repository URL once the principal names the repo.
+assembling the full banked derivations behind the statement-level theorems
+(Theorems~\ref{thm:antichaincoincide},~\ref{thm:partition},~\ref{thm:qd},~\ref{thm:qch},
+\ref{thm:q12}, and~\ref{thm:qtransfer}). The replays corroborate and gate the symbolic
+corpora; the theorems rest on the exact identities themselves, which a referee can
+re-expand from the published artifacts with any computer algebra system.
+
+\section{Discussion: the defect ladder ahead}\label{sec:discussion}
+% Updated 2026-08-18: the r10 obstruction paragraph is retained as motivation --- those
+% blocked reductions are why the direct cell-closure architecture was necessary.
+The reduction routes one might hope for are provably blocked at three defects: no
+re-presentation as a two-defect chain exists inside a connected three-defect core, the
+canonical ordinal-sum factorization produces no usable factor there, and deletion fails
+quantitatively (restriction of the uniform distribution to $P-u$ is not uniform after
+reinsertion). The direct architecture of Sections~8--13 --- avoidance rigidity, an
+exhaustive case grid, and exact certificate corpora for the surviving cells --- was
+forced by these obstructions, and it is the contribution we expect to scale.
+
+Three of its pillars are already defect-count-free: the strong-order theorem, heavy-gap
+rigidity, and the Helly coincidence mechanism of Theorem~\ref{thm:antichaincoincide}
+apply verbatim to any number of pairwise-incomparable defects, and canonical
+factorization reduces the general conjecture to indecomposable posets. What is not yet
+defect-count-free is the endgame: at $k$ defects the shape classification grows, and the
+common-heavy antichain cell needs a $k$-free replacement for
+Theorem~\ref{thm:CH}. The concrete open target is a \emph{weighted-gap split-tail
+inequality}: for antichain defects $x,y$ sharing the heavy gap under closed-third
+avoidance, bound $|\pr(G_x<G_y)-\pr(G_x>G_y)|$ from the joint weighted fiber structure.
+Marginals alone provably do not suffice --- independent marginals with below-tail
+$1/3$/heavy $2/3$ against heavy $2/3$/above-tail $1/3$ reach $\approx0.78$ --- so any
+proof must use the tied-diagonal weights and the coupling through the remaining defects.
+A bound of $1/3$ for some pair would collapse the entire arbitrary-$k$ antichain slice
+at once.
+
+Other open questions: the defect-four ladder (new shapes, including the first
+width-four cores); whether any aligned member of Section~6 attains balance constant
+exactly $1/3$ (cf.\ Theorem~\ref{thm:rigidity}); and the interval-order connection ---
+incomparable-defect $k$-defect chains are interval orders with $k$ nontrivial intervals,
+so the antichain slice is a first approximation to the open interval-order case.
+
+\begin{thebibliography}{99}
+\bibitem{kislitsyn} S.~S. Kislitsyn, \emph{Finite partially ordered sets and their
+associated sets of permutations}, Matematicheskie Zametki \textbf{4} (1968), 511--518.
+\bibitem{fredman} M.~Fredman, \emph{How good is the information theory bound in sorting?},
+Theoretical Computer Science \textbf{1} (1976), 355--361.
+\bibitem{linial} N.~Linial, \emph{The information-theoretic bound is good for merging},
+SIAM J. Computing \textbf{13} (1984), 795--801.
+\bibitem{kahn-saks} J.~Kahn and M.~Saks, \emph{Balancing poset extensions}, Order
+\textbf{1} (1984), 113--126.
+\bibitem{aigner} M.~Aigner, \emph{A note on merging}, Order \textbf{2} (1985), 257--264.
+\bibitem{ghp} B.~Ganter, G.~H\"afner, and W.~Poguntke, \emph{On linear extensions of
+ordered sets with a symmetry}, Discrete Mathematics \textbf{63} (1987), 153--156.
+% VERIFIED 2026-08-18 (web, produced source): GHP = Discrete Math 63 (1987) 153-156,
+% cycle-free + nontrivial automorphism -> 1/2 pair; Peczarski 2006 = GPC (hence 1/3-2/3)
+% for any poset with a nontrivial automorphism. Both cited accordingly in the intro.
+\bibitem{brightwell-semi} G.~Brightwell, \emph{Semiorders and the 1/3--2/3 conjecture},
+Order \textbf{5} (1989), 369--380.
+\bibitem{tgf} W.~T. Trotter, W.~G. Gehrlein, and P.~C. Fishburn, \emph{Balance theorems
+for height-2 posets}, Order \textbf{9} (1992), 43--53.
+\bibitem{bft} G.~Brightwell, S.~Felsner, and W.~T. Trotter, \emph{Balancing pairs and the
+cross product conjecture}, Order \textbf{12} (1995), 327--349.
+\bibitem{peczarski-thin} M.~Peczarski, \emph{The Gold Partition Conjecture for 6-thin
+posets}, Order \textbf{25} (2008), 91--103.
+\bibitem{peczarski-aut} M.~Peczarski, \emph{The gold partition conjecture}, Order
+\textbf{23} (2006), 89--95. % TODO(verify): exact home of the automorphism theorem
+\bibitem{deloof} K.~De Loof, B.~De Baets, and H.~De Meyer, \emph{Counting linear
+extension majority cycles in partially ordered sets on up to 13 elements}, Computers \&
+Mathematics with Applications \textbf{59} (2010), 1541--1547.
+\bibitem{zaguia-nfree} I.~Zaguia, \emph{The 1/3--2/3 conjecture for $N$-free ordered
+sets}, Electronic J. Combinatorics \textbf{19}(2) (2012), P29.
+\bibitem{zaguia-polytree} I.~Zaguia, \emph{The 1/3--2/3 conjecture for ordered sets whose
+cover graph is a forest}, Order \textbf{36} (2019), 335--347.
+\bibitem{olson-sagan} E.~J. Olson and B.~E. Sagan, \emph{On the 1/3--2/3 conjecture},
+Order \textbf{35} (2018), 581--596.
+\bibitem{sah} A.~Sah, \emph{Improving the $\frac13$--$\frac23$ conjecture for width two
+posets}, Combinatorica \textbf{41} (2021), 99--126.
+\bibitem{dolores-cuenca} E.~Dolores-Cuenca, A.~Guzm\'an-S\'aenz, and S.~Kim, \emph{The
+gold partition conjecture and the lexicographic sum of posets}, arXiv:2410.12494.
+\bibitem{chan-pak} S.~H. Chan and I.~Pak, survey. % TODO(verify): exact reference
+\bibitem{gupta} R.~Gupta, \emph{Balance constants, majority cycles, and the Gold
+Partition Conjecture through fourteen elements}, arXiv:2607.23926 (2026).
+\end{thebibliography}
+
+\end{document}

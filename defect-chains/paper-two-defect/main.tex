@@ -1,0 +1,456 @@
+% PAPER A (submission track), forked 2026-08-17 per the external referee's structure
+% recommendation and the principal's order. The crisp k=2 paper: model, balance lemma,
+% two-defect theorem, rigidity classification, closing three-defect teaser. The full
+% three-defect/uniform-program material lives in ../main.tex (the living ladder draft).
+% Source of truth for every theorem: the campaign wiki entries named in comments.
+% Gates before submission: principal line-read + external cold-read referee.
+% TODO(acquire): Aigner 1985 deposited copy for the width-two equality citation.
+% TODO(principal): authorship.
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{booktabs}
+\usepackage[margin=1.2in]{geometry}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\pr}{\operatorname{Pr}}
+\DeclareMathOperator{\bal}{bal}
+
+\title{The $1/3$--$2/3$ Conjecture for Posets\\ at Chain-Deletion Distance Two}
+\author{}% TODO(principal): authorship
+\date{Draft of August 16, 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+A finite poset is a \emph{$k$-defect chain} if it becomes a chain after the deletion of
+$k$ elements. We prove the $1/3$--$2/3$ conjecture for all two-defect chains: every such
+poset that is not itself a chain has an incomparable pair $(u,v)$ with
+$1/3\le\pr(u\prec v)\le 2/3$. The class contains posets of width three and does not bound the number of
+incomparabilities per element, and we exhibit members escaping each previously proved
+class known to us. We prove equality rigidity: every ordinal-sum-indecomposable poset of
+defect exactly two has a strictly balanced eligible count, and among
+chain-plus-two-incomparable-defect presentations the unique non-strict member is the
+three-element poset $Q$ (a two-element chain plus an isolated point, itself of defect
+one); this extends Aigner's width-two equality classification to an infinite family of
+width-three posets, whose non-attainment of $1/3$ the order-$14$ census could previously
+only observe empirically. A closing section takes the first step onto the three-defect ladder: an
+infinite three-defect family attaining the boundary exactly, and the precise place where
+the two-defect arithmetic stops.
+\end{abstract}
+
+\section{Introduction}
+% Positioning per the banked novelty sweep (wiki: operator-novelty-sweep-two-defect-
+% theorem-new-rigidity-width). All class attributions verified against produced sources.
+The $1/3$--$2/3$ conjecture --- posed independently by Kislitsyn \cite{kislitsyn},
+Fredman \cite{fredman}, and Linial \cite{linial} in connection with sorting under partial
+information --- asserts that every finite poset $P$ that is not a chain contains an
+incomparable pair $(u,v)$ whose orientation probability under the uniform distribution on
+linear extensions satisfies $1/3\le\pr(u\prec v)\le 2/3$. Kahn and Saks \cite{kahn-saks}
+proved the first uniform positive bound; the strongest general bound is due to Brightwell,
+Felsner, and Trotter \cite{bft}. The conjecture is known for partial orders of width two
+(Linial \cite{linial}, sharpened by Sah \cite{sah}), height two \cite{tgf}, posets with at
+most $14$ elements \cite{deloof,gupta}, posets in which every element is incomparable to
+at most six others (Peczarski \cite{peczarski-thin}), series-parallel posets, $N$-free
+posets and polytrees (Zaguia \cite{zaguia-nfree,zaguia-polytree}), semiorders (Brightwell
+\cite{brightwell-semi}), several lattice and Young-diagram families (Olson and Sagan
+\cite{olson-sagan}), and is preserved by lexicographic sums \cite{dolores-cuenca}. Chan
+and Pak \cite{chan-pak} survey the area.
+
+Every finite poset becomes a chain after deleting some number of elements; call the least
+such number its \emph{defect}. The conjecture restricted to defect $k$ interpolates, as
+$k$ grows, from the merging problems of the classical literature to the full conjecture.
+Defect one is contained in width two. This paper settles defect two completely, classifies
+its extremal cases, and closes with the first rung of the three-defect ladder.
+
+Three subfamilies of the two-defect class were previously known and are not claimed here:
+members whose two defect windows coincide carry a defect-exchanging automorphism, a case
+settled by Peczarski's automorphism theorem \cite{peczarski-aut} (and, for cycle-free
+members, already by Ganter, H\"afner, and Poguntke \cite{ghp}, who obtain a $1/2$-balanced
+pair); members of width two are Linial--Sah; members whose windows have
+length at most two are semiorders. The class as a whole --- with windows of unbounded length, hence unboundedly many
+incomparabilities at a single element, and with genuine width-three members --- is
+contained in neither the width-two class nor any bounded-incomparability class, and its
+non-containment in the remaining listed classes is witnessed explicitly. With $m=2$ and
+windows $I=[0,1]$, $J=[1,2]$, the four elements $(x,c_1,c_2,y)$ induce an $N$ ($x<c_2$,
+$c_1<c_2$, $c_1<y$, all other pairs incomparable), both as an induced suborder and in
+the Hasse diagram --- so the class is contained in neither the series-parallel nor the
+$N$-free class. With $m=3$ and windows $I=[1,2]$, $J=[1,3]$, the Hasse diagram contains
+the cycle $c_1\,x\,c_3\,c_2$ --- so it is not contained in the forest-cover class.
+Unbounded windows exclude semiorders, and height excludes the height-two class. The incomparable-defect
+members are precisely the interval orders with exactly two nontrivial intervals; general
+interval orders remain open.
+
+Section~2 constructs the insertion-window model and its state bijection; Section~3
+proves the balance lemma; Section~4 assembles the Two-Defect Chain Theorem; Section~5
+proves the equality rigidity classification; Section~6 poses the next problem. Throughout, $e(P)$ is the number of linear
+extensions of $P$, $\pr(u\prec v)$ the fraction orienting $u$ before $v$, and
+$\#L(P;\,\cdot)$ the number of extensions with the displayed property; windows are
+integer intervals of insertion gaps against the fixed chain $C$.
+
+\section{The doubled-diagonal model}
+% Source: wiki doubled-diagonal-overlapping-interval-balance-decision (round 5, sol),
+% independently re-derived in round 6 (supervisor-verdict-work-d4e5c56a7791).
+Let $C=(c_1<\cdots<c_m)$ be a chain and let $x,y$ be two further elements with
+$x\parallel y$. Consistency with the chain forces the admissible insertion gaps of $x$ to
+form a window $I=[a,b]\subseteq\{0,\dots,m\}$ (gap $i$ meaning that exactly $i$ chain
+elements precede $x$): the relations are $c_t<x$ for $t\le a$ and $x<c_{t}$ for $t>b$.
+Similarly $y$ carries a window $J=[c,d]$.
+
+\begin{lemma}[Overlap]\label{lem:overlap}
+If $x\parallel y$ then $I\cap J\neq\emptyset$. Conversely, for any two nonempty
+overlapping windows $I,J$, imposing the chain order, the threshold relations of both
+windows, and no relation between $x$ and $y$ defines a valid poset in which $x\parallel y$
+and no hidden comparabilities arise.
+\end{lemma}
+
+\begin{proof}
+If $b<c$ then $x<c_{b+1}\le c_c<y$ by transitivity, contradicting $x\parallel y$; the case
+$d<a$ is symmetric. For the converse, every pair of gaps $(i,j)\in I\times J$ is realized
+by merging $x$ and $y$ into the chain at those gaps, and at a common gap both relative
+orders of $x,y$ occur, so $x\parallel y$ and the prescribed windows are exactly attained.
+% imported from: round-6 verdict items "Insertion-Gap Structural Model" and "Overlap
+% Converse for Two Insertion Intervals"
+\end{proof}
+
+\begin{lemma}[State bijection and counts]\label{lem:states}
+Let $p=|I|$, $q=|J|$, $K=I\cap J$, $h=|K|$. The linear extensions of $P$ are in bijection
+with the states $(i,j)\in I\times J$ with $i\ne j$, together with two ordered states for
+each common gap $i=j\in K$; hence
+\[
+N=e(P)=(pq-h)+2h=pq+h.
+\]
+The orientation counts of the incomparable pairs are
+\begin{align*}
+D&=\#\{(i,j)\in I\times J: i<j\}+h &&\text{for the pair }(x,y),\\
+A_t&=q\,\#\{i\in I: i<t\}+\#\{i\in K: i<t\} &&\text{for }(x,c_t),\ a<t\le b,\\
+B_t&=p\,\#\{j\in J: j<t\}+\#\{j\in K: j<t\} &&\text{for }(y,c_t),\ c<t\le d,
+\end{align*}
+and exactly the displayed thresholds correspond to incomparable pairs; outside them the
+orientation is forced.
+\end{lemma}
+
+\begin{proof}
+A linear extension is determined by the pair of gaps, except that when $x$ and $y$ occupy
+a common gap the two relative orders give two extensions --- the doubled diagonal. For
+$D$: every off-diagonal state with $i<j$ contributes, and exactly the $x$-before-$y$
+diagonal state contributes, giving the displayed count. For $A_t$ with $a<t\le b$: $x<c_t$
+exactly when the $x$-gap satisfies $i<t$; each such $i$ pairs with $q$ choices of $j$,
+plus one extra state when $i\in K$ (the doubled diagonal), and symmetrically for $B_t$.
+Incomparability of the displayed pairs is witnessed by explicit gap choices realizing both
+orientations.
+% imported from: r5 artifact section 1 (state model), verified against the m<=4
+% topological-sort audit (259 cases, 0 failures) recorded in the same artifact
+\end{proof}
+
+\section{The balance lemma}
+% Source: same r5/r6 entries; full derivation banked verbatim in the r5 artifact.
+\begin{theorem}[Overlapping Two-Interval Balance Lemma]\label{thm:balance}
+For every pair of nonempty overlapping windows, at least one of $D$, an eligible $A_t$,
+or an eligible $B_t$ lies in $[N/3,\,2N/3]$.
+\end{theorem}
+
+The proof rests on one discrete intermediate-value fact and exact jump accounting.
+
+\begin{lemma}[Discrete crossing lemma]\label{lem:crossing}
+Let $x_1<\cdots<x_r$ be integers with $x_1\le N/3$, $x_r\ge 2N/3$, and
+$x_{k+1}-x_k\le N/3$ for all $k$. Then some $x_k\in[N/3,\,2N/3]$.
+\end{lemma}
+
+\begin{proof}
+Take the first $k$ with $x_k\ge N/3$. If $k=1$ then $x_1=N/3$ exactly and we are done;
+otherwise $x_{k-1}<N/3$, so $x_k=x_{k-1}+(x_k-x_{k-1})<N/3+N/3=2N/3$.
+\end{proof}
+
+Exchanging the defect names replaces $D$ by $N-D$ and swaps the $A$ and $B$ families;
+translation and order reversal also preserve the assertion. After these symmetries exactly
+two canonical forms remain: \emph{crossing} ($a\le c\le b\le d$; then $h=p-s$ where $s=c$
+after translating $a$ to $0$, and $q\ge h$) and \emph{nested} ($J\subseteq I$; then
+$h=q$).
+
+\paragraph{The crossing form.} Direct summation gives
+\[
+N=pq+h,\qquad D=pq-\tfrac{h(h-1)}{2},\qquad
+A_t=qt+\max(0,t-s),\qquad B_{s+u}=pu+\min(u,h),
+\]
+with exact consecutive jumps $A_{t+1}-A_t\in\{q,q+1\}$ and
+$B_{s+u+1}-B_{s+u}\in\{p,p+1\}$. If $N\ge 3(q+1)$ then $p\ge2$, the $A$-sequence runs
+from $A_1\le q+1\le N/3$ to $A_{p-1}=N-(q+1)\ge 2N/3$ with jumps at most $q+1\le N/3$,
+and Lemma~\ref{lem:crossing} produces a balanced eligible $A_t$. Symmetrically, if
+$N\ge3(p+1)$ the $B$-sequence does the same. If neither large-case condition holds, the
+inequalities $q(p-3)<3-h$ and $p(q-3)<3-h$ with $1\le h\le\min(p,q)$ force exactly fifteen
+triples $(p,q,h)$, each of which carries an explicit balanced witness:
+
+\begin{center}
+\begin{tabular}{@{}lrrl@{}}\toprule
+$(p,q,h)$ & $s$ & $N$ & witness \\ \midrule
+$(1,1,1)$ & 0 & 2 & $D=1$\\
+$(1,2,1)$ & 0 & 3 & $D=2$\\
+$(1,3,1)$ & 0 & 4 & $B_{s+1}=2$\\
+$(1,4,1)$ & 0 & 5 & $B_{s+1}=2$\\
+$(2,1,1)$ & 1 & 3 & $D=2$\\
+$(2,2,1)$ & 1 & 5 & $A_1=2$\\
+$(2,2,2)$ & 0 & 6 & $D=3$\\
+$(2,3,1)$ & 1 & 7 & $A_1=3$\\
+$(2,3,2)$ & 0 & 8 & $D=5$\\
+$(3,1,1)$ & 2 & 4 & $A_2=2$\\
+$(3,2,1)$ & 2 & 7 & $A_2=4$\\
+$(3,2,2)$ & 1 & 8 & $D=5$\\
+$(3,3,1)$ & 2 & 10 & $A_2=6$\\
+$(3,3,2)$ & 1 & 11 & $A_2=7$\\
+$(4,1,1)$ & 3 & 5 & $A_2=2$\\ \bottomrule
+\end{tabular}
+\end{center}
+
+\paragraph{The nested form.} Here $N=(p+1)q$. If $q\ge2$, take $u=\lceil q/3\rceil$: then
+$1\le u\le q-1$ and $q\le 3u\le 2q$, so the eligible count $B_{s+u}=(p+1)u$ satisfies
+$N\le 3B_{s+u}\le 2N$ \emph{exactly} --- the factorization of $N$ makes the nested case
+rigid. If $q=1$ then $N=p+1$, $D=s+1$, and $A_t=t+\mathbf1_{\{s<t\}}$; for $p\ge5$ the
+$A$-sequence starts at most $2$, ends at least $p-1$, and jumps by $1$ or $2$, so
+Lemma~\ref{lem:crossing} applies, while $p\le4$ is a finite table of explicit witnesses.
+% imported from: r5 artifact sections 4-5; the closed interval is used throughout and no
+% continuity is invoked (r5 artifact section 6). Corroborating audits (r5/r6): all 5,551
+% overlapping endpoint tuples at m=12; adversarial canonical scan of 4,040,100 states
+% p,q<=200; zero failures. Audits are checks, not premises.
+
+\begin{remark}[$D$ alone does not suffice]
+The count $D$ alone is not always balanced: at $(p,q,h)=(2,2,1)$ one has $N=5$ and
+$D=4>2N/3$, while the eligible $A_1=2$ is balanced. Any proof must use the chain-cut
+counts. % source: r6 verdict, "D-Only Balance Route Refuted"
+\end{remark}
+
+\section{The two-defect chain theorem}
+\begin{theorem}[Two-Defect Chain Theorem]\label{thm:twodefect}
+Every finite non-chain poset $P$ containing a chain $C$ with $|P\setminus C|=2$ has an
+incomparable pair $(u,v)$ with $1/3\le\pr(u\prec v)\le 2/3$.
+\end{theorem}
+
+\begin{proof}
+Write $P\setminus C=\{x,y\}$. If $x$ and $y$ are comparable, then $C\cup\{x<y\}$ is a
+two-chain cover, so $P$ has width at most two and the theorem of Linial \cite{linial}
+(in the sharpened form of Sah \cite{sah}) applies. If $x\parallel y$, their windows
+overlap by Lemma~\ref{lem:overlap}; Lemma~\ref{lem:states} identifies the orientation
+counts of the genuine incomparable pairs, and Theorem~\ref{thm:balance} produces one in
+the middle third.
+\end{proof}
+
+\section{The extremal classification}
+% Sources: r7 (supervisor verdict "DD-EQ Rigidity Proved") + r8 independent re-derivation
+% (supervisor-verdict-work-5fbb947628b0). ATTRIBUTION: the width-two part is Aigner
+% \cite{aigner}: width-two posets with balance constant exactly 1/3 are the ordinal sums
+% of singletons and copies of Q. The width-three content is new; the order-14 census
+% \cite{gupta} observes it empirically and notes it is beyond Aigner's argument.
+Write $Q$ for the three-element poset with exactly one relation. Aigner \cite{aigner}
+proved that the width-two posets with balance constant exactly $1/3$ are precisely the
+ordinal sums of singletons and copies of $Q$. The census of Gupta \cite{gupta}
+determines the extremal balance data through order $14$: exactly $128$ classes attain
+$1/3$, every one an ordinal sum of singletons and copies of $Q$ --- in particular all of
+width two. The following theorem proves this non-attainment for the full (infinite,
+width-three-containing) class. Note the distinction between the \emph{presentation}
+(a chain plus two designated defects, the model of Section~2, which any poset of defect
+at most two admits) and the \emph{exact defect} $n-h(P)$: the extremal member $Q$
+arises as a one-element chain plus two defects but has exact defect one.
+
+\begin{theorem}[Equality rigidity]\label{thm:rigidity}
+\emph{(a)} Every ordinal-sum-indecomposable poset of defect exactly two has an eligible
+orientation count strictly inside the open interval $(N/3,\,2N/3)$; in particular its
+balance constant exceeds $1/3$.
+\emph{(b)} Among ordinal-sum-indecomposable posets presented as a chain plus two
+incomparable defects, the unique member all of whose eligible counts avoid the open
+interval is $Q$ --- which has defect one. Every other member has an eligible count
+strictly inside.
+\end{theorem}
+
+The proof classifies the \emph{simultaneous avoiders} --- parameter tuples for which every
+eligible count $C$ satisfies $3C\le N$ or $3C\ge2N$ --- and intersects them with an
+indecomposability criterion:
+
+\begin{proposition}[Avoider classification]\label{prop:avoiders}
+In the canonical crossing form, simultaneous avoidance holds exactly for
+$(p,q,h,s)=(1,2,1,0)$ and $(2,1,1,1)$. In the nested form, exactly for
+$(p,q,s)=(2,1,0)$ and $(2,1,1)$.
+\end{proposition}
+
+\begin{proposition}[Indecomposability criterion]\label{prop:indec}
+The two-defect model with windows $I=[a,b]$, $J=[c,d]$ is ordinal-sum-indecomposable iff
+its incomparability graph is connected, iff every $t\in\{1,\dots,m\}$ satisfies $a<t\le b$
+or $c<t\le d$; under the overlap hypothesis this is equivalent to $\min(a,c)=0$ and
+$\max(b,d)=m$.
+\end{proposition}
+
+\begin{proof}[Proof of Proposition~\ref{prop:avoiders}]
+% transcribed from paper/derivations/r7_capture_02.md (r7, sol), independently
+% re-derived in r8 (r8_capture_01/02, luna) — two derivations on record.
+Write $\mathrm{AV}(C)$ for the condition $3C\le N$ or $3C\ge2N$. We first sharpen
+Lemma~\ref{lem:crossing} under avoidance: if $x_1\le N/3$, $x_r\ge2N/3$, all jumps are at
+most $N/3$, and \emph{every} term satisfies $\mathrm{AV}$, then the first term
+$\ge N/3$ equals $N/3$ exactly, and its successor equals $2N/3$ exactly (the predecessor
+of the first crossing term is strictly below $N/3$, so the jump bound puts that term
+strictly below $2N/3$; avoidance then forces equality at $N/3$, and the next term can
+neither be in the open middle nor overshoot $2N/3$).
+
+\emph{Large regimes.} In the crossing form the $A$-sequence has $A_1\le q+1$,
+$A_{p-1}=N-(q+1)$, and jumps in $\{q,q+1\}$. If $N\ge3(q+1)$, all-$A$ avoidance forces
+$N/3\in\{q,q+1\}$ by the sharpened lemma, hence $N=3(q+1)$, i.e.\ $q(p-3)=3-h$. With
+$1\le h\le\min(p,q)$ the solutions are $(p,q,h)=(3,q,3)$ for $q\ge3$, $(4,2,1)$, and
+$(5,1,1)$; the first is killed at $q=3$ by $D=6$, $N=12$ (strict middle) and for $q>3$
+by the symmetric $B$-argument (which would force $N=3(p+1)=12$, impossible), while the
+last two carry the strict witnesses $A_2=4$, $N=9$ and $A_3=3$, $N=6$. Symmetrically,
+$N\ge3(p+1)$ with all-$B$ avoidance forces $p(q-3)=3-h$, whose solutions
+$(p,3,3)_{p\ge3}$, $(2,4,1)$, $(1,5,1)$ are killed the same way. Hence every survivor
+satisfies $N<3(q+1)$ and $N<3(p+1)$.
+
+\emph{Residual list.} The strict inequalities $q(p-3)<3-h$ and $p(q-3)<3-h$ force
+$p,q\le4$ and exactly the fifteen triples of the table in
+Section~\ref{thm:balance}. All but two carry an eligible count strictly inside the open
+middle third:
+\[
+\begin{array}{llllll}
+(1,1,1)\!: D{=}1,N{=}2 & (1,3,1)\!: B_1{=}2,N{=}4 & (1,4,1)\!: B_1{=}2,N{=}5\\
+(2,2,1)\!: A_1{=}2,N{=}5 & (2,2,2)\!: D{=}3,N{=}6 & (2,3,1)\!: A_1{=}3,N{=}7\\
+(2,3,2)\!: D{=}5,N{=}8 & (3,1,1)\!: A_2{=}2,N{=}4 & (3,2,1)\!: A_2{=}4,N{=}7\\
+(3,2,2)\!: D{=}5,N{=}8 & (3,3,1)\!: A_2{=}6,N{=}10 & (3,3,2)\!: A_2{=}7,N{=}11\\
+(4,1,1)\!: A_2{=}2,N{=}5
+\end{array}
+\]
+(each displayed value $C$ satisfies $N<3C<2N$). The remaining two triples avoid: at
+$(1,2,1)$, $N=3$ with $D=B_1=2$, both at the boundary $3C=2N$; at $(2,1,1)$, $N=3$ with
+$D=2$ and $A_1=1$, at the boundaries $3C=2N$ and $3C=N$. Note $D-N/2=(pq-h^2)/2\ge0$
+throughout, so $D$ never realizes the low branch in this orientation.
+
+\emph{Nested form.} Here $N=(p+1)q$ and $B_{s+u}=(p+1)u$. If $q\ge2$ and $3\nmid q$,
+then $u=\lceil q/3\rceil$ gives $q<3u<2q$, a strict-middle $B$; if $q=3k\ge6$, take
+$u=k+1$. If $q=3$: $p=3$ gives $D=6$, $N=12$ strict middle, and for $p\ge4$ the
+$A$-sequence starts at most $4<N/3=p+1$, ends at least $3p-1>2N/3$, with jumps at most
+$4$, so Lemma~\ref{lem:crossing} gives a strict term. For $q=1$: $N=p+1$ and
+$\{D\}\cup\{A_t\}=\{1,\dots,p\}$; $p=1$ fails at $D=1$, $N=2$, $p\ge3$ contains an
+integer strictly inside, and $p=2$ survives for $s\in\{0,1\}$ with values $\{1,2\}$ at
+the boundaries of $N=3$.
+\end{proof}
+
+\begin{proof}[Proof of Proposition~\ref{prop:indec}]
+The incomparability graph has the edge $xy$, no edges among chain vertices, and $c_t$
+adjacent to $x$ exactly for $a<t\le b$, to $y$ exactly for $c<t\le d$. After exchange
+assume $a\le c$; overlap gives $c\le b$, so the union of the two adjacency windows is the
+single index interval $(a,\max(b,d)]$, and the graph is connected exactly when that
+interval is all of $\{1,\dots,m\}$ --- that is, $\min(a,c)=0$ and $\max(b,d)=m$.
+Connectedness of the incomparability graph is equivalent to ordinal-sum
+indecomposability, since the canonical ordinal-sum factors are precisely the
+incomparability components. % banked: canonical-ordinal-sum-factorization theorem
+\end{proof}
+
+Intersecting the avoider tuples (with their translations, defect exchanges, and order
+reversals) with the criterion leaves exactly the four interval presentations
+$(L,F),(F,L),(F,R),(R,F)$, where $L=[0,0]$, $R=[1,1]$, $F=[0,1]$ at $m=1$: endpoint
+coverage forces $m=s+q-1$, collapsing both survivor tuples to one-element chains with
+the displayed windows, each isomorphic to $Q$ (extensions $abc,acb,cab$; pair counts
+$(2,1)$ and $(1,2)$). Every other arithmetic survivor has a nontrivial chain prefix or
+suffix and is a chain--$Q$--chain ordinal sum, hence decomposable. This proves
+part~(b) of Theorem~\ref{thm:rigidity}.
+
+Part (a) follows. Let $P$ be indecomposable of defect exactly two, and let $C$ be a
+maximum chain, $P\setminus C=\{x,y\}$. If $x$ and $y$ are comparable, $C\cup\{x<y\}$ is
+a two-chain cover, so $P$ has width two; Linial \cite{linial} gives $\delta(P)\ge1/3$,
+and by Aigner's classification \cite{aigner} equality holds only for ordinal sums of
+singletons and copies of $Q$ --- all decomposable except $Q$ itself, whose defect is
+one. Hence $\delta(P)>1/3$: some incomparable pair lies strictly inside. If $x\parallel
+y$, part (b) applies to the presentation, and its unique avoider $Q$ has defect one,
+not two; so $P$ carries a strict eligible count.
+
+\begin{remark}
+An eligible count with $N/3<C<2N/3$ yields a strict witness; if all eligible counts avoid
+the open interval, Theorem~\ref{thm:balance} forces equality at $N/3$ or $2N/3$ --- which
+is the situation classified above. A corroborating exact scan through $p,q\le60$ (73{,}810
+canonical cases) found no further avoiders. % r7; audits are checks, not premises
+\end{remark}
+
+\section{The next rung: three defects}
+% Sources: r9/r10 banked aligned theorem (two independent derivations); the k=3 boundary
+% from the r13 bridge verdict. The full three-defect program lives in the companion
+% living draft (../main.tex in the campaign record).
+The machinery of this paper is the $k=2$ instance of a general weighted-gap model: for
+$k$ defects, linear extensions correspond to feasible gap assignments weighted by the
+extension counts of the tied blocks. The first three-defect result is already in reach of
+a symmetry argument, and it lands exactly on the conjecture's boundary.
+
+\begin{theorem}[Aligned $Q$-defect chains]
+Let $P\setminus C=\{x,y,z\}$ induce $x<y$ with $z$ incomparable to both, all three
+insertion windows equal to a common interval $I$ with $p=|I|\ge2$. Then
+$N=e(P)=p(p+1)(p+2)/2$ and
+\[
+\pr(x\prec z)=\pr(z\prec y)=2/3\qquad\text{exactly.}
+\]
+\end{theorem}
+
+\begin{proof}[Proof sketch]
+States are triples of gaps $(i,j,k)$ with $i\le j$, weighted $1$, $2$, or $3$ by how many
+defects share a gap. Delete the relation $x<y$: the three defects become interchangeable
+and relabeling splits the extensions into six classes of equal size $\binom{p+2}{3}$.
+Restoring $x<y$ retains exactly the classes $xyz$, $xzy$, $zxy$; two of the three have
+$x\prec z$ and two have $z\prec y$.
+\end{proof}
+
+Thus the aligned family generalizes the extremal poset $Q$ of
+Theorem~\ref{thm:rigidity} to every window size, with its defect pairs pinned to the
+boundary. Beyond the aligned chamber the two-defect arithmetic genuinely stops: with
+three defects, tied fibers are no longer pair-additive (a fully tied gap carries the
+extension count of the induced three-element defect order --- $6$, $3$, $2$, or $1$ ---
+rather than a product of pairwise corrections), and orientation counts become asymmetric
+between the defect pairs. Deciding the full three-defect analogue of
+Theorem~\ref{thm:twodefect}, and the extremal classification above width three, are the
+natural next problems; the interval-order connection (incomparable-defect $k$-defect
+chains are interval orders with $k$ nontrivial intervals) suggests the ladder climbs
+toward genuinely open territory.
+
+\begin{thebibliography}{99}
+\bibitem{kislitsyn} S.~S. Kislitsyn, \emph{Finite partially ordered sets and their
+associated sets of permutations}, Matematicheskie Zametki \textbf{4} (1968), 511--518.
+\bibitem{fredman} M.~Fredman, \emph{How good is the information theory bound in sorting?},
+Theoretical Computer Science \textbf{1} (1976), 355--361.
+\bibitem{linial} N.~Linial, \emph{The information-theoretic bound is good for merging},
+SIAM J. Computing \textbf{13} (1984), 795--801.
+\bibitem{kahn-saks} J.~Kahn and M.~Saks, \emph{Balancing poset extensions}, Order
+\textbf{1} (1984), 113--126.
+\bibitem{aigner} M.~Aigner, \emph{A note on merging}, Order \textbf{2} (1985), 257--264.
+\bibitem{ghp} B.~Ganter, G.~H\"afner, and W.~Poguntke, \emph{On linear extensions of
+ordered sets with a symmetry}, Discrete Mathematics \textbf{63} (1987), 153--156.
+% VERIFIED 2026-08-18 (web, produced source): GHP = Discrete Math 63 (1987) 153-156,
+% cycle-free + nontrivial automorphism -> 1/2 pair; Peczarski 2006 = GPC (hence 1/3-2/3)
+% for any poset with a nontrivial automorphism. Both cited accordingly in the intro.
+\bibitem{brightwell-semi} G.~Brightwell, \emph{Semiorders and the 1/3--2/3 conjecture},
+Order \textbf{5} (1989), 369--380.
+\bibitem{tgf} W.~T. Trotter, W.~G. Gehrlein, and P.~C. Fishburn, \emph{Balance theorems
+for height-2 posets}, Order \textbf{9} (1992), 43--53.
+\bibitem{bft} G.~Brightwell, S.~Felsner, and W.~T. Trotter, \emph{Balancing pairs and the
+cross product conjecture}, Order \textbf{12} (1995), 327--349.
+\bibitem{peczarski-thin} M.~Peczarski, \emph{The Gold Partition Conjecture for 6-thin
+posets}, Order \textbf{25} (2008), 91--103.
+\bibitem{peczarski-aut} M.~Peczarski, \emph{The gold partition conjecture}, Order
+\textbf{23} (2006), 89--95. % TODO(verify): exact home of the automorphism theorem
+\bibitem{deloof} K.~De Loof, B.~De Baets, and H.~De Meyer, \emph{Counting linear
+extension majority cycles in partially ordered sets on up to 13 elements}, Computers \&
+Mathematics with Applications \textbf{59} (2010), 1541--1547.
+\bibitem{zaguia-nfree} I.~Zaguia, \emph{The 1/3--2/3 conjecture for $N$-free ordered
+sets}, Electronic J. Combinatorics \textbf{19}(2) (2012), P29.
+\bibitem{zaguia-polytree} I.~Zaguia, \emph{The 1/3--2/3 conjecture for ordered sets whose
+cover graph is a forest}, Order \textbf{36} (2019), 335--347.
+\bibitem{olson-sagan} E.~J. Olson and B.~E. Sagan, \emph{On the 1/3--2/3 conjecture},
+Order \textbf{35} (2018), 581--596.
+\bibitem{sah} A.~Sah, \emph{Improving the $\frac13$--$\frac23$ conjecture for width two
+posets}, Combinatorica \textbf{41} (2021), 99--126.
+\bibitem{dolores-cuenca} E.~Dolores-Cuenca, A.~Guzm\'an-S\'aenz, and S.~Kim, \emph{The
+gold partition conjecture and the lexicographic sum of posets}, arXiv:2410.12494.
+\bibitem{chan-pak} S.~H. Chan and I.~Pak, survey. % TODO(verify): exact reference
+\bibitem{gupta} R.~Gupta, \emph{Balance constants, majority cycles, and the Gold
+Partition Conjecture through fourteen elements}, arXiv:2607.23926 (2026).
+\end{thebibliography}
+
+\end{document}

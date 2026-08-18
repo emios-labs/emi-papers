@@ -1,0 +1,223 @@
+{
+  "atlas": {
+    "boundary_atlas": {
+      "constant_min": "1",
+      "coverage_pattern_max": 126,
+      "coverage_pattern_min": 28,
+      "coverage_rows": 2304,
+      "identities": 31,
+      "identity_numeric_points": 4096,
+      "negative_residual_coefficients": 0,
+      "patterns": 31,
+      "residual_terms": 391
+    },
+    "coverage_disjoint": true,
+    "hashes": {
+      "boundary_data": "7aad8e7378dfe5475ba1dc3b8283e8250adf64dafe3359a0a0460b23c6288a5a",
+      "strict_data": "59e2b841ce2cb653d900a73092165f1b78547f4bf6023c4b04adf677a878174d"
+    },
+    "ordered_partitions": {
+      "all": 75,
+      "x_eq_y": 44,
+      "x_gt_y": 31
+    },
+    "strict_atlas": {
+      "certificates": 62,
+      "coverage_pattern_max": 378,
+      "coverage_pattern_min": 84,
+      "coverage_rows": 7776,
+      "identity_numeric_points": 32768,
+      "negative_residual_coefficients": 0,
+      "patterns": 31,
+      "residual_terms": 1147
+    },
+    "strict_floor": {
+      "equality_L_eq_H_plus_1_examples": [
+        [
+          "c|y|e|x",
+          [
+            1,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            60,
+            39,
+            40
+          ],
+          60
+        ],
+        [
+          "c|y|e|x",
+          [
+            1,
+            0,
+            0,
+            0,
+            1
+          ],
+          [
+            69,
+            45,
+            46
+          ],
+          69
+        ],
+        [
+          "c|y|e|x",
+          [
+            1,
+            0,
+            0,
+            0,
+            2
+          ],
+          [
+            78,
+            51,
+            52
+          ],
+          78
+        ],
+        [
+          "c|y|e|x",
+          [
+            1,
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            69,
+            45,
+            46
+          ],
+          69
+        ],
+        [
+          "c|y|e|x",
+          [
+            1,
+            1,
+            0,
+            0,
+            1
+          ],
+          [
+            78,
+            51,
+            52
+          ],
+          78
+        ]
+      ],
+      "finite_min_3L_minus_N_when_L_gt_H": 1,
+      "invalid_H_active_witness": [
+        "y|xce",
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          11,
+          3,
+          4
+        ],
+        -2
+      ],
+      "nonzero_constant_min": "1",
+      "zero_constant_exceptions": [
+        [
+          "ye|c|x",
+          "1/11"
+        ],
+        [
+          "ye|xc",
+          "2"
+        ],
+        [
+          "ye|x|c",
+          "2"
+        ]
+      ],
+      "zero_exception_all_zero_stats": [
+        [
+          "ye|c|x",
+          [
+            13,
+            8,
+            4
+          ],
+          -4
+        ],
+        [
+          "ye|xc",
+          [
+            8,
+            3,
+            2
+          ],
+          -1
+        ],
+        [
+          "ye|x|c",
+          [
+            8,
+            3,
+            2
+          ],
+          -1
+        ]
+      ]
+    }
+  },
+  "integrality_equivalence": {
+    "checks": 9261,
+    "mismatches": 0
+  },
+  "interface": {
+    "H_Q=H_V+1": true,
+    "L_Q=L_V": true,
+    "N_Q=N_V+1": true,
+    "Q3_extra": "original x<z; under reversal transformed r'<q'",
+    "Q4_extra": "original z<y; direct transformed r<q",
+    "invalid_H_active_S_H_V": "excluded: S_H^V is used only when H_V>=L_V; L_V>H_V is dispatched to the strict floor"
+  },
+  "q_transfer": {
+    "formula_M": 32,
+    "formula_errors": 0,
+    "formula_rows_per_branch": 5456,
+    "literal_M": 12,
+    "literal_orientation_errors": 0,
+    "literal_rows_per_branch": 286,
+    "literal_state_mass_sum_both": 35750,
+    "literal_transfer_errors": 0,
+    "min_corrected_slack_M": -3,
+    "near_miss_count_M": 66
+  },
+  "replay_inputs": {
+    "boundary_data": "outputs\\data\\te21_D_eq_F_facet_atlas_20260818.json",
+    "literal_q_M": 12,
+    "strict_data": "outputs\\data\\gated_te21_chamber_atlas_20260817.json"
+  },
+  "representative": {
+    "Q": [
+      9,
+      4,
+      2
+    ],
+    "S_H_Q": 3,
+    "S_L_Q": -3,
+    "V": [
+      8,
+      3,
+      2
+    ],
+    "aligned_signed_certificate": "-P_b = 3H_Q-N_Q = 3"
+  },
+  "verdict": "PASS"
+}

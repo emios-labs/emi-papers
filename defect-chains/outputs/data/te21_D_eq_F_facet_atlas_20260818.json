@@ -1,0 +1,8240 @@
+{
+  "title": "Exact normalized guarded-V TE(2=1) D=F facet chamber atlas",
+  "status": "COMPUTED generator output; proof labels are assigned in the companion artifact",
+  "facet": "f=F-D=0 after D=0 normalization",
+  "normalized_domain": {
+    "x_y_c_e": "x>y>=0, c>=1, e>=1",
+    "raw_endpoints": "A=-x, B=-y, C0=-c, D=0, E=-e, F=0",
+    "certificate_envelope": "The 31-cell envelope is the displayed domain; exact structural guards may only shrink it.",
+    "structural_realizability": "exact acyclic/q||r/height=m/connected-incomparability guards applied before containment"
+  },
+  "patterns": [
+    "y|xce",
+    "yc|xe",
+    "yce|x",
+    "ye|xc",
+    "c|y|xe",
+    "c|ye|x",
+    "ce|y|x",
+    "e|y|xc",
+    "e|yc|x",
+    "y|c|xe",
+    "y|ce|x",
+    "y|e|xc",
+    "y|x|ce",
+    "y|xc|e",
+    "y|xe|c",
+    "yc|e|x",
+    "yc|x|e",
+    "ye|c|x",
+    "ye|x|c",
+    "c|e|y|x",
+    "c|y|e|x",
+    "c|y|x|e",
+    "e|c|y|x",
+    "e|y|c|x",
+    "e|y|x|c",
+    "y|c|e|x",
+    "y|c|x|e",
+    "y|e|c|x",
+    "y|e|x|c",
+    "y|x|c|e",
+    "y|x|e|c"
+  ],
+  "pattern_count": 31,
+  "records": [
+    {
+      "id": 0,
+      "pattern": "y|xce",
+      "blocks": [
+        [
+          "y"
+        ],
+        [
+          "x",
+          "c",
+          "e"
+        ]
+      ],
+      "variables": [
+        "u",
+        "z0"
+      ],
+      "offset": 0,
+      "lowest_level_shift": 0,
+      "strict_gap_rule": "lambda[i+1]-lambda[i]=1+z_i",
+      "parameter_domain": "all listed variables are integers >=0",
+      "endpoints": {
+        "A": "-u - z0 - 1",
+        "B": "-u",
+        "C0": "-u - z0 - 1",
+        "D": "0",
+        "E": "-u - z0 - 1",
+        "F": "0"
+      },
+      "levels": {
+        "y": "u",
+        "x": "u + z0 + 1",
+        "c": "u + z0 + 1",
+        "e": "u + z0 + 1"
+      },
+      "polynomials": {
+        "N": "8 + 26/3*z0 + 3*z0^2 + 1/3*z0^3 + 8*u + 6*u*z0 + u*z0^2 + 2*u^2 + u^2*z0",
+        "H": "2 + 11/3*z0 + 2*z0^2 + 1/3*z0^3 + 3*u + 4*u*z0 + u*z0^2 + u^2 + u^2*z0",
+        "L": "3 + 31/6*z0 + 5/2*z0^2 + 1/3*z0^3 + 6*u + 5*u*z0 + u*z0^2 + 2*u^2 + u^2*z0",
+        "N_coefficients": [
+          {
+            "monomial": "1",
+            "coefficient": "8"
+          },
+          {
+            "monomial": "z0",
+            "coefficient": "26/3"
+          },
+          {
+            "monomial": "z0^2",
+            "coefficient": "3"
+          },
+          {
+            "monomial": "z0^3",
+            "coefficient": "1/3"
+          },
+          {
+            "monomial": "u",
+            "coefficient": "8"
+          },
+          {
+            "monomial": "u*z0",
+            "coefficient": "6"
+          },
+          {
+            "monomial": "u*z0^2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u^2",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u^2*z0",
+            "coefficient": "1"
+          }
+        ],
+        "H_coefficients": [
+          {
+            "monomial": "1",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "z0",
+            "coefficient": "11/3"
+          },
+          {
+            "monomial": "z0^2",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "z0^3",
+            "coefficient": "1/3"
+          },
+          {
+            "monomial": "u",
+            "coefficient": "3"
+          },
+          {
+            "monomial": "u*z0",
+            "coefficient": "4"
+          },
+          {
+            "monomial": "u*z0^2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u^2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u^2*z0",
+            "coefficient": "1"
+          }
+        ],
+        "L_coefficients": [
+          {
+            "monomial": "1",
+            "coefficient": "3"
+          },
+          {
+            "monomial": "z0",
+            "coefficient": "31/6"
+          },
+          {
+            "monomial": "z0^2",
+            "coefficient": "5/2"
+          },
+          {
+            "monomial": "z0^3",
+            "coefficient": "1/3"
+          },
+          {
+            "monomial": "u",
+            "coefficient": "6"
+          },
+          {
+            "monomial": "u*z0",
+            "coefficient": "5"
+          },
+          {
+            "monomial": "u*z0^2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u^2",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u^2*z0",
+            "coefficient": "1"
+          }
+        ]
+      },
+      "certificate": {
+        "branch": "L",
+        "alpha": "0",
+        "beta": "0",
+        "lhs": "3L-N",
+        "residual": "1 + 41/6*z0 + 9/2*z0^2 + 2/3*z0^3 + 10*u + 9*u*z0 + 2*u*z0^2 + 4*u^2 + 2*u^2*z0",
+        "residual_coefficients": [
+          {
+            "monomial": "1",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "z0",
+            "coefficient": "41/6"
+          },
+          {
+            "monomial": "z0^2",
+            "coefficient": "9/2"
+          },
+          {
+            "monomial": "z0^3",
+            "coefficient": "2/3"
+          },
+          {
+            "monomial": "u",
+            "coefficient": "10"
+          },
+          {
+            "monomial": "u*z0",
+            "coefficient": "9"
+          },
+          {
+            "monomial": "u*z0^2",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u^2",
+            "coefficient": "4"
+          },
+          {
+            "monomial": "u^2*z0",
+            "coefficient": "2"
+          }
+        ],
+        "negative_coefficient_count": 0
+      },
+      "generator_box_checks": 147
+    },
+    {
+      "id": 1,
+      "pattern": "yc|xe",
+      "blocks": [
+        [
+          "y",
+          "c"
+        ],
+        [
+          "x",
+          "e"
+        ]
+      ],
+      "variables": [
+        "u",
+        "z0"
+      ],
+      "offset": 1,
+      "lowest_level_shift": 0,
+      "strict_gap_rule": "lambda[i+1]-lambda[i]=1+z_i",
+      "parameter_domain": "all listed variables are integers >=0",
+      "endpoints": {
+        "A": "-u - z0 - 2",
+        "B": "-u - 1",
+        "C0": "-u - 1",
+        "D": "0",
+        "E": "-u - z0 - 2",
+        "F": "0"
+      },
+      "levels": {
+        "y": "u + 1",
+        "c": "u + 1",
+        "x": "u + z0 + 2",
+        "e": "u + z0 + 2"
+      },
+      "polynomials": {
+        "N": "14 + 9*z0 + z0^2 + 11*u + 13/2*u*z0 + 1/2*u*z0^2 + 2*u^2 + u^2*z0",
+        "H": "6 + 7*z0 + z0^2 + 5*u + 11/2*u*z0 + 1/2*u*z0^2 + u^2 + u^2*z0",
+        "L": "7 + 9/2*z0 + 1/2*z0^2 + 9*u + 11/2*u*z0 + 1/2*u*z0^2 + 2*u^2 + u^2*z0",
+        "N_coefficients": [
+          {
+            "monomial": "1",
+            "coefficient": "14"
+          },
+          {
+            "monomial": "z0",
+            "coefficient": "9"
+          },
+          {
+            "monomial": "z0^2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u",
+            "coefficient": "11"
+          },
+          {
+            "monomial": "u*z0",
+            "coefficient": "13/2"
+          },
+          {
+            "monomial": "u*z0^2",
+            "coefficient": "1/2"
+          },
+          {
+            "monomial": "u^2",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u^2*z0",
+            "coefficient": "1"
+          }
+        ],
+        "H_coefficients": [
+          {
+            "monomial": "1",
+            "coefficient": "6"
+          },
+          {
+            "monomial": "z0",
+            "coefficient": "7"
+          },
+          {
+            "monomial": "z0^2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u",
+            "coefficient": "5"
+          },
+          {
+            "monomial": "u*z0",
+            "coefficient": "11/2"
+          },
+          {
+            "monomial": "u*z0^2",
+            "coefficient": "1/2"
+          },
+          {
+            "monomial": "u^2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u^2*z0",
+            "coefficient": "1"
+          }
+        ],
+        "L_coefficients": [
+          {
+            "monomial": "1",
+            "coefficient": "7"
+          },
+          {
+            "monomial": "z0",
+            "coefficient": "9/2"
+          },
+          {
+            "monomial": "z0^2",
+            "coefficient": "1/2"
+          },
+          {
+            "monomial": "u",
+            "coefficient": "9"
+          },
+          {
+            "monomial": "u*z0",
+            "coefficient": "11/2"
+          },
+          {
+            "monomial": "u*z0^2",
+            "coefficient": "1/2"
+          },
+          {
+            "monomial": "u^2",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u^2*z0",
+            "coefficient": "1"
+          }
+        ]
+      },
+      "certificate": {
+        "branch": "L",
+        "alpha": "0",
+        "beta": "0",
+        "lhs": "3L-N",
+        "residual": "7 + 9/2*z0 + 1/2*z0^2 + 16*u + 10*u*z0 + u*z0^2 + 4*u^2 + 2*u^2*z0",
+        "residual_coefficients": [
+          {
+            "monomial": "1",
+            "coefficient": "7"
+          },
+          {
+            "monomial": "z0",
+            "coefficient": "9/2"
+          },
+          {
+            "monomial": "z0^2",
+            "coefficient": "1/2"
+          },
+          {
+            "monomial": "u",
+            "coefficient": "16"
+          },
+          {
+            "monomial": "u*z0",
+            "coefficient": "10"
+          },
+          {
+            "monomial": "u*z0^2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u^2",
+            "coefficient": "4"
+          },
+          {
+            "monomial": "u^2*z0",
+            "coefficient": "2"
+          }
+        ],
+        "negative_coefficient_count": 0
+      },
+      "generator_box_checks": 147
+    },
+    {
+      "id": 2,
+      "pattern": "yce|x",
+      "blocks": [
+        [
+          "y",
+          "c",
+          "e"
+        ],
+        [
+          "x"
+        ]
+      ],
+      "variables": [
+        "u",
+        "z0"
+      ],
+      "offset": 1,
+      "lowest_level_shift": 0,
+      "strict_gap_rule": "lambda[i+1]-lambda[i]=1+z_i",
+      "parameter_domain": "all listed variables are integers >=0",
+      "endpoints": {
+        "A": "-u - z0 - 2",
+        "B": "-u - 1",
+        "C0": "-u - 1",
+        "D": "0",
+        "E": "-u - 1",
+        "F": "0"
+      },
+      "levels": {
+        "y": "u + 1",
+        "c": "u + 1",
+        "e": "u + 1",
+        "x": "u + z0 + 2"
+      },
+      "polynomials": {
+        "N": "12 + 6*z0 + 10*u + 5*u*z0 + 2*u^2 + u^2*z0",
+        "H": "6 + 6*z0 + 5*u + 5*u*z0 + u^2 + u^2*z0",
+        "L": "6 + 3*z0 + 8*u + 4*u*z0 + 2*u^2 + u^2*z0",
+        "N_coefficients": [
+          {
+            "monomial": "1",
+            "coefficient": "12"
+          },
+          {
+            "monomial": "z0",
+            "coefficient": "6"
+          },
+          {
+            "monomial": "u",
+            "coefficient": "10"
+          },
+          {
+            "monomial": "u*z0",
+            "coefficient": "5"
+          },
+          {
+            "monomial": "u^2",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u^2*z0",
+            "coefficient": "1"
+          }
+        ],
+        "H_coefficients": [
+          {
+            "monomial": "1",
+            "coefficient": "6"
+          },
+          {
+            "monomial": "z0",
+            "coefficient": "6"
+          },
+          {
+            "monomial": "u",
+            "coefficient": "5"
+          },
+          {
+            "monomial": "u*z0",
+            "coefficient": "5"
+          },
+          {
+            "monomial": "u^2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u^2*z0",
+            "coefficient": "1"
+          }
+        ],
+        "L_coefficients": [
+          {
+            "monomial": "1",
+            "coefficient": "6"
+          },
+          {
+            "monomial": "z0",
+            "coefficient": "3"
+          },
+          {
+            "monomial": "u",
+            "coefficient": "8"
+          },
+          {
+            "monomial": "u*z0",
+            "coefficient": "4"
+          },
+          {
+            "monomial": "u^2",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u^2*z0",
+            "coefficient": "1"
+          }
+        ]
+      },
+      "certificate": {
+        "branch": "L",
+        "alpha": "0",
+        "beta": "0",
+        "lhs": "3L-N",
+        "residual": "6 + 3*z0 + 14*u + 7*u*z0 + 4*u^2 + 2*u^2*z0",
+        "residual_coefficients": [
+          {
+            "monomial": "1",
+            "coefficient": "6"
+          },
+          {
+            "monomial": "z0",
+            "coefficient": "3"
+          },
+          {
+            "monomial": "u",
+            "coefficient": "14"
+          },
+          {
+            "monomial": "u*z0",
+            "coefficient": "7"
+          },
+          {
+            "monomial": "u^2",
+            "coefficient": "4"
+          },
+          {
+            "monomial": "u^2*z0",
+            "coefficient": "2"
+          }
+        ],
+        "negative_coefficient_count": 0
+      },
+      "generator_box_checks": 147
+    },
+    {
+      "id": 3,
+      "pattern": "ye|xc",
+      "blocks": [
+        [
+          "y",
+          "e"
+        ],
+        [
+          "x",
+          "c"
+        ]
+      ],
+      "variables": [
+        "u",
+        "z0"
+      ],
+      "offset": 0,
+      "lowest_level_shift": 1,
+      "strict_gap_rule": "lambda[i+1]-lambda[i]=1+z_i",
+      "parameter_domain": "all listed variables are integers >=0",
+      "endpoints": {
+        "A": "-u - z0 - 2",
+        "B": "-u - 1",
+        "C0": "-u - z0 - 2",
+        "D": "0",
+        "E": "-u - 1",
+        "F": "0"
+      },
+      "levels": {
+        "y": "u + 1",
+        "e": "u + 1",
+        "x": "u + z0 + 2",
+        "c": "u + z0 + 2"
+      },
+      "polynomials": {
+        "N": "14 + 9*z0 + z0^2 + 11*u + 13/2*u*z0 + 1/2*u*z0^2 + 2*u^2 + u^2*z0",
+        "H": "6 + 7*z0 + z0^2 + 5*u + 11/2*u*z0 + 1/2*u*z0^2 + u^2 + u^2*z0",
+        "L": "8 + 6*z0 + z0^2 + 9*u + 11/2*u*z0 + 1/2*u*z0^2 + 2*u^2 + u^2*z0",
+        "N_coefficients": [
+          {
+            "monomial": "1",
+            "coefficient": "14"
+          },
+          {
+            "monomial": "z0",
+            "coefficient": "9"
+          },
+          {
+            "monomial": "z0^2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u",
+            "coefficient": "11"
+          },
+          {
+            "monomial": "u*z0",
+            "coefficient": "13/2"
+          },
+          {
+            "monomial": "u*z0^2",
+            "coefficient": "1/2"
+          },
+          {
+            "monomial": "u^2",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u^2*z0",
+            "coefficient": "1"
+          }
+        ],
+        "H_coefficients": [
+          {
+            "monomial": "1",
+            "coefficient": "6"
+          },
+          {
+            "monomial": "z0",
+            "coefficient": "7"
+          },
+          {
+            "monomial": "z0^2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u",
+            "coefficient": "5"
+          },
+          {
+            "monomial": "u*z0",
+            "coefficient": "11/2"
+          },
+          {
+            "monomial": "u*z0^2",
+            "coefficient": "1/2"
+          },
+          {
+            "monomial": "u^2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u^2*z0",
+            "coefficient": "1"
+          }
+        ],
+        "L_coefficients": [
+          {
+            "monomial": "1",
+            "coefficient": "8"
+          },
+          {
+            "monomial": "z0",
+            "coefficient": "6"
+          },
+          {
+            "monomial": "z0^2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u",
+            "coefficient": "9"
+          },
+          {
+            "monomial": "u*z0",
+            "coefficient": "11/2"
+          },
+          {
+            "monomial": "u*z0^2",
+            "coefficient": "1/2"
+          },
+          {
+            "monomial": "u^2",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u^2*z0",
+            "coefficient": "1"
+          }
+        ]
+      },
+      "certificate": {
+        "branch": "L",
+        "alpha": "0",
+        "beta": "0",
+        "lhs": "3L-N",
+        "residual": "10 + 9*z0 + 2*z0^2 + 16*u + 10*u*z0 + u*z0^2 + 4*u^2 + 2*u^2*z0",
+        "residual_coefficients": [
+          {
+            "monomial": "1",
+            "coefficient": "10"
+          },
+          {
+            "monomial": "z0",
+            "coefficient": "9"
+          },
+          {
+            "monomial": "z0^2",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u",
+            "coefficient": "16"
+          },
+          {
+            "monomial": "u*z0",
+            "coefficient": "10"
+          },
+          {
+            "monomial": "u*z0^2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u^2",
+            "coefficient": "4"
+          },
+          {
+            "monomial": "u^2*z0",
+            "coefficient": "2"
+          }
+        ],
+        "negative_coefficient_count": 0
+      },
+      "generator_box_checks": 147
+    },
+    {
+      "id": 4,
+      "pattern": "c|y|xe",
+      "blocks": [
+        [
+          "c"
+        ],
+        [
+          "y"
+        ],
+        [
+          "x",
+          "e"
+        ]
+      ],
+      "variables": [
+        "u",
+        "z0",
+        "z1"
+      ],
+      "offset": 1,
+      "lowest_level_shift": 0,
+      "strict_gap_rule": "lambda[i+1]-lambda[i]=1+z_i",
+      "parameter_domain": "all listed variables are integers >=0",
+      "endpoints": {
+        "A": "-u - z0 - z1 - 3",
+        "B": "-u - z0 - 2",
+        "C0": "-u - 1",
+        "D": "0",
+        "E": "-u - z0 - z1 - 3",
+        "F": "0"
+      },
+      "levels": {
+        "c": "u + 1",
+        "y": "u + z0 + 2",
+        "x": "u + z0 + z1 + 3",
+        "e": "u + z0 + z1 + 3"
+      },
+      "polynomials": {
+        "N": "18 + 11*z1 + z1^2 + 4*z0 + 2*z0*z1 + 13*u + 15/2*u*z1 + 1/2*u*z1^2 + 2*u*z0 + u*z0*z1 + 2*u^2 + u^2*z1",
+        "H": "8 + 9*z1 + z1^2 + 2*z0 + 2*z0*z1 + 6*u + 13/2*u*z1 + 1/2*u*z1^2 + u*z0 + u*z0*z1 + u^2 + u^2*z1",
+        "L": "9 + 11/2*z1 + 1/2*z1^2 + 2*z0 + z0*z1 + 11*u + 13/2*u*z1 + 1/2*u*z1^2 + 2*u*z0 + u*z0*z1 + 2*u^2 + u^2*z1",
+        "N_coefficients": [
+          {
+            "monomial": "1",
+            "coefficient": "18"
+          },
+          {
+            "monomial": "z1",
+            "coefficient": "11"
+          },
+          {
+            "monomial": "z1^2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "z0",
+            "coefficient": "4"
+          },
+          {
+            "monomial": "z0*z1",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u",
+            "coefficient": "13"
+          },
+          {
+            "monomial": "u*z1",
+            "coefficient": "15/2"
+          },
+          {
+            "monomial": "u*z1^2",
+            "coefficient": "1/2"
+          },
+          {
+            "monomial": "u*z0",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u*z0*z1",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u^2",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u^2*z1",
+            "coefficient": "1"
+          }
+        ],
+        "H_coefficients": [
+          {
+            "monomial": "1",
+            "coefficient": "8"
+          },
+          {
+            "monomial": "z1",
+            "coefficient": "9"
+          },
+          {
+            "monomial": "z1^2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "z0",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "z0*z1",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u",
+            "coefficient": "6"
+          },
+          {
+            "monomial": "u*z1",
+            "coefficient": "13/2"
+          },
+          {
+            "monomial": "u*z1^2",
+            "coefficient": "1/2"
+          },
+          {
+            "monomial": "u*z0",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u*z0*z1",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u^2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u^2*z1",
+            "coefficient": "1"
+          }
+        ],
+        "L_coefficients": [
+          {
+            "monomial": "1",
+            "coefficient": "9"
+          },
+          {
+            "monomial": "z1",
+            "coefficient": "11/2"
+          },
+          {
+            "monomial": "z1^2",
+            "coefficient": "1/2"
+          },
+          {
+            "monomial": "z0",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "z0*z1",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u",
+            "coefficient": "11"
+          },
+          {
+            "monomial": "u*z1",
+            "coefficient": "13/2"
+          },
+          {
+            "monomial": "u*z1^2",
+            "coefficient": "1/2"
+          },
+          {
+            "monomial": "u*z0",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u*z0*z1",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u^2",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u^2*z1",
+            "coefficient": "1"
+          }
+        ]
+      },
+      "certificate": {
+        "branch": "L",
+        "alpha": "0",
+        "beta": "0",
+        "lhs": "3L-N",
+        "residual": "9 + 11/2*z1 + 1/2*z1^2 + 2*z0 + z0*z1 + 20*u + 12*u*z1 + u*z1^2 + 4*u*z0 + 2*u*z0*z1 + 4*u^2 + 2*u^2*z1",
+        "residual_coefficients": [
+          {
+            "monomial": "1",
+            "coefficient": "9"
+          },
+          {
+            "monomial": "z1",
+            "coefficient": "11/2"
+          },
+          {
+            "monomial": "z1^2",
+            "coefficient": "1/2"
+          },
+          {
+            "monomial": "z0",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "z0*z1",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u",
+            "coefficient": "20"
+          },
+          {
+            "monomial": "u*z1",
+            "coefficient": "12"
+          },
+          {
+            "monomial": "u*z1^2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u*z0",
+            "coefficient": "4"
+          },
+          {
+            "monomial": "u*z0*z1",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u^2",
+            "coefficient": "4"
+          },
+          {
+            "monomial": "u^2*z1",
+            "coefficient": "2"
+          }
+        ],
+        "negative_coefficient_count": 0
+      },
+      "generator_box_checks": 1029
+    },
+    {
+      "id": 5,
+      "pattern": "c|ye|x",
+      "blocks": [
+        [
+          "c"
+        ],
+        [
+          "y",
+          "e"
+        ],
+        [
+          "x"
+        ]
+      ],
+      "variables": [
+        "u",
+        "z0",
+        "z1"
+      ],
+      "offset": 1,
+      "lowest_level_shift": 0,
+      "strict_gap_rule": "lambda[i+1]-lambda[i]=1+z_i",
+      "parameter_domain": "all listed variables are integers >=0",
+      "endpoints": {
+        "A": "-u - z0 - z1 - 3",
+        "B": "-u - z0 - 2",
+        "C0": "-u - 1",
+        "D": "0",
+        "E": "-u - z0 - 2",
+        "F": "0"
+      },
+      "levels": {
+        "c": "u + 1",
+        "y": "u + z0 + 2",
+        "e": "u + z0 + 2",
+        "x": "u + z0 + z1 + 3"
+      },
+      "polynomials": {
+        "N": "16 + 8*z1 + 4*z0 + 2*z0*z1 + 12*u + 6*u*z1 + 2*u*z0 + u*z0*z1 + 2*u^2 + u^2*z1",
+        "H": "8 + 8*z1 + 2*z0 + 2*z0*z1 + 6*u + 6*u*z1 + u*z0 + u*z0*z1 + u^2 + u^2*z1",
+        "L": "8 + 4*z1 + 2*z0 + z0*z1 + 10*u + 5*u*z1 + 2*u*z0 + u*z0*z1 + 2*u^2 + u^2*z1",
+        "N_coefficients": [
+          {
+            "monomial": "1",
+            "coefficient": "16"
+          },
+          {
+            "monomial": "z1",
+            "coefficient": "8"
+          },
+          {
+            "monomial": "z0",
+            "coefficient": "4"
+          },
+          {
+            "monomial": "z0*z1",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u",
+            "coefficient": "12"
+          },
+          {
+            "monomial": "u*z1",
+            "coefficient": "6"
+          },
+          {
+            "monomial": "u*z0",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u*z0*z1",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u^2",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u^2*z1",
+            "coefficient": "1"
+          }
+        ],
+        "H_coefficients": [
+          {
+            "monomial": "1",
+            "coefficient": "8"
+          },
+          {
+            "monomial": "z1",
+            "coefficient": "8"
+          },
+          {
+            "monomial": "z0",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "z0*z1",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u",
+            "coefficient": "6"
+          },
+          {
+            "monomial": "u*z1",
+            "coefficient": "6"
+          },
+          {
+            "monomial": "u*z0",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u*z0*z1",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u^2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u^2*z1",
+            "coefficient": "1"
+          }
+        ],
+        "L_coefficients": [
+          {
+            "monomial": "1",
+            "coefficient": "8"
+          },
+          {
+            "monomial": "z1",
+            "coefficient": "4"
+          },
+          {
+            "monomial": "z0",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "z0*z1",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u",
+            "coefficient": "10"
+          },
+          {
+            "monomial": "u*z1",
+            "coefficient": "5"
+          },
+          {
+            "monomial": "u*z0",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u*z0*z1",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u^2",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u^2*z1",
+            "coefficient": "1"
+          }
+        ]
+      },
+      "certificate": {
+        "branch": "L",
+        "alpha": "0",
+        "beta": "0",
+        "lhs": "3L-N",
+        "residual": "8 + 4*z1 + 2*z0 + z0*z1 + 18*u + 9*u*z1 + 4*u*z0 + 2*u*z0*z1 + 4*u^2 + 2*u^2*z1",
+        "residual_coefficients": [
+          {
+            "monomial": "1",
+            "coefficient": "8"
+          },
+          {
+            "monomial": "z1",
+            "coefficient": "4"
+          },
+          {
+            "monomial": "z0",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "z0*z1",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u",
+            "coefficient": "18"
+          },
+          {
+            "monomial": "u*z1",
+            "coefficient": "9"
+          },
+          {
+            "monomial": "u*z0",
+            "coefficient": "4"
+          },
+          {
+            "monomial": "u*z0*z1",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u^2",
+            "coefficient": "4"
+          },
+          {
+            "monomial": "u^2*z1",
+            "coefficient": "2"
+          }
+        ],
+        "negative_coefficient_count": 0
+      },
+      "generator_box_checks": 1029
+    },
+    {
+      "id": 6,
+      "pattern": "ce|y|x",
+      "blocks": [
+        [
+          "c",
+          "e"
+        ],
+        [
+          "y"
+        ],
+        [
+          "x"
+        ]
+      ],
+      "variables": [
+        "u",
+        "z0",
+        "z1"
+      ],
+      "offset": 1,
+      "lowest_level_shift": 0,
+      "strict_gap_rule": "lambda[i+1]-lambda[i]=1+z_i",
+      "parameter_domain": "all listed variables are integers >=0",
+      "endpoints": {
+        "A": "-u - z0 - z1 - 3",
+        "B": "-u - z0 - 2",
+        "C0": "-u - 1",
+        "D": "0",
+        "E": "-u - 1",
+        "F": "0"
+      },
+      "levels": {
+        "c": "u + 1",
+        "e": "u + 1",
+        "y": "u + z0 + 2",
+        "x": "u + z0 + z1 + 3"
+      },
+      "polynomials": {
+        "N": "12 + 6*z1 + 10*u + 5*u*z1 + 2*u^2 + u^2*z1",
+        "H": "6 + 6*z1 + 5*u + 5*u*z1 + u^2 + u^2*z1",
+        "L": "6 + 3*z1 + 8*u + 4*u*z1 + 2*u^2 + u^2*z1",
+        "N_coefficients": [
+          {
+            "monomial": "1",
+            "coefficient": "12"
+          },
+          {
+            "monomial": "z1",
+            "coefficient": "6"
+          },
+          {
+            "monomial": "u",
+            "coefficient": "10"
+          },
+          {
+            "monomial": "u*z1",
+            "coefficient": "5"
+          },
+          {
+            "monomial": "u^2",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u^2*z1",
+            "coefficient": "1"
+          }
+        ],
+        "H_coefficients": [
+          {
+            "monomial": "1",
+            "coefficient": "6"
+          },
+          {
+            "monomial": "z1",
+            "coefficient": "6"
+          },
+          {
+            "monomial": "u",
+            "coefficient": "5"
+          },
+          {
+            "monomial": "u*z1",
+            "coefficient": "5"
+          },
+          {
+            "monomial": "u^2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u^2*z1",
+            "coefficient": "1"
+          }
+        ],
+        "L_coefficients": [
+          {
+            "monomial": "1",
+            "coefficient": "6"
+          },
+          {
+            "monomial": "z1",
+            "coefficient": "3"
+          },
+          {
+            "monomial": "u",
+            "coefficient": "8"
+          },
+          {
+            "monomial": "u*z1",
+            "coefficient": "4"
+          },
+          {
+            "monomial": "u^2",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u^2*z1",
+            "coefficient": "1"
+          }
+        ]
+      },
+      "certificate": {
+        "branch": "L",
+        "alpha": "0",
+        "beta": "0",
+        "lhs": "3L-N",
+        "residual": "6 + 3*z1 + 14*u + 7*u*z1 + 4*u^2 + 2*u^2*z1",
+        "residual_coefficients": [
+          {
+            "monomial": "1",
+            "coefficient": "6"
+          },
+          {
+            "monomial": "z1",
+            "coefficient": "3"
+          },
+          {
+            "monomial": "u",
+            "coefficient": "14"
+          },
+          {
+            "monomial": "u*z1",
+            "coefficient": "7"
+          },
+          {
+            "monomial": "u^2",
+            "coefficient": "4"
+          },
+          {
+            "monomial": "u^2*z1",
+            "coefficient": "2"
+          }
+        ],
+        "negative_coefficient_count": 0
+      },
+      "generator_box_checks": 1029
+    },
+    {
+      "id": 7,
+      "pattern": "e|y|xc",
+      "blocks": [
+        [
+          "e"
+        ],
+        [
+          "y"
+        ],
+        [
+          "x",
+          "c"
+        ]
+      ],
+      "variables": [
+        "u",
+        "z0",
+        "z1"
+      ],
+      "offset": 0,
+      "lowest_level_shift": 1,
+      "strict_gap_rule": "lambda[i+1]-lambda[i]=1+z_i",
+      "parameter_domain": "all listed variables are integers >=0",
+      "endpoints": {
+        "A": "-u - z0 - z1 - 3",
+        "B": "-u - z0 - 2",
+        "C0": "-u - z0 - z1 - 3",
+        "D": "0",
+        "E": "-u - 1",
+        "F": "0"
+      },
+      "levels": {
+        "e": "u + 1",
+        "y": "u + z0 + 2",
+        "x": "u + z0 + z1 + 3",
+        "c": "u + z0 + z1 + 3"
+      },
+      "polynomials": {
+        "N": "18 + 11*z1 + z1^2 + 4*z0 + 2*z0*z1 + 13*u + 15/2*u*z1 + 1/2*u*z1^2 + 2*u*z0 + u*z0*z1 + 2*u^2 + u^2*z1",
+        "H": "8 + 9*z1 + z1^2 + 2*z0 + 2*z0*z1 + 6*u + 13/2*u*z1 + 1/2*u*z1^2 + u*z0 + u*z0*z1 + u^2 + u^2*z1",
+        "L": "12 + 8*z1 + z1^2 + 4*z0 + 2*z0*z1 + 11*u + 13/2*u*z1 + 1/2*u*z1^2 + 2*u*z0 + u*z0*z1 + 2*u^2 + u^2*z1",
+        "N_coefficients": [
+          {
+            "monomial": "1",
+            "coefficient": "18"
+          },
+          {
+            "monomial": "z1",
+            "coefficient": "11"
+          },
+          {
+            "monomial": "z1^2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "z0",
+            "coefficient": "4"
+          },
+          {
+            "monomial": "z0*z1",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u",
+            "coefficient": "13"
+          },
+          {
+            "monomial": "u*z1",
+            "coefficient": "15/2"
+          },
+          {
+            "monomial": "u*z1^2",
+            "coefficient": "1/2"
+          },
+          {
+            "monomial": "u*z0",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u*z0*z1",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u^2",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u^2*z1",
+            "coefficient": "1"
+          }
+        ],
+        "H_coefficients": [
+          {
+            "monomial": "1",
+            "coefficient": "8"
+          },
+          {
+            "monomial": "z1",
+            "coefficient": "9"
+          },
+          {
+            "monomial": "z1^2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "z0",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "z0*z1",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u",
+            "coefficient": "6"
+          },
+          {
+            "monomial": "u*z1",
+            "coefficient": "13/2"
+          },
+          {
+            "monomial": "u*z1^2",
+            "coefficient": "1/2"
+          },
+          {
+            "monomial": "u*z0",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u*z0*z1",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u^2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u^2*z1",
+            "coefficient": "1"
+          }
+        ],
+        "L_coefficients": [
+          {
+            "monomial": "1",
+            "coefficient": "12"
+          },
+          {
+            "monomial": "z1",
+            "coefficient": "8"
+          },
+          {
+            "monomial": "z1^2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "z0",
+            "coefficient": "4"
+          },
+          {
+            "monomial": "z0*z1",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u",
+            "coefficient": "11"
+          },
+          {
+            "monomial": "u*z1",
+            "coefficient": "13/2"
+          },
+          {
+            "monomial": "u*z1^2",
+            "coefficient": "1/2"
+          },
+          {
+            "monomial": "u*z0",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u*z0*z1",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u^2",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u^2*z1",
+            "coefficient": "1"
+          }
+        ]
+      },
+      "certificate": {
+        "branch": "L",
+        "alpha": "0",
+        "beta": "0",
+        "lhs": "3L-N",
+        "residual": "18 + 13*z1 + 2*z1^2 + 8*z0 + 4*z0*z1 + 20*u + 12*u*z1 + u*z1^2 + 4*u*z0 + 2*u*z0*z1 + 4*u^2 + 2*u^2*z1",
+        "residual_coefficients": [
+          {
+            "monomial": "1",
+            "coefficient": "18"
+          },
+          {
+            "monomial": "z1",
+            "coefficient": "13"
+          },
+          {
+            "monomial": "z1^2",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "z0",
+            "coefficient": "8"
+          },
+          {
+            "monomial": "z0*z1",
+            "coefficient": "4"
+          },
+          {
+            "monomial": "u",
+            "coefficient": "20"
+          },
+          {
+            "monomial": "u*z1",
+            "coefficient": "12"
+          },
+          {
+            "monomial": "u*z1^2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u*z0",
+            "coefficient": "4"
+          },
+          {
+            "monomial": "u*z0*z1",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u^2",
+            "coefficient": "4"
+          },
+          {
+            "monomial": "u^2*z1",
+            "coefficient": "2"
+          }
+        ],
+        "negative_coefficient_count": 0
+      },
+      "generator_box_checks": 1029
+    },
+    {
+      "id": 8,
+      "pattern": "e|yc|x",
+      "blocks": [
+        [
+          "e"
+        ],
+        [
+          "y",
+          "c"
+        ],
+        [
+          "x"
+        ]
+      ],
+      "variables": [
+        "u",
+        "z0",
+        "z1"
+      ],
+      "offset": 0,
+      "lowest_level_shift": 1,
+      "strict_gap_rule": "lambda[i+1]-lambda[i]=1+z_i",
+      "parameter_domain": "all listed variables are integers >=0",
+      "endpoints": {
+        "A": "-u - z0 - z1 - 3",
+        "B": "-u - z0 - 2",
+        "C0": "-u - z0 - 2",
+        "D": "0",
+        "E": "-u - 1",
+        "F": "0"
+      },
+      "levels": {
+        "e": "u + 1",
+        "y": "u + z0 + 2",
+        "c": "u + z0 + 2",
+        "x": "u + z0 + z1 + 3"
+      },
+      "polynomials": {
+        "N": "16 + 8*z1 + 4*z0 + 2*z0*z1 + 12*u + 6*u*z1 + 2*u*z0 + u*z0*z1 + 2*u^2 + u^2*z1",
+        "H": "8 + 8*z1 + 2*z0 + 2*z0*z1 + 6*u + 6*u*z1 + u*z0 + u*z0*z1 + u^2 + u^2*z1",
+        "L": "10 + 5*z1 + 4*z0 + 2*z0*z1 + 10*u + 5*u*z1 + 2*u*z0 + u*z0*z1 + 2*u^2 + u^2*z1",
+        "N_coefficients": [
+          {
+            "monomial": "1",
+            "coefficient": "16"
+          },
+          {
+            "monomial": "z1",
+            "coefficient": "8"
+          },
+          {
+            "monomial": "z0",
+            "coefficient": "4"
+          },
+          {
+            "monomial": "z0*z1",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u",
+            "coefficient": "12"
+          },
+          {
+            "monomial": "u*z1",
+            "coefficient": "6"
+          },
+          {
+            "monomial": "u*z0",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u*z0*z1",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u^2",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u^2*z1",
+            "coefficient": "1"
+          }
+        ],
+        "H_coefficients": [
+          {
+            "monomial": "1",
+            "coefficient": "8"
+          },
+          {
+            "monomial": "z1",
+            "coefficient": "8"
+          },
+          {
+            "monomial": "z0",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "z0*z1",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u",
+            "coefficient": "6"
+          },
+          {
+            "monomial": "u*z1",
+            "coefficient": "6"
+          },
+          {
+            "monomial": "u*z0",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u*z0*z1",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u^2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u^2*z1",
+            "coefficient": "1"
+          }
+        ],
+        "L_coefficients": [
+          {
+            "monomial": "1",
+            "coefficient": "10"
+          },
+          {
+            "monomial": "z1",
+            "coefficient": "5"
+          },
+          {
+            "monomial": "z0",
+            "coefficient": "4"
+          },
+          {
+            "monomial": "z0*z1",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u",
+            "coefficient": "10"
+          },
+          {
+            "monomial": "u*z1",
+            "coefficient": "5"
+          },
+          {
+            "monomial": "u*z0",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u*z0*z1",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u^2",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u^2*z1",
+            "coefficient": "1"
+          }
+        ]
+      },
+      "certificate": {
+        "branch": "L",
+        "alpha": "0",
+        "beta": "0",
+        "lhs": "3L-N",
+        "residual": "14 + 7*z1 + 8*z0 + 4*z0*z1 + 18*u + 9*u*z1 + 4*u*z0 + 2*u*z0*z1 + 4*u^2 + 2*u^2*z1",
+        "residual_coefficients": [
+          {
+            "monomial": "1",
+            "coefficient": "14"
+          },
+          {
+            "monomial": "z1",
+            "coefficient": "7"
+          },
+          {
+            "monomial": "z0",
+            "coefficient": "8"
+          },
+          {
+            "monomial": "z0*z1",
+            "coefficient": "4"
+          },
+          {
+            "monomial": "u",
+            "coefficient": "18"
+          },
+          {
+            "monomial": "u*z1",
+            "coefficient": "9"
+          },
+          {
+            "monomial": "u*z0",
+            "coefficient": "4"
+          },
+          {
+            "monomial": "u*z0*z1",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u^2",
+            "coefficient": "4"
+          },
+          {
+            "monomial": "u^2*z1",
+            "coefficient": "2"
+          }
+        ],
+        "negative_coefficient_count": 0
+      },
+      "generator_box_checks": 1029
+    },
+    {
+      "id": 9,
+      "pattern": "y|c|xe",
+      "blocks": [
+        [
+          "y"
+        ],
+        [
+          "c"
+        ],
+        [
+          "x",
+          "e"
+        ]
+      ],
+      "variables": [
+        "u",
+        "z0",
+        "z1"
+      ],
+      "offset": 0,
+      "lowest_level_shift": 0,
+      "strict_gap_rule": "lambda[i+1]-lambda[i]=1+z_i",
+      "parameter_domain": "all listed variables are integers >=0",
+      "endpoints": {
+        "A": "-u - z0 - z1 - 2",
+        "B": "-u",
+        "C0": "-u - z0 - 1",
+        "D": "0",
+        "E": "-u - z0 - z1 - 2",
+        "F": "0"
+      },
+      "levels": {
+        "y": "u",
+        "c": "u + z0 + 1",
+        "x": "u + z0 + z1 + 2",
+        "e": "u + z0 + z1 + 2"
+      },
+      "polynomials": {
+        "N": "16 + 9*z1 + z1^2 + 44/3*z0 + 13/2*z0*z1 + 1/2*z0*z1^2 + 4*z0^2 + z0^2*z1 + 1/3*z0^3 + 14*u + 13/2*u*z1 + 1/2*u*z1^2 + 8*u*z0 + 2*u*z0*z1 + u*z0^2 + 3*u^2 + u^2*z1 + u^2*z0",
+        "H": "8 + 7*z1 + z1^2 + 26/3*z0 + 11/2*z0*z1 + 1/2*z0*z1^2 + 3*z0^2 + z0^2*z1 + 1/3*z0^3 + 8*u + 11/2*u*z1 + 1/2*u*z1^2 + 6*u*z0 + 2*u*z0*z1 + u*z0^2 + 2*u^2 + u^2*z1 + u^2*z0",
+        "L": "7 + 9/2*z1 + 1/2*z1^2 + 61/6*z0 + 11/2*z0*z1 + 1/2*z0*z1^2 + 7/2*z0^2 + z0^2*z1 + 1/3*z0^3 + 11*u + 11/2*u*z1 + 1/2*u*z1^2 + 7*u*z0 + 2*u*z0*z1 + u*z0^2 + 3*u^2 + u^2*z1 + u^2*z0",
+        "N_coefficients": [
+          {
+            "monomial": "1",
+            "coefficient": "16"
+          },
+          {
+            "monomial": "z1",
+            "coefficient": "9"
+          },
+          {
+            "monomial": "z1^2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "z0",
+            "coefficient": "44/3"
+          },
+          {
+            "monomial": "z0*z1",
+            "coefficient": "13/2"
+          },
+          {
+            "monomial": "z0*z1^2",
+            "coefficient": "1/2"
+          },
+          {
+            "monomial": "z0^2",
+            "coefficient": "4"
+          },
+          {
+            "monomial": "z0^2*z1",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "z0^3",
+            "coefficient": "1/3"
+          },
+          {
+            "monomial": "u",
+            "coefficient": "14"
+          },
+          {
+            "monomial": "u*z1",
+            "coefficient": "13/2"
+          },
+          {
+            "monomial": "u*z1^2",
+            "coefficient": "1/2"
+          },
+          {
+            "monomial": "u*z0",
+            "coefficient": "8"
+          },
+          {
+            "monomial": "u*z0*z1",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u*z0^2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u^2",
+            "coefficient": "3"
+          },
+          {
+            "monomial": "u^2*z1",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u^2*z0",
+            "coefficient": "1"
+          }
+        ],
+        "H_coefficients": [
+          {
+            "monomial": "1",
+            "coefficient": "8"
+          },
+          {
+            "monomial": "z1",
+            "coefficient": "7"
+          },
+          {
+            "monomial": "z1^2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "z0",
+            "coefficient": "26/3"
+          },
+          {
+            "monomial": "z0*z1",
+            "coefficient": "11/2"
+          },
+          {
+            "monomial": "z0*z1^2",
+            "coefficient": "1/2"
+          },
+          {
+            "monomial": "z0^2",
+            "coefficient": "3"
+          },
+          {
+            "monomial": "z0^2*z1",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "z0^3",
+            "coefficient": "1/3"
+          },
+          {
+            "monomial": "u",
+            "coefficient": "8"
+          },
+          {
+            "monomial": "u*z1",
+            "coefficient": "11/2"
+          },
+          {
+            "monomial": "u*z1^2",
+            "coefficient": "1/2"
+          },
+          {
+            "monomial": "u*z0",
+            "coefficient": "6"
+          },
+          {
+            "monomial": "u*z0*z1",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u*z0^2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u^2",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u^2*z1",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u^2*z0",
+            "coefficient": "1"
+          }
+        ],
+        "L_coefficients": [
+          {
+            "monomial": "1",
+            "coefficient": "7"
+          },
+          {
+            "monomial": "z1",
+            "coefficient": "9/2"
+          },
+          {
+            "monomial": "z1^2",
+            "coefficient": "1/2"
+          },
+          {
+            "monomial": "z0",
+            "coefficient": "61/6"
+          },
+          {
+            "monomial": "z0*z1",
+            "coefficient": "11/2"
+          },
+          {
+            "monomial": "z0*z1^2",
+            "coefficient": "1/2"
+          },
+          {
+            "monomial": "z0^2",
+            "coefficient": "7/2"
+          },
+          {
+            "monomial": "z0^2*z1",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "z0^3",
+            "coefficient": "1/3"
+          },
+          {
+            "monomial": "u",
+            "coefficient": "11"
+          },
+          {
+            "monomial": "u*z1",
+            "coefficient": "11/2"
+          },
+          {
+            "monomial": "u*z1^2",
+            "coefficient": "1/2"
+          },
+          {
+            "monomial": "u*z0",
+            "coefficient": "7"
+          },
+          {
+            "monomial": "u*z0*z1",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u*z0^2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u^2",
+            "coefficient": "3"
+          },
+          {
+            "monomial": "u^2*z1",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u^2*z0",
+            "coefficient": "1"
+          }
+        ]
+      },
+      "certificate": {
+        "branch": "L",
+        "alpha": "0",
+        "beta": "0",
+        "lhs": "3L-N",
+        "residual": "5 + 9/2*z1 + 1/2*z1^2 + 95/6*z0 + 10*z0*z1 + z0*z1^2 + 13/2*z0^2 + 2*z0^2*z1 + 2/3*z0^3 + 19*u + 10*u*z1 + u*z1^2 + 13*u*z0 + 4*u*z0*z1 + 2*u*z0^2 + 6*u^2 + 2*u^2*z1 + 2*u^2*z0",
+        "residual_coefficients": [
+          {
+            "monomial": "1",
+            "coefficient": "5"
+          },
+          {
+            "monomial": "z1",
+            "coefficient": "9/2"
+          },
+          {
+            "monomial": "z1^2",
+            "coefficient": "1/2"
+          },
+          {
+            "monomial": "z0",
+            "coefficient": "95/6"
+          },
+          {
+            "monomial": "z0*z1",
+            "coefficient": "10"
+          },
+          {
+            "monomial": "z0*z1^2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "z0^2",
+            "coefficient": "13/2"
+          },
+          {
+            "monomial": "z0^2*z1",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "z0^3",
+            "coefficient": "2/3"
+          },
+          {
+            "monomial": "u",
+            "coefficient": "19"
+          },
+          {
+            "monomial": "u*z1",
+            "coefficient": "10"
+          },
+          {
+            "monomial": "u*z1^2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u*z0",
+            "coefficient": "13"
+          },
+          {
+            "monomial": "u*z0*z1",
+            "coefficient": "4"
+          },
+          {
+            "monomial": "u*z0^2",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u^2",
+            "coefficient": "6"
+          },
+          {
+            "monomial": "u^2*z1",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u^2*z0",
+            "coefficient": "2"
+          }
+        ],
+        "negative_coefficient_count": 0
+      },
+      "generator_box_checks": 1029
+    },
+    {
+      "id": 10,
+      "pattern": "y|ce|x",
+      "blocks": [
+        [
+          "y"
+        ],
+        [
+          "c",
+          "e"
+        ],
+        [
+          "x"
+        ]
+      ],
+      "variables": [
+        "u",
+        "z0",
+        "z1"
+      ],
+      "offset": 0,
+      "lowest_level_shift": 0,
+      "strict_gap_rule": "lambda[i+1]-lambda[i]=1+z_i",
+      "parameter_domain": "all listed variables are integers >=0",
+      "endpoints": {
+        "A": "-u - z0 - z1 - 2",
+        "B": "-u",
+        "C0": "-u - z0 - 1",
+        "D": "0",
+        "E": "-u - z0 - 1",
+        "F": "0"
+      },
+      "levels": {
+        "y": "u",
+        "c": "u + z0 + 1",
+        "e": "u + z0 + 1",
+        "x": "u + z0 + z1 + 2"
+      },
+      "polynomials": {
+        "N": "14 + 6*z1 + 41/3*z0 + 5*z0*z1 + 4*z0^2 + z0^2*z1 + 1/3*z0^3 + 13*u + 5*u*z1 + 8*u*z0 + 2*u*z0*z1 + u*z0^2 + 3*u^2 + u^2*z1 + u^2*z0",
+        "H": "8 + 6*z1 + 26/3*z0 + 5*z0*z1 + 3*z0^2 + z0^2*z1 + 1/3*z0^3 + 8*u + 5*u*z1 + 6*u*z0 + 2*u*z0*z1 + u*z0^2 + 2*u^2 + u^2*z1 + u^2*z0",
+        "L": "6 + 3*z1 + 55/6*z0 + 4*z0*z1 + 7/2*z0^2 + z0^2*z1 + 1/3*z0^3 + 10*u + 4*u*z1 + 7*u*z0 + 2*u*z0*z1 + u*z0^2 + 3*u^2 + u^2*z1 + u^2*z0",
+        "N_coefficients": [
+          {
+            "monomial": "1",
+            "coefficient": "14"
+          },
+          {
+            "monomial": "z1",
+            "coefficient": "6"
+          },
+          {
+            "monomial": "z0",
+            "coefficient": "41/3"
+          },
+          {
+            "monomial": "z0*z1",
+            "coefficient": "5"
+          },
+          {
+            "monomial": "z0^2",
+            "coefficient": "4"
+          },
+          {
+            "monomial": "z0^2*z1",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "z0^3",
+            "coefficient": "1/3"
+          },
+          {
+            "monomial": "u",
+            "coefficient": "13"
+          },
+          {
+            "monomial": "u*z1",
+            "coefficient": "5"
+          },
+          {
+            "monomial": "u*z0",
+            "coefficient": "8"
+          },
+          {
+            "monomial": "u*z0*z1",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u*z0^2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u^2",
+            "coefficient": "3"
+          },
+          {
+            "monomial": "u^2*z1",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u^2*z0",
+            "coefficient": "1"
+          }
+        ],
+        "H_coefficients": [
+          {
+            "monomial": "1",
+            "coefficient": "8"
+          },
+          {
+            "monomial": "z1",
+            "coefficient": "6"
+          },
+          {
+            "monomial": "z0",
+            "coefficient": "26/3"
+          },
+          {
+            "monomial": "z0*z1",
+            "coefficient": "5"
+          },
+          {
+            "monomial": "z0^2",
+            "coefficient": "3"
+          },
+          {
+            "monomial": "z0^2*z1",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "z0^3",
+            "coefficient": "1/3"
+          },
+          {
+            "monomial": "u",
+            "coefficient": "8"
+          },
+          {
+            "monomial": "u*z1",
+            "coefficient": "5"
+          },
+          {
+            "monomial": "u*z0",
+            "coefficient": "6"
+          },
+          {
+            "monomial": "u*z0*z1",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u*z0^2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u^2",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u^2*z1",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u^2*z0",
+            "coefficient": "1"
+          }
+        ],
+        "L_coefficients": [
+          {
+            "monomial": "1",
+            "coefficient": "6"
+          },
+          {
+            "monomial": "z1",
+            "coefficient": "3"
+          },
+          {
+            "monomial": "z0",
+            "coefficient": "55/6"
+          },
+          {
+            "monomial": "z0*z1",
+            "coefficient": "4"
+          },
+          {
+            "monomial": "z0^2",
+            "coefficient": "7/2"
+          },
+          {
+            "monomial": "z0^2*z1",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "z0^3",
+            "coefficient": "1/3"
+          },
+          {
+            "monomial": "u",
+            "coefficient": "10"
+          },
+          {
+            "monomial": "u*z1",
+            "coefficient": "4"
+          },
+          {
+            "monomial": "u*z0",
+            "coefficient": "7"
+          },
+          {
+            "monomial": "u*z0*z1",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u*z0^2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u^2",
+            "coefficient": "3"
+          },
+          {
+            "monomial": "u^2*z1",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u^2*z0",
+            "coefficient": "1"
+          }
+        ]
+      },
+      "certificate": {
+        "branch": "L",
+        "alpha": "0",
+        "beta": "0",
+        "lhs": "3L-N",
+        "residual": "4 + 3*z1 + 83/6*z0 + 7*z0*z1 + 13/2*z0^2 + 2*z0^2*z1 + 2/3*z0^3 + 17*u + 7*u*z1 + 13*u*z0 + 4*u*z0*z1 + 2*u*z0^2 + 6*u^2 + 2*u^2*z1 + 2*u^2*z0",
+        "residual_coefficients": [
+          {
+            "monomial": "1",
+            "coefficient": "4"
+          },
+          {
+            "monomial": "z1",
+            "coefficient": "3"
+          },
+          {
+            "monomial": "z0",
+            "coefficient": "83/6"
+          },
+          {
+            "monomial": "z0*z1",
+            "coefficient": "7"
+          },
+          {
+            "monomial": "z0^2",
+            "coefficient": "13/2"
+          },
+          {
+            "monomial": "z0^2*z1",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "z0^3",
+            "coefficient": "2/3"
+          },
+          {
+            "monomial": "u",
+            "coefficient": "17"
+          },
+          {
+            "monomial": "u*z1",
+            "coefficient": "7"
+          },
+          {
+            "monomial": "u*z0",
+            "coefficient": "13"
+          },
+          {
+            "monomial": "u*z0*z1",
+            "coefficient": "4"
+          },
+          {
+            "monomial": "u*z0^2",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u^2",
+            "coefficient": "6"
+          },
+          {
+            "monomial": "u^2*z1",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u^2*z0",
+            "coefficient": "2"
+          }
+        ],
+        "negative_coefficient_count": 0
+      },
+      "generator_box_checks": 1029
+    },
+    {
+      "id": 11,
+      "pattern": "y|e|xc",
+      "blocks": [
+        [
+          "y"
+        ],
+        [
+          "e"
+        ],
+        [
+          "x",
+          "c"
+        ]
+      ],
+      "variables": [
+        "u",
+        "z0",
+        "z1"
+      ],
+      "offset": 0,
+      "lowest_level_shift": 0,
+      "strict_gap_rule": "lambda[i+1]-lambda[i]=1+z_i",
+      "parameter_domain": "all listed variables are integers >=0",
+      "endpoints": {
+        "A": "-u - z0 - z1 - 2",
+        "B": "-u",
+        "C0": "-u - z0 - z1 - 2",
+        "D": "0",
+        "E": "-u - z0 - 1",
+        "F": "0"
+      },
+      "levels": {
+        "y": "u",
+        "e": "u + z0 + 1",
+        "x": "u + z0 + z1 + 2",
+        "c": "u + z0 + z1 + 2"
+      },
+      "polynomials": {
+        "N": "16 + 9*z1 + z1^2 + 44/3*z0 + 13/2*z0*z1 + 1/2*z0*z1^2 + 4*z0^2 + z0^2*z1 + 1/3*z0^3 + 14*u + 13/2*u*z1 + 1/2*u*z1^2 + 8*u*z0 + 2*u*z0*z1 + u*z0^2 + 3*u^2 + u^2*z1 + u^2*z0",
+        "H": "8 + 7*z1 + z1^2 + 26/3*z0 + 11/2*z0*z1 + 1/2*z0*z1^2 + 3*z0^2 + z0^2*z1 + 1/3*z0^3 + 8*u + 11/2*u*z1 + 1/2*u*z1^2 + 6*u*z0 + 2*u*z0*z1 + u*z0^2 + 2*u^2 + u^2*z1 + u^2*z0",
+        "L": "8 + 6*z1 + z1^2 + 61/6*z0 + 11/2*z0*z1 + 1/2*z0*z1^2 + 7/2*z0^2 + z0^2*z1 + 1/3*z0^3 + 11*u + 11/2*u*z1 + 1/2*u*z1^2 + 7*u*z0 + 2*u*z0*z1 + u*z0^2 + 3*u^2 + u^2*z1 + u^2*z0",
+        "N_coefficients": [
+          {
+            "monomial": "1",
+            "coefficient": "16"
+          },
+          {
+            "monomial": "z1",
+            "coefficient": "9"
+          },
+          {
+            "monomial": "z1^2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "z0",
+            "coefficient": "44/3"
+          },
+          {
+            "monomial": "z0*z1",
+            "coefficient": "13/2"
+          },
+          {
+            "monomial": "z0*z1^2",
+            "coefficient": "1/2"
+          },
+          {
+            "monomial": "z0^2",
+            "coefficient": "4"
+          },
+          {
+            "monomial": "z0^2*z1",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "z0^3",
+            "coefficient": "1/3"
+          },
+          {
+            "monomial": "u",
+            "coefficient": "14"
+          },
+          {
+            "monomial": "u*z1",
+            "coefficient": "13/2"
+          },
+          {
+            "monomial": "u*z1^2",
+            "coefficient": "1/2"
+          },
+          {
+            "monomial": "u*z0",
+            "coefficient": "8"
+          },
+          {
+            "monomial": "u*z0*z1",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u*z0^2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u^2",
+            "coefficient": "3"
+          },
+          {
+            "monomial": "u^2*z1",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u^2*z0",
+            "coefficient": "1"
+          }
+        ],
+        "H_coefficients": [
+          {
+            "monomial": "1",
+            "coefficient": "8"
+          },
+          {
+            "monomial": "z1",
+            "coefficient": "7"
+          },
+          {
+            "monomial": "z1^2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "z0",
+            "coefficient": "26/3"
+          },
+          {
+            "monomial": "z0*z1",
+            "coefficient": "11/2"
+          },
+          {
+            "monomial": "z0*z1^2",
+            "coefficient": "1/2"
+          },
+          {
+            "monomial": "z0^2",
+            "coefficient": "3"
+          },
+          {
+            "monomial": "z0^2*z1",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "z0^3",
+            "coefficient": "1/3"
+          },
+          {
+            "monomial": "u",
+            "coefficient": "8"
+          },
+          {
+            "monomial": "u*z1",
+            "coefficient": "11/2"
+          },
+          {
+            "monomial": "u*z1^2",
+            "coefficient": "1/2"
+          },
+          {
+            "monomial": "u*z0",
+            "coefficient": "6"
+          },
+          {
+            "monomial": "u*z0*z1",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u*z0^2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u^2",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u^2*z1",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u^2*z0",
+            "coefficient": "1"
+          }
+        ],
+        "L_coefficients": [
+          {
+            "monomial": "1",
+            "coefficient": "8"
+          },
+          {
+            "monomial": "z1",
+            "coefficient": "6"
+          },
+          {
+            "monomial": "z1^2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "z0",
+            "coefficient": "61/6"
+          },
+          {
+            "monomial": "z0*z1",
+            "coefficient": "11/2"
+          },
+          {
+            "monomial": "z0*z1^2",
+            "coefficient": "1/2"
+          },
+          {
+            "monomial": "z0^2",
+            "coefficient": "7/2"
+          },
+          {
+            "monomial": "z0^2*z1",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "z0^3",
+            "coefficient": "1/3"
+          },
+          {
+            "monomial": "u",
+            "coefficient": "11"
+          },
+          {
+            "monomial": "u*z1",
+            "coefficient": "11/2"
+          },
+          {
+            "monomial": "u*z1^2",
+            "coefficient": "1/2"
+          },
+          {
+            "monomial": "u*z0",
+            "coefficient": "7"
+          },
+          {
+            "monomial": "u*z0*z1",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u*z0^2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u^2",
+            "coefficient": "3"
+          },
+          {
+            "monomial": "u^2*z1",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u^2*z0",
+            "coefficient": "1"
+          }
+        ]
+      },
+      "certificate": {
+        "branch": "L",
+        "alpha": "0",
+        "beta": "0",
+        "lhs": "3L-N",
+        "residual": "8 + 9*z1 + 2*z1^2 + 95/6*z0 + 10*z0*z1 + z0*z1^2 + 13/2*z0^2 + 2*z0^2*z1 + 2/3*z0^3 + 19*u + 10*u*z1 + u*z1^2 + 13*u*z0 + 4*u*z0*z1 + 2*u*z0^2 + 6*u^2 + 2*u^2*z1 + 2*u^2*z0",
+        "residual_coefficients": [
+          {
+            "monomial": "1",
+            "coefficient": "8"
+          },
+          {
+            "monomial": "z1",
+            "coefficient": "9"
+          },
+          {
+            "monomial": "z1^2",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "z0",
+            "coefficient": "95/6"
+          },
+          {
+            "monomial": "z0*z1",
+            "coefficient": "10"
+          },
+          {
+            "monomial": "z0*z1^2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "z0^2",
+            "coefficient": "13/2"
+          },
+          {
+            "monomial": "z0^2*z1",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "z0^3",
+            "coefficient": "2/3"
+          },
+          {
+            "monomial": "u",
+            "coefficient": "19"
+          },
+          {
+            "monomial": "u*z1",
+            "coefficient": "10"
+          },
+          {
+            "monomial": "u*z1^2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u*z0",
+            "coefficient": "13"
+          },
+          {
+            "monomial": "u*z0*z1",
+            "coefficient": "4"
+          },
+          {
+            "monomial": "u*z0^2",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u^2",
+            "coefficient": "6"
+          },
+          {
+            "monomial": "u^2*z1",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u^2*z0",
+            "coefficient": "2"
+          }
+        ],
+        "negative_coefficient_count": 0
+      },
+      "generator_box_checks": 1029
+    },
+    {
+      "id": 12,
+      "pattern": "y|x|ce",
+      "blocks": [
+        [
+          "y"
+        ],
+        [
+          "x"
+        ],
+        [
+          "c",
+          "e"
+        ]
+      ],
+      "variables": [
+        "u",
+        "z0",
+        "z1"
+      ],
+      "offset": 0,
+      "lowest_level_shift": 0,
+      "strict_gap_rule": "lambda[i+1]-lambda[i]=1+z_i",
+      "parameter_domain": "all listed variables are integers >=0",
+      "endpoints": {
+        "A": "-u - z0 - 1",
+        "B": "-u",
+        "C0": "-u - z0 - z1 - 2",
+        "D": "0",
+        "E": "-u - z0 - z1 - 2",
+        "F": "0"
+      },
+      "levels": {
+        "y": "u",
+        "x": "u + z0 + 1",
+        "c": "u + z0 + z1 + 2",
+        "e": "u + z0 + z1 + 2"
+      },
+      "polynomials": {
+        "N": "8 + 26/3*z0 + 3*z0^2 + 1/3*z0^3 + 8*u + 6*u*z0 + u*z0^2 + 2*u^2 + u^2*z0",
+        "H": "2 + 11/3*z0 + 2*z0^2 + 1/3*z0^3 + 3*u + 4*u*z0 + u*z0^2 + u^2 + u^2*z0",
+        "L": "3 + 31/6*z0 + 5/2*z0^2 + 1/3*z0^3 + 6*u + 5*u*z0 + u*z0^2 + 2*u^2 + u^2*z0",
+        "N_coefficients": [
+          {
+            "monomial": "1",
+            "coefficient": "8"
+          },
+          {
+            "monomial": "z0",
+            "coefficient": "26/3"
+          },
+          {
+            "monomial": "z0^2",
+            "coefficient": "3"
+          },
+          {
+            "monomial": "z0^3",
+            "coefficient": "1/3"
+          },
+          {
+            "monomial": "u",
+            "coefficient": "8"
+          },
+          {
+            "monomial": "u*z0",
+            "coefficient": "6"
+          },
+          {
+            "monomial": "u*z0^2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u^2",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u^2*z0",
+            "coefficient": "1"
+          }
+        ],
+        "H_coefficients": [
+          {
+            "monomial": "1",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "z0",
+            "coefficient": "11/3"
+          },
+          {
+            "monomial": "z0^2",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "z0^3",
+            "coefficient": "1/3"
+          },
+          {
+            "monomial": "u",
+            "coefficient": "3"
+          },
+          {
+            "monomial": "u*z0",
+            "coefficient": "4"
+          },
+          {
+            "monomial": "u*z0^2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u^2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u^2*z0",
+            "coefficient": "1"
+          }
+        ],
+        "L_coefficients": [
+          {
+            "monomial": "1",
+            "coefficient": "3"
+          },
+          {
+            "monomial": "z0",
+            "coefficient": "31/6"
+          },
+          {
+            "monomial": "z0^2",
+            "coefficient": "5/2"
+          },
+          {
+            "monomial": "z0^3",
+            "coefficient": "1/3"
+          },
+          {
+            "monomial": "u",
+            "coefficient": "6"
+          },
+          {
+            "monomial": "u*z0",
+            "coefficient": "5"
+          },
+          {
+            "monomial": "u*z0^2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u^2",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u^2*z0",
+            "coefficient": "1"
+          }
+        ]
+      },
+      "certificate": {
+        "branch": "L",
+        "alpha": "0",
+        "beta": "0",
+        "lhs": "3L-N",
+        "residual": "1 + 41/6*z0 + 9/2*z0^2 + 2/3*z0^3 + 10*u + 9*u*z0 + 2*u*z0^2 + 4*u^2 + 2*u^2*z0",
+        "residual_coefficients": [
+          {
+            "monomial": "1",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "z0",
+            "coefficient": "41/6"
+          },
+          {
+            "monomial": "z0^2",
+            "coefficient": "9/2"
+          },
+          {
+            "monomial": "z0^3",
+            "coefficient": "2/3"
+          },
+          {
+            "monomial": "u",
+            "coefficient": "10"
+          },
+          {
+            "monomial": "u*z0",
+            "coefficient": "9"
+          },
+          {
+            "monomial": "u*z0^2",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u^2",
+            "coefficient": "4"
+          },
+          {
+            "monomial": "u^2*z0",
+            "coefficient": "2"
+          }
+        ],
+        "negative_coefficient_count": 0
+      },
+      "generator_box_checks": 1029
+    },
+    {
+      "id": 13,
+      "pattern": "y|xc|e",
+      "blocks": [
+        [
+          "y"
+        ],
+        [
+          "x",
+          "c"
+        ],
+        [
+          "e"
+        ]
+      ],
+      "variables": [
+        "u",
+        "z0",
+        "z1"
+      ],
+      "offset": 0,
+      "lowest_level_shift": 0,
+      "strict_gap_rule": "lambda[i+1]-lambda[i]=1+z_i",
+      "parameter_domain": "all listed variables are integers >=0",
+      "endpoints": {
+        "A": "-u - z0 - 1",
+        "B": "-u",
+        "C0": "-u - z0 - 1",
+        "D": "0",
+        "E": "-u - z0 - z1 - 2",
+        "F": "0"
+      },
+      "levels": {
+        "y": "u",
+        "x": "u + z0 + 1",
+        "c": "u + z0 + 1",
+        "e": "u + z0 + z1 + 2"
+      },
+      "polynomials": {
+        "N": "8 + 26/3*z0 + 3*z0^2 + 1/3*z0^3 + 8*u + 6*u*z0 + u*z0^2 + 2*u^2 + u^2*z0",
+        "H": "2 + 11/3*z0 + 2*z0^2 + 1/3*z0^3 + 3*u + 4*u*z0 + u*z0^2 + u^2 + u^2*z0",
+        "L": "3 + 31/6*z0 + 5/2*z0^2 + 1/3*z0^3 + 6*u + 5*u*z0 + u*z0^2 + 2*u^2 + u^2*z0",
+        "N_coefficients": [
+          {
+            "monomial": "1",
+            "coefficient": "8"
+          },
+          {
+            "monomial": "z0",
+            "coefficient": "26/3"
+          },
+          {
+            "monomial": "z0^2",
+            "coefficient": "3"
+          },
+          {
+            "monomial": "z0^3",
+            "coefficient": "1/3"
+          },
+          {
+            "monomial": "u",
+            "coefficient": "8"
+          },
+          {
+            "monomial": "u*z0",
+            "coefficient": "6"
+          },
+          {
+            "monomial": "u*z0^2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u^2",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u^2*z0",
+            "coefficient": "1"
+          }
+        ],
+        "H_coefficients": [
+          {
+            "monomial": "1",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "z0",
+            "coefficient": "11/3"
+          },
+          {
+            "monomial": "z0^2",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "z0^3",
+            "coefficient": "1/3"
+          },
+          {
+            "monomial": "u",
+            "coefficient": "3"
+          },
+          {
+            "monomial": "u*z0",
+            "coefficient": "4"
+          },
+          {
+            "monomial": "u*z0^2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u^2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u^2*z0",
+            "coefficient": "1"
+          }
+        ],
+        "L_coefficients": [
+          {
+            "monomial": "1",
+            "coefficient": "3"
+          },
+          {
+            "monomial": "z0",
+            "coefficient": "31/6"
+          },
+          {
+            "monomial": "z0^2",
+            "coefficient": "5/2"
+          },
+          {
+            "monomial": "z0^3",
+            "coefficient": "1/3"
+          },
+          {
+            "monomial": "u",
+            "coefficient": "6"
+          },
+          {
+            "monomial": "u*z0",
+            "coefficient": "5"
+          },
+          {
+            "monomial": "u*z0^2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u^2",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u^2*z0",
+            "coefficient": "1"
+          }
+        ]
+      },
+      "certificate": {
+        "branch": "L",
+        "alpha": "0",
+        "beta": "0",
+        "lhs": "3L-N",
+        "residual": "1 + 41/6*z0 + 9/2*z0^2 + 2/3*z0^3 + 10*u + 9*u*z0 + 2*u*z0^2 + 4*u^2 + 2*u^2*z0",
+        "residual_coefficients": [
+          {
+            "monomial": "1",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "z0",
+            "coefficient": "41/6"
+          },
+          {
+            "monomial": "z0^2",
+            "coefficient": "9/2"
+          },
+          {
+            "monomial": "z0^3",
+            "coefficient": "2/3"
+          },
+          {
+            "monomial": "u",
+            "coefficient": "10"
+          },
+          {
+            "monomial": "u*z0",
+            "coefficient": "9"
+          },
+          {
+            "monomial": "u*z0^2",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u^2",
+            "coefficient": "4"
+          },
+          {
+            "monomial": "u^2*z0",
+            "coefficient": "2"
+          }
+        ],
+        "negative_coefficient_count": 0
+      },
+      "generator_box_checks": 1029
+    },
+    {
+      "id": 14,
+      "pattern": "y|xe|c",
+      "blocks": [
+        [
+          "y"
+        ],
+        [
+          "x",
+          "e"
+        ],
+        [
+          "c"
+        ]
+      ],
+      "variables": [
+        "u",
+        "z0",
+        "z1"
+      ],
+      "offset": 0,
+      "lowest_level_shift": 0,
+      "strict_gap_rule": "lambda[i+1]-lambda[i]=1+z_i",
+      "parameter_domain": "all listed variables are integers >=0",
+      "endpoints": {
+        "A": "-u - z0 - 1",
+        "B": "-u",
+        "C0": "-u - z0 - z1 - 2",
+        "D": "0",
+        "E": "-u - z0 - 1",
+        "F": "0"
+      },
+      "levels": {
+        "y": "u",
+        "x": "u + z0 + 1",
+        "e": "u + z0 + 1",
+        "c": "u + z0 + z1 + 2"
+      },
+      "polynomials": {
+        "N": "8 + 26/3*z0 + 3*z0^2 + 1/3*z0^3 + 8*u + 6*u*z0 + u*z0^2 + 2*u^2 + u^2*z0",
+        "H": "2 + 11/3*z0 + 2*z0^2 + 1/3*z0^3 + 3*u + 4*u*z0 + u*z0^2 + u^2 + u^2*z0",
+        "L": "3 + 31/6*z0 + 5/2*z0^2 + 1/3*z0^3 + 6*u + 5*u*z0 + u*z0^2 + 2*u^2 + u^2*z0",
+        "N_coefficients": [
+          {
+            "monomial": "1",
+            "coefficient": "8"
+          },
+          {
+            "monomial": "z0",
+            "coefficient": "26/3"
+          },
+          {
+            "monomial": "z0^2",
+            "coefficient": "3"
+          },
+          {
+            "monomial": "z0^3",
+            "coefficient": "1/3"
+          },
+          {
+            "monomial": "u",
+            "coefficient": "8"
+          },
+          {
+            "monomial": "u*z0",
+            "coefficient": "6"
+          },
+          {
+            "monomial": "u*z0^2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u^2",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u^2*z0",
+            "coefficient": "1"
+          }
+        ],
+        "H_coefficients": [
+          {
+            "monomial": "1",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "z0",
+            "coefficient": "11/3"
+          },
+          {
+            "monomial": "z0^2",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "z0^3",
+            "coefficient": "1/3"
+          },
+          {
+            "monomial": "u",
+            "coefficient": "3"
+          },
+          {
+            "monomial": "u*z0",
+            "coefficient": "4"
+          },
+          {
+            "monomial": "u*z0^2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u^2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u^2*z0",
+            "coefficient": "1"
+          }
+        ],
+        "L_coefficients": [
+          {
+            "monomial": "1",
+            "coefficient": "3"
+          },
+          {
+            "monomial": "z0",
+            "coefficient": "31/6"
+          },
+          {
+            "monomial": "z0^2",
+            "coefficient": "5/2"
+          },
+          {
+            "monomial": "z0^3",
+            "coefficient": "1/3"
+          },
+          {
+            "monomial": "u",
+            "coefficient": "6"
+          },
+          {
+            "monomial": "u*z0",
+            "coefficient": "5"
+          },
+          {
+            "monomial": "u*z0^2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u^2",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u^2*z0",
+            "coefficient": "1"
+          }
+        ]
+      },
+      "certificate": {
+        "branch": "L",
+        "alpha": "0",
+        "beta": "0",
+        "lhs": "3L-N",
+        "residual": "1 + 41/6*z0 + 9/2*z0^2 + 2/3*z0^3 + 10*u + 9*u*z0 + 2*u*z0^2 + 4*u^2 + 2*u^2*z0",
+        "residual_coefficients": [
+          {
+            "monomial": "1",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "z0",
+            "coefficient": "41/6"
+          },
+          {
+            "monomial": "z0^2",
+            "coefficient": "9/2"
+          },
+          {
+            "monomial": "z0^3",
+            "coefficient": "2/3"
+          },
+          {
+            "monomial": "u",
+            "coefficient": "10"
+          },
+          {
+            "monomial": "u*z0",
+            "coefficient": "9"
+          },
+          {
+            "monomial": "u*z0^2",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u^2",
+            "coefficient": "4"
+          },
+          {
+            "monomial": "u^2*z0",
+            "coefficient": "2"
+          }
+        ],
+        "negative_coefficient_count": 0
+      },
+      "generator_box_checks": 1029
+    },
+    {
+      "id": 15,
+      "pattern": "yc|e|x",
+      "blocks": [
+        [
+          "y",
+          "c"
+        ],
+        [
+          "e"
+        ],
+        [
+          "x"
+        ]
+      ],
+      "variables": [
+        "u",
+        "z0",
+        "z1"
+      ],
+      "offset": 1,
+      "lowest_level_shift": 0,
+      "strict_gap_rule": "lambda[i+1]-lambda[i]=1+z_i",
+      "parameter_domain": "all listed variables are integers >=0",
+      "endpoints": {
+        "A": "-u - z0 - z1 - 3",
+        "B": "-u - 1",
+        "C0": "-u - 1",
+        "D": "0",
+        "E": "-u - z0 - 2",
+        "F": "0"
+      },
+      "levels": {
+        "y": "u + 1",
+        "c": "u + 1",
+        "e": "u + z0 + 2",
+        "x": "u + z0 + z1 + 3"
+      },
+      "polynomials": {
+        "N": "22 + 8*z1 + 11*z0 + 2*z0*z1 + z0^2 + 17*u + 6*u*z1 + 15/2*u*z0 + u*z0*z1 + 1/2*u*z0^2 + 3*u^2 + u^2*z1 + u^2*z0",
+        "H": "14 + 8*z1 + 9*z0 + 2*z0*z1 + z0^2 + 11*u + 6*u*z1 + 13/2*u*z0 + u*z0*z1 + 1/2*u*z0^2 + 2*u^2 + u^2*z1 + u^2*z0",
+        "L": "11 + 4*z1 + 11/2*z0 + z0*z1 + 1/2*z0^2 + 14*u + 5*u*z1 + 13/2*u*z0 + u*z0*z1 + 1/2*u*z0^2 + 3*u^2 + u^2*z1 + u^2*z0",
+        "N_coefficients": [
+          {
+            "monomial": "1",
+            "coefficient": "22"
+          },
+          {
+            "monomial": "z1",
+            "coefficient": "8"
+          },
+          {
+            "monomial": "z0",
+            "coefficient": "11"
+          },
+          {
+            "monomial": "z0*z1",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "z0^2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u",
+            "coefficient": "17"
+          },
+          {
+            "monomial": "u*z1",
+            "coefficient": "6"
+          },
+          {
+            "monomial": "u*z0",
+            "coefficient": "15/2"
+          },
+          {
+            "monomial": "u*z0*z1",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u*z0^2",
+            "coefficient": "1/2"
+          },
+          {
+            "monomial": "u^2",
+            "coefficient": "3"
+          },
+          {
+            "monomial": "u^2*z1",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u^2*z0",
+            "coefficient": "1"
+          }
+        ],
+        "H_coefficients": [
+          {
+            "monomial": "1",
+            "coefficient": "14"
+          },
+          {
+            "monomial": "z1",
+            "coefficient": "8"
+          },
+          {
+            "monomial": "z0",
+            "coefficient": "9"
+          },
+          {
+            "monomial": "z0*z1",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "z0^2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u",
+            "coefficient": "11"
+          },
+          {
+            "monomial": "u*z1",
+            "coefficient": "6"
+          },
+          {
+            "monomial": "u*z0",
+            "coefficient": "13/2"
+          },
+          {
+            "monomial": "u*z0*z1",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u*z0^2",
+            "coefficient": "1/2"
+          },
+          {
+            "monomial": "u^2",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u^2*z1",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u^2*z0",
+            "coefficient": "1"
+          }
+        ],
+        "L_coefficients": [
+          {
+            "monomial": "1",
+            "coefficient": "11"
+          },
+          {
+            "monomial": "z1",
+            "coefficient": "4"
+          },
+          {
+            "monomial": "z0",
+            "coefficient": "11/2"
+          },
+          {
+            "monomial": "z0*z1",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "z0^2",
+            "coefficient": "1/2"
+          },
+          {
+            "monomial": "u",
+            "coefficient": "14"
+          },
+          {
+            "monomial": "u*z1",
+            "coefficient": "5"
+          },
+          {
+            "monomial": "u*z0",
+            "coefficient": "13/2"
+          },
+          {
+            "monomial": "u*z0*z1",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u*z0^2",
+            "coefficient": "1/2"
+          },
+          {
+            "monomial": "u^2",
+            "coefficient": "3"
+          },
+          {
+            "monomial": "u^2*z1",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u^2*z0",
+            "coefficient": "1"
+          }
+        ]
+      },
+      "certificate": {
+        "branch": "L",
+        "alpha": "0",
+        "beta": "0",
+        "lhs": "3L-N",
+        "residual": "11 + 4*z1 + 11/2*z0 + z0*z1 + 1/2*z0^2 + 25*u + 9*u*z1 + 12*u*z0 + 2*u*z0*z1 + u*z0^2 + 6*u^2 + 2*u^2*z1 + 2*u^2*z0",
+        "residual_coefficients": [
+          {
+            "monomial": "1",
+            "coefficient": "11"
+          },
+          {
+            "monomial": "z1",
+            "coefficient": "4"
+          },
+          {
+            "monomial": "z0",
+            "coefficient": "11/2"
+          },
+          {
+            "monomial": "z0*z1",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "z0^2",
+            "coefficient": "1/2"
+          },
+          {
+            "monomial": "u",
+            "coefficient": "25"
+          },
+          {
+            "monomial": "u*z1",
+            "coefficient": "9"
+          },
+          {
+            "monomial": "u*z0",
+            "coefficient": "12"
+          },
+          {
+            "monomial": "u*z0*z1",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u*z0^2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u^2",
+            "coefficient": "6"
+          },
+          {
+            "monomial": "u^2*z1",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u^2*z0",
+            "coefficient": "2"
+          }
+        ],
+        "negative_coefficient_count": 0
+      },
+      "generator_box_checks": 1029
+    },
+    {
+      "id": 16,
+      "pattern": "yc|x|e",
+      "blocks": [
+        [
+          "y",
+          "c"
+        ],
+        [
+          "x"
+        ],
+        [
+          "e"
+        ]
+      ],
+      "variables": [
+        "u",
+        "z0",
+        "z1"
+      ],
+      "offset": 1,
+      "lowest_level_shift": 0,
+      "strict_gap_rule": "lambda[i+1]-lambda[i]=1+z_i",
+      "parameter_domain": "all listed variables are integers >=0",
+      "endpoints": {
+        "A": "-u - z0 - 2",
+        "B": "-u - 1",
+        "C0": "-u - 1",
+        "D": "0",
+        "E": "-u - z0 - z1 - 3",
+        "F": "0"
+      },
+      "levels": {
+        "y": "u + 1",
+        "c": "u + 1",
+        "x": "u + z0 + 2",
+        "e": "u + z0 + z1 + 3"
+      },
+      "polynomials": {
+        "N": "14 + 9*z0 + z0^2 + 11*u + 13/2*u*z0 + 1/2*u*z0^2 + 2*u^2 + u^2*z0",
+        "H": "6 + 7*z0 + z0^2 + 5*u + 11/2*u*z0 + 1/2*u*z0^2 + u^2 + u^2*z0",
+        "L": "7 + 9/2*z0 + 1/2*z0^2 + 9*u + 11/2*u*z0 + 1/2*u*z0^2 + 2*u^2 + u^2*z0",
+        "N_coefficients": [
+          {
+            "monomial": "1",
+            "coefficient": "14"
+          },
+          {
+            "monomial": "z0",
+            "coefficient": "9"
+          },
+          {
+            "monomial": "z0^2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u",
+            "coefficient": "11"
+          },
+          {
+            "monomial": "u*z0",
+            "coefficient": "13/2"
+          },
+          {
+            "monomial": "u*z0^2",
+            "coefficient": "1/2"
+          },
+          {
+            "monomial": "u^2",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u^2*z0",
+            "coefficient": "1"
+          }
+        ],
+        "H_coefficients": [
+          {
+            "monomial": "1",
+            "coefficient": "6"
+          },
+          {
+            "monomial": "z0",
+            "coefficient": "7"
+          },
+          {
+            "monomial": "z0^2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u",
+            "coefficient": "5"
+          },
+          {
+            "monomial": "u*z0",
+            "coefficient": "11/2"
+          },
+          {
+            "monomial": "u*z0^2",
+            "coefficient": "1/2"
+          },
+          {
+            "monomial": "u^2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u^2*z0",
+            "coefficient": "1"
+          }
+        ],
+        "L_coefficients": [
+          {
+            "monomial": "1",
+            "coefficient": "7"
+          },
+          {
+            "monomial": "z0",
+            "coefficient": "9/2"
+          },
+          {
+            "monomial": "z0^2",
+            "coefficient": "1/2"
+          },
+          {
+            "monomial": "u",
+            "coefficient": "9"
+          },
+          {
+            "monomial": "u*z0",
+            "coefficient": "11/2"
+          },
+          {
+            "monomial": "u*z0^2",
+            "coefficient": "1/2"
+          },
+          {
+            "monomial": "u^2",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u^2*z0",
+            "coefficient": "1"
+          }
+        ]
+      },
+      "certificate": {
+        "branch": "L",
+        "alpha": "0",
+        "beta": "0",
+        "lhs": "3L-N",
+        "residual": "7 + 9/2*z0 + 1/2*z0^2 + 16*u + 10*u*z0 + u*z0^2 + 4*u^2 + 2*u^2*z0",
+        "residual_coefficients": [
+          {
+            "monomial": "1",
+            "coefficient": "7"
+          },
+          {
+            "monomial": "z0",
+            "coefficient": "9/2"
+          },
+          {
+            "monomial": "z0^2",
+            "coefficient": "1/2"
+          },
+          {
+            "monomial": "u",
+            "coefficient": "16"
+          },
+          {
+            "monomial": "u*z0",
+            "coefficient": "10"
+          },
+          {
+            "monomial": "u*z0^2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u^2",
+            "coefficient": "4"
+          },
+          {
+            "monomial": "u^2*z0",
+            "coefficient": "2"
+          }
+        ],
+        "negative_coefficient_count": 0
+      },
+      "generator_box_checks": 1029
+    },
+    {
+      "id": 17,
+      "pattern": "ye|c|x",
+      "blocks": [
+        [
+          "y",
+          "e"
+        ],
+        [
+          "c"
+        ],
+        [
+          "x"
+        ]
+      ],
+      "variables": [
+        "u",
+        "z0",
+        "z1"
+      ],
+      "offset": 0,
+      "lowest_level_shift": 1,
+      "strict_gap_rule": "lambda[i+1]-lambda[i]=1+z_i",
+      "parameter_domain": "all listed variables are integers >=0",
+      "endpoints": {
+        "A": "-u - z0 - z1 - 3",
+        "B": "-u - 1",
+        "C0": "-u - z0 - 2",
+        "D": "0",
+        "E": "-u - 1",
+        "F": "0"
+      },
+      "levels": {
+        "y": "u + 1",
+        "e": "u + 1",
+        "c": "u + z0 + 2",
+        "x": "u + z0 + z1 + 3"
+      },
+      "polynomials": {
+        "N": "22 + 8*z1 + 11*z0 + 2*z0*z1 + z0^2 + 17*u + 6*u*z1 + 15/2*u*z0 + u*z0*z1 + 1/2*u*z0^2 + 3*u^2 + u^2*z1 + u^2*z0",
+        "H": "14 + 8*z1 + 9*z0 + 2*z0*z1 + z0^2 + 11*u + 6*u*z1 + 13/2*u*z0 + u*z0*z1 + 1/2*u*z0^2 + 2*u^2 + u^2*z1 + u^2*z0",
+        "L": "13 + 5*z1 + 8*z0 + 2*z0*z1 + z0^2 + 14*u + 5*u*z1 + 13/2*u*z0 + u*z0*z1 + 1/2*u*z0^2 + 3*u^2 + u^2*z1 + u^2*z0",
+        "N_coefficients": [
+          {
+            "monomial": "1",
+            "coefficient": "22"
+          },
+          {
+            "monomial": "z1",
+            "coefficient": "8"
+          },
+          {
+            "monomial": "z0",
+            "coefficient": "11"
+          },
+          {
+            "monomial": "z0*z1",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "z0^2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u",
+            "coefficient": "17"
+          },
+          {
+            "monomial": "u*z1",
+            "coefficient": "6"
+          },
+          {
+            "monomial": "u*z0",
+            "coefficient": "15/2"
+          },
+          {
+            "monomial": "u*z0*z1",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u*z0^2",
+            "coefficient": "1/2"
+          },
+          {
+            "monomial": "u^2",
+            "coefficient": "3"
+          },
+          {
+            "monomial": "u^2*z1",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u^2*z0",
+            "coefficient": "1"
+          }
+        ],
+        "H_coefficients": [
+          {
+            "monomial": "1",
+            "coefficient": "14"
+          },
+          {
+            "monomial": "z1",
+            "coefficient": "8"
+          },
+          {
+            "monomial": "z0",
+            "coefficient": "9"
+          },
+          {
+            "monomial": "z0*z1",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "z0^2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u",
+            "coefficient": "11"
+          },
+          {
+            "monomial": "u*z1",
+            "coefficient": "6"
+          },
+          {
+            "monomial": "u*z0",
+            "coefficient": "13/2"
+          },
+          {
+            "monomial": "u*z0*z1",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u*z0^2",
+            "coefficient": "1/2"
+          },
+          {
+            "monomial": "u^2",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u^2*z1",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u^2*z0",
+            "coefficient": "1"
+          }
+        ],
+        "L_coefficients": [
+          {
+            "monomial": "1",
+            "coefficient": "13"
+          },
+          {
+            "monomial": "z1",
+            "coefficient": "5"
+          },
+          {
+            "monomial": "z0",
+            "coefficient": "8"
+          },
+          {
+            "monomial": "z0*z1",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "z0^2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u",
+            "coefficient": "14"
+          },
+          {
+            "monomial": "u*z1",
+            "coefficient": "5"
+          },
+          {
+            "monomial": "u*z0",
+            "coefficient": "13/2"
+          },
+          {
+            "monomial": "u*z0*z1",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u*z0^2",
+            "coefficient": "1/2"
+          },
+          {
+            "monomial": "u^2",
+            "coefficient": "3"
+          },
+          {
+            "monomial": "u^2*z1",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u^2*z0",
+            "coefficient": "1"
+          }
+        ]
+      },
+      "certificate": {
+        "branch": "L",
+        "alpha": "0",
+        "beta": "0",
+        "lhs": "3L-N",
+        "residual": "17 + 7*z1 + 13*z0 + 4*z0*z1 + 2*z0^2 + 25*u + 9*u*z1 + 12*u*z0 + 2*u*z0*z1 + u*z0^2 + 6*u^2 + 2*u^2*z1 + 2*u^2*z0",
+        "residual_coefficients": [
+          {
+            "monomial": "1",
+            "coefficient": "17"
+          },
+          {
+            "monomial": "z1",
+            "coefficient": "7"
+          },
+          {
+            "monomial": "z0",
+            "coefficient": "13"
+          },
+          {
+            "monomial": "z0*z1",
+            "coefficient": "4"
+          },
+          {
+            "monomial": "z0^2",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u",
+            "coefficient": "25"
+          },
+          {
+            "monomial": "u*z1",
+            "coefficient": "9"
+          },
+          {
+            "monomial": "u*z0",
+            "coefficient": "12"
+          },
+          {
+            "monomial": "u*z0*z1",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u*z0^2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u^2",
+            "coefficient": "6"
+          },
+          {
+            "monomial": "u^2*z1",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u^2*z0",
+            "coefficient": "2"
+          }
+        ],
+        "negative_coefficient_count": 0
+      },
+      "generator_box_checks": 1029
+    },
+    {
+      "id": 18,
+      "pattern": "ye|x|c",
+      "blocks": [
+        [
+          "y",
+          "e"
+        ],
+        [
+          "x"
+        ],
+        [
+          "c"
+        ]
+      ],
+      "variables": [
+        "u",
+        "z0",
+        "z1"
+      ],
+      "offset": 0,
+      "lowest_level_shift": 1,
+      "strict_gap_rule": "lambda[i+1]-lambda[i]=1+z_i",
+      "parameter_domain": "all listed variables are integers >=0",
+      "endpoints": {
+        "A": "-u - z0 - 2",
+        "B": "-u - 1",
+        "C0": "-u - z0 - z1 - 3",
+        "D": "0",
+        "E": "-u - 1",
+        "F": "0"
+      },
+      "levels": {
+        "y": "u + 1",
+        "e": "u + 1",
+        "x": "u + z0 + 2",
+        "c": "u + z0 + z1 + 3"
+      },
+      "polynomials": {
+        "N": "14 + 9*z0 + z0^2 + 11*u + 13/2*u*z0 + 1/2*u*z0^2 + 2*u^2 + u^2*z0",
+        "H": "6 + 7*z0 + z0^2 + 5*u + 11/2*u*z0 + 1/2*u*z0^2 + u^2 + u^2*z0",
+        "L": "8 + 6*z0 + z0^2 + 9*u + 11/2*u*z0 + 1/2*u*z0^2 + 2*u^2 + u^2*z0",
+        "N_coefficients": [
+          {
+            "monomial": "1",
+            "coefficient": "14"
+          },
+          {
+            "monomial": "z0",
+            "coefficient": "9"
+          },
+          {
+            "monomial": "z0^2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u",
+            "coefficient": "11"
+          },
+          {
+            "monomial": "u*z0",
+            "coefficient": "13/2"
+          },
+          {
+            "monomial": "u*z0^2",
+            "coefficient": "1/2"
+          },
+          {
+            "monomial": "u^2",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u^2*z0",
+            "coefficient": "1"
+          }
+        ],
+        "H_coefficients": [
+          {
+            "monomial": "1",
+            "coefficient": "6"
+          },
+          {
+            "monomial": "z0",
+            "coefficient": "7"
+          },
+          {
+            "monomial": "z0^2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u",
+            "coefficient": "5"
+          },
+          {
+            "monomial": "u*z0",
+            "coefficient": "11/2"
+          },
+          {
+            "monomial": "u*z0^2",
+            "coefficient": "1/2"
+          },
+          {
+            "monomial": "u^2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u^2*z0",
+            "coefficient": "1"
+          }
+        ],
+        "L_coefficients": [
+          {
+            "monomial": "1",
+            "coefficient": "8"
+          },
+          {
+            "monomial": "z0",
+            "coefficient": "6"
+          },
+          {
+            "monomial": "z0^2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u",
+            "coefficient": "9"
+          },
+          {
+            "monomial": "u*z0",
+            "coefficient": "11/2"
+          },
+          {
+            "monomial": "u*z0^2",
+            "coefficient": "1/2"
+          },
+          {
+            "monomial": "u^2",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u^2*z0",
+            "coefficient": "1"
+          }
+        ]
+      },
+      "certificate": {
+        "branch": "L",
+        "alpha": "0",
+        "beta": "0",
+        "lhs": "3L-N",
+        "residual": "10 + 9*z0 + 2*z0^2 + 16*u + 10*u*z0 + u*z0^2 + 4*u^2 + 2*u^2*z0",
+        "residual_coefficients": [
+          {
+            "monomial": "1",
+            "coefficient": "10"
+          },
+          {
+            "monomial": "z0",
+            "coefficient": "9"
+          },
+          {
+            "monomial": "z0^2",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u",
+            "coefficient": "16"
+          },
+          {
+            "monomial": "u*z0",
+            "coefficient": "10"
+          },
+          {
+            "monomial": "u*z0^2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u^2",
+            "coefficient": "4"
+          },
+          {
+            "monomial": "u^2*z0",
+            "coefficient": "2"
+          }
+        ],
+        "negative_coefficient_count": 0
+      },
+      "generator_box_checks": 1029
+    },
+    {
+      "id": 19,
+      "pattern": "c|e|y|x",
+      "blocks": [
+        [
+          "c"
+        ],
+        [
+          "e"
+        ],
+        [
+          "y"
+        ],
+        [
+          "x"
+        ]
+      ],
+      "variables": [
+        "u",
+        "z0",
+        "z1",
+        "z2"
+      ],
+      "offset": 1,
+      "lowest_level_shift": 0,
+      "strict_gap_rule": "lambda[i+1]-lambda[i]=1+z_i",
+      "parameter_domain": "all listed variables are integers >=0",
+      "endpoints": {
+        "A": "-u - z0 - z1 - z2 - 4",
+        "B": "-u - z0 - z1 - 3",
+        "C0": "-u - 1",
+        "D": "0",
+        "E": "-u - z0 - 2",
+        "F": "0"
+      },
+      "levels": {
+        "c": "u + 1",
+        "e": "u + z0 + 2",
+        "y": "u + z0 + z1 + 3",
+        "x": "u + z0 + z1 + z2 + 4"
+      },
+      "polynomials": {
+        "N": "16 + 8*z2 + 4*z0 + 2*z0*z2 + 12*u + 6*u*z2 + 2*u*z0 + u*z0*z2 + 2*u^2 + u^2*z2",
+        "H": "8 + 8*z2 + 2*z0 + 2*z0*z2 + 6*u + 6*u*z2 + u*z0 + u*z0*z2 + u^2 + u^2*z2",
+        "L": "8 + 4*z2 + 2*z0 + z0*z2 + 10*u + 5*u*z2 + 2*u*z0 + u*z0*z2 + 2*u^2 + u^2*z2",
+        "N_coefficients": [
+          {
+            "monomial": "1",
+            "coefficient": "16"
+          },
+          {
+            "monomial": "z2",
+            "coefficient": "8"
+          },
+          {
+            "monomial": "z0",
+            "coefficient": "4"
+          },
+          {
+            "monomial": "z0*z2",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u",
+            "coefficient": "12"
+          },
+          {
+            "monomial": "u*z2",
+            "coefficient": "6"
+          },
+          {
+            "monomial": "u*z0",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u*z0*z2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u^2",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u^2*z2",
+            "coefficient": "1"
+          }
+        ],
+        "H_coefficients": [
+          {
+            "monomial": "1",
+            "coefficient": "8"
+          },
+          {
+            "monomial": "z2",
+            "coefficient": "8"
+          },
+          {
+            "monomial": "z0",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "z0*z2",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u",
+            "coefficient": "6"
+          },
+          {
+            "monomial": "u*z2",
+            "coefficient": "6"
+          },
+          {
+            "monomial": "u*z0",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u*z0*z2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u^2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u^2*z2",
+            "coefficient": "1"
+          }
+        ],
+        "L_coefficients": [
+          {
+            "monomial": "1",
+            "coefficient": "8"
+          },
+          {
+            "monomial": "z2",
+            "coefficient": "4"
+          },
+          {
+            "monomial": "z0",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "z0*z2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u",
+            "coefficient": "10"
+          },
+          {
+            "monomial": "u*z2",
+            "coefficient": "5"
+          },
+          {
+            "monomial": "u*z0",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u*z0*z2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u^2",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u^2*z2",
+            "coefficient": "1"
+          }
+        ]
+      },
+      "certificate": {
+        "branch": "L",
+        "alpha": "0",
+        "beta": "0",
+        "lhs": "3L-N",
+        "residual": "8 + 4*z2 + 2*z0 + z0*z2 + 18*u + 9*u*z2 + 4*u*z0 + 2*u*z0*z2 + 4*u^2 + 2*u^2*z2",
+        "residual_coefficients": [
+          {
+            "monomial": "1",
+            "coefficient": "8"
+          },
+          {
+            "monomial": "z2",
+            "coefficient": "4"
+          },
+          {
+            "monomial": "z0",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "z0*z2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u",
+            "coefficient": "18"
+          },
+          {
+            "monomial": "u*z2",
+            "coefficient": "9"
+          },
+          {
+            "monomial": "u*z0",
+            "coefficient": "4"
+          },
+          {
+            "monomial": "u*z0*z2",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u^2",
+            "coefficient": "4"
+          },
+          {
+            "monomial": "u^2*z2",
+            "coefficient": "2"
+          }
+        ],
+        "negative_coefficient_count": 0
+      },
+      "generator_box_checks": 7203
+    },
+    {
+      "id": 20,
+      "pattern": "c|y|e|x",
+      "blocks": [
+        [
+          "c"
+        ],
+        [
+          "y"
+        ],
+        [
+          "e"
+        ],
+        [
+          "x"
+        ]
+      ],
+      "variables": [
+        "u",
+        "z0",
+        "z1",
+        "z2"
+      ],
+      "offset": 1,
+      "lowest_level_shift": 0,
+      "strict_gap_rule": "lambda[i+1]-lambda[i]=1+z_i",
+      "parameter_domain": "all listed variables are integers >=0",
+      "endpoints": {
+        "A": "-u - z0 - z1 - z2 - 4",
+        "B": "-u - z0 - 2",
+        "C0": "-u - 1",
+        "D": "0",
+        "E": "-u - z0 - z1 - 3",
+        "F": "0"
+      },
+      "levels": {
+        "c": "u + 1",
+        "y": "u + z0 + 2",
+        "e": "u + z0 + z1 + 3",
+        "x": "u + z0 + z1 + z2 + 4"
+      },
+      "polynomials": {
+        "N": "28 + 10*z2 + 13*z1 + 2*z1*z2 + z1^2 + 6*z0 + 2*z0*z2 + 2*z0*z1 + 20*u + 7*u*z2 + 17/2*u*z1 + u*z1*z2 + 1/2*u*z1^2 + 3*u*z0 + u*z0*z2 + u*z0*z1 + 3*u^2 + u^2*z2 + u^2*z1",
+        "H": "18 + 10*z2 + 11*z1 + 2*z1*z2 + z1^2 + 4*z0 + 2*z0*z2 + 2*z0*z1 + 13*u + 7*u*z2 + 15/2*u*z1 + u*z1*z2 + 1/2*u*z1^2 + 2*u*z0 + u*z0*z2 + u*z0*z1 + 2*u^2 + u^2*z2 + u^2*z1",
+        "L": "14 + 5*z2 + 13/2*z1 + z1*z2 + 1/2*z1^2 + 3*z0 + z0*z2 + z0*z1 + 17*u + 6*u*z2 + 15/2*u*z1 + u*z1*z2 + 1/2*u*z1^2 + 3*u*z0 + u*z0*z2 + u*z0*z1 + 3*u^2 + u^2*z2 + u^2*z1",
+        "N_coefficients": [
+          {
+            "monomial": "1",
+            "coefficient": "28"
+          },
+          {
+            "monomial": "z2",
+            "coefficient": "10"
+          },
+          {
+            "monomial": "z1",
+            "coefficient": "13"
+          },
+          {
+            "monomial": "z1*z2",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "z1^2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "z0",
+            "coefficient": "6"
+          },
+          {
+            "monomial": "z0*z2",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "z0*z1",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u",
+            "coefficient": "20"
+          },
+          {
+            "monomial": "u*z2",
+            "coefficient": "7"
+          },
+          {
+            "monomial": "u*z1",
+            "coefficient": "17/2"
+          },
+          {
+            "monomial": "u*z1*z2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u*z1^2",
+            "coefficient": "1/2"
+          },
+          {
+            "monomial": "u*z0",
+            "coefficient": "3"
+          },
+          {
+            "monomial": "u*z0*z2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u*z0*z1",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u^2",
+            "coefficient": "3"
+          },
+          {
+            "monomial": "u^2*z2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u^2*z1",
+            "coefficient": "1"
+          }
+        ],
+        "H_coefficients": [
+          {
+            "monomial": "1",
+            "coefficient": "18"
+          },
+          {
+            "monomial": "z2",
+            "coefficient": "10"
+          },
+          {
+            "monomial": "z1",
+            "coefficient": "11"
+          },
+          {
+            "monomial": "z1*z2",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "z1^2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "z0",
+            "coefficient": "4"
+          },
+          {
+            "monomial": "z0*z2",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "z0*z1",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u",
+            "coefficient": "13"
+          },
+          {
+            "monomial": "u*z2",
+            "coefficient": "7"
+          },
+          {
+            "monomial": "u*z1",
+            "coefficient": "15/2"
+          },
+          {
+            "monomial": "u*z1*z2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u*z1^2",
+            "coefficient": "1/2"
+          },
+          {
+            "monomial": "u*z0",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u*z0*z2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u*z0*z1",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u^2",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u^2*z2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u^2*z1",
+            "coefficient": "1"
+          }
+        ],
+        "L_coefficients": [
+          {
+            "monomial": "1",
+            "coefficient": "14"
+          },
+          {
+            "monomial": "z2",
+            "coefficient": "5"
+          },
+          {
+            "monomial": "z1",
+            "coefficient": "13/2"
+          },
+          {
+            "monomial": "z1*z2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "z1^2",
+            "coefficient": "1/2"
+          },
+          {
+            "monomial": "z0",
+            "coefficient": "3"
+          },
+          {
+            "monomial": "z0*z2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "z0*z1",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u",
+            "coefficient": "17"
+          },
+          {
+            "monomial": "u*z2",
+            "coefficient": "6"
+          },
+          {
+            "monomial": "u*z1",
+            "coefficient": "15/2"
+          },
+          {
+            "monomial": "u*z1*z2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u*z1^2",
+            "coefficient": "1/2"
+          },
+          {
+            "monomial": "u*z0",
+            "coefficient": "3"
+          },
+          {
+            "monomial": "u*z0*z2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u*z0*z1",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u^2",
+            "coefficient": "3"
+          },
+          {
+            "monomial": "u^2*z2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u^2*z1",
+            "coefficient": "1"
+          }
+        ]
+      },
+      "certificate": {
+        "branch": "L",
+        "alpha": "0",
+        "beta": "0",
+        "lhs": "3L-N",
+        "residual": "14 + 5*z2 + 13/2*z1 + z1*z2 + 1/2*z1^2 + 3*z0 + z0*z2 + z0*z1 + 31*u + 11*u*z2 + 14*u*z1 + 2*u*z1*z2 + u*z1^2 + 6*u*z0 + 2*u*z0*z2 + 2*u*z0*z1 + 6*u^2 + 2*u^2*z2 + 2*u^2*z1",
+        "residual_coefficients": [
+          {
+            "monomial": "1",
+            "coefficient": "14"
+          },
+          {
+            "monomial": "z2",
+            "coefficient": "5"
+          },
+          {
+            "monomial": "z1",
+            "coefficient": "13/2"
+          },
+          {
+            "monomial": "z1*z2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "z1^2",
+            "coefficient": "1/2"
+          },
+          {
+            "monomial": "z0",
+            "coefficient": "3"
+          },
+          {
+            "monomial": "z0*z2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "z0*z1",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u",
+            "coefficient": "31"
+          },
+          {
+            "monomial": "u*z2",
+            "coefficient": "11"
+          },
+          {
+            "monomial": "u*z1",
+            "coefficient": "14"
+          },
+          {
+            "monomial": "u*z1*z2",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u*z1^2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u*z0",
+            "coefficient": "6"
+          },
+          {
+            "monomial": "u*z0*z2",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u*z0*z1",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u^2",
+            "coefficient": "6"
+          },
+          {
+            "monomial": "u^2*z2",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u^2*z1",
+            "coefficient": "2"
+          }
+        ],
+        "negative_coefficient_count": 0
+      },
+      "generator_box_checks": 7203
+    },
+    {
+      "id": 21,
+      "pattern": "c|y|x|e",
+      "blocks": [
+        [
+          "c"
+        ],
+        [
+          "y"
+        ],
+        [
+          "x"
+        ],
+        [
+          "e"
+        ]
+      ],
+      "variables": [
+        "u",
+        "z0",
+        "z1",
+        "z2"
+      ],
+      "offset": 1,
+      "lowest_level_shift": 0,
+      "strict_gap_rule": "lambda[i+1]-lambda[i]=1+z_i",
+      "parameter_domain": "all listed variables are integers >=0",
+      "endpoints": {
+        "A": "-u - z0 - z1 - 3",
+        "B": "-u - z0 - 2",
+        "C0": "-u - 1",
+        "D": "0",
+        "E": "-u - z0 - z1 - z2 - 4",
+        "F": "0"
+      },
+      "levels": {
+        "c": "u + 1",
+        "y": "u + z0 + 2",
+        "x": "u + z0 + z1 + 3",
+        "e": "u + z0 + z1 + z2 + 4"
+      },
+      "polynomials": {
+        "N": "18 + 11*z1 + z1^2 + 4*z0 + 2*z0*z1 + 13*u + 15/2*u*z1 + 1/2*u*z1^2 + 2*u*z0 + u*z0*z1 + 2*u^2 + u^2*z1",
+        "H": "8 + 9*z1 + z1^2 + 2*z0 + 2*z0*z1 + 6*u + 13/2*u*z1 + 1/2*u*z1^2 + u*z0 + u*z0*z1 + u^2 + u^2*z1",
+        "L": "9 + 11/2*z1 + 1/2*z1^2 + 2*z0 + z0*z1 + 11*u + 13/2*u*z1 + 1/2*u*z1^2 + 2*u*z0 + u*z0*z1 + 2*u^2 + u^2*z1",
+        "N_coefficients": [
+          {
+            "monomial": "1",
+            "coefficient": "18"
+          },
+          {
+            "monomial": "z1",
+            "coefficient": "11"
+          },
+          {
+            "monomial": "z1^2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "z0",
+            "coefficient": "4"
+          },
+          {
+            "monomial": "z0*z1",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u",
+            "coefficient": "13"
+          },
+          {
+            "monomial": "u*z1",
+            "coefficient": "15/2"
+          },
+          {
+            "monomial": "u*z1^2",
+            "coefficient": "1/2"
+          },
+          {
+            "monomial": "u*z0",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u*z0*z1",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u^2",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u^2*z1",
+            "coefficient": "1"
+          }
+        ],
+        "H_coefficients": [
+          {
+            "monomial": "1",
+            "coefficient": "8"
+          },
+          {
+            "monomial": "z1",
+            "coefficient": "9"
+          },
+          {
+            "monomial": "z1^2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "z0",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "z0*z1",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u",
+            "coefficient": "6"
+          },
+          {
+            "monomial": "u*z1",
+            "coefficient": "13/2"
+          },
+          {
+            "monomial": "u*z1^2",
+            "coefficient": "1/2"
+          },
+          {
+            "monomial": "u*z0",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u*z0*z1",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u^2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u^2*z1",
+            "coefficient": "1"
+          }
+        ],
+        "L_coefficients": [
+          {
+            "monomial": "1",
+            "coefficient": "9"
+          },
+          {
+            "monomial": "z1",
+            "coefficient": "11/2"
+          },
+          {
+            "monomial": "z1^2",
+            "coefficient": "1/2"
+          },
+          {
+            "monomial": "z0",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "z0*z1",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u",
+            "coefficient": "11"
+          },
+          {
+            "monomial": "u*z1",
+            "coefficient": "13/2"
+          },
+          {
+            "monomial": "u*z1^2",
+            "coefficient": "1/2"
+          },
+          {
+            "monomial": "u*z0",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u*z0*z1",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u^2",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u^2*z1",
+            "coefficient": "1"
+          }
+        ]
+      },
+      "certificate": {
+        "branch": "L",
+        "alpha": "0",
+        "beta": "0",
+        "lhs": "3L-N",
+        "residual": "9 + 11/2*z1 + 1/2*z1^2 + 2*z0 + z0*z1 + 20*u + 12*u*z1 + u*z1^2 + 4*u*z0 + 2*u*z0*z1 + 4*u^2 + 2*u^2*z1",
+        "residual_coefficients": [
+          {
+            "monomial": "1",
+            "coefficient": "9"
+          },
+          {
+            "monomial": "z1",
+            "coefficient": "11/2"
+          },
+          {
+            "monomial": "z1^2",
+            "coefficient": "1/2"
+          },
+          {
+            "monomial": "z0",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "z0*z1",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u",
+            "coefficient": "20"
+          },
+          {
+            "monomial": "u*z1",
+            "coefficient": "12"
+          },
+          {
+            "monomial": "u*z1^2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u*z0",
+            "coefficient": "4"
+          },
+          {
+            "monomial": "u*z0*z1",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u^2",
+            "coefficient": "4"
+          },
+          {
+            "monomial": "u^2*z1",
+            "coefficient": "2"
+          }
+        ],
+        "negative_coefficient_count": 0
+      },
+      "generator_box_checks": 7203
+    },
+    {
+      "id": 22,
+      "pattern": "e|c|y|x",
+      "blocks": [
+        [
+          "e"
+        ],
+        [
+          "c"
+        ],
+        [
+          "y"
+        ],
+        [
+          "x"
+        ]
+      ],
+      "variables": [
+        "u",
+        "z0",
+        "z1",
+        "z2"
+      ],
+      "offset": 0,
+      "lowest_level_shift": 1,
+      "strict_gap_rule": "lambda[i+1]-lambda[i]=1+z_i",
+      "parameter_domain": "all listed variables are integers >=0",
+      "endpoints": {
+        "A": "-u - z0 - z1 - z2 - 4",
+        "B": "-u - z0 - z1 - 3",
+        "C0": "-u - z0 - 2",
+        "D": "0",
+        "E": "-u - 1",
+        "F": "0"
+      },
+      "levels": {
+        "e": "u + 1",
+        "c": "u + z0 + 2",
+        "y": "u + z0 + z1 + 3",
+        "x": "u + z0 + z1 + z2 + 4"
+      },
+      "polynomials": {
+        "N": "16 + 8*z2 + 4*z0 + 2*z0*z2 + 12*u + 6*u*z2 + 2*u*z0 + u*z0*z2 + 2*u^2 + u^2*z2",
+        "H": "8 + 8*z2 + 2*z0 + 2*z0*z2 + 6*u + 6*u*z2 + u*z0 + u*z0*z2 + u^2 + u^2*z2",
+        "L": "10 + 5*z2 + 4*z0 + 2*z0*z2 + 10*u + 5*u*z2 + 2*u*z0 + u*z0*z2 + 2*u^2 + u^2*z2",
+        "N_coefficients": [
+          {
+            "monomial": "1",
+            "coefficient": "16"
+          },
+          {
+            "monomial": "z2",
+            "coefficient": "8"
+          },
+          {
+            "monomial": "z0",
+            "coefficient": "4"
+          },
+          {
+            "monomial": "z0*z2",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u",
+            "coefficient": "12"
+          },
+          {
+            "monomial": "u*z2",
+            "coefficient": "6"
+          },
+          {
+            "monomial": "u*z0",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u*z0*z2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u^2",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u^2*z2",
+            "coefficient": "1"
+          }
+        ],
+        "H_coefficients": [
+          {
+            "monomial": "1",
+            "coefficient": "8"
+          },
+          {
+            "monomial": "z2",
+            "coefficient": "8"
+          },
+          {
+            "monomial": "z0",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "z0*z2",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u",
+            "coefficient": "6"
+          },
+          {
+            "monomial": "u*z2",
+            "coefficient": "6"
+          },
+          {
+            "monomial": "u*z0",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u*z0*z2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u^2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u^2*z2",
+            "coefficient": "1"
+          }
+        ],
+        "L_coefficients": [
+          {
+            "monomial": "1",
+            "coefficient": "10"
+          },
+          {
+            "monomial": "z2",
+            "coefficient": "5"
+          },
+          {
+            "monomial": "z0",
+            "coefficient": "4"
+          },
+          {
+            "monomial": "z0*z2",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u",
+            "coefficient": "10"
+          },
+          {
+            "monomial": "u*z2",
+            "coefficient": "5"
+          },
+          {
+            "monomial": "u*z0",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u*z0*z2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u^2",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u^2*z2",
+            "coefficient": "1"
+          }
+        ]
+      },
+      "certificate": {
+        "branch": "L",
+        "alpha": "0",
+        "beta": "0",
+        "lhs": "3L-N",
+        "residual": "14 + 7*z2 + 8*z0 + 4*z0*z2 + 18*u + 9*u*z2 + 4*u*z0 + 2*u*z0*z2 + 4*u^2 + 2*u^2*z2",
+        "residual_coefficients": [
+          {
+            "monomial": "1",
+            "coefficient": "14"
+          },
+          {
+            "monomial": "z2",
+            "coefficient": "7"
+          },
+          {
+            "monomial": "z0",
+            "coefficient": "8"
+          },
+          {
+            "monomial": "z0*z2",
+            "coefficient": "4"
+          },
+          {
+            "monomial": "u",
+            "coefficient": "18"
+          },
+          {
+            "monomial": "u*z2",
+            "coefficient": "9"
+          },
+          {
+            "monomial": "u*z0",
+            "coefficient": "4"
+          },
+          {
+            "monomial": "u*z0*z2",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u^2",
+            "coefficient": "4"
+          },
+          {
+            "monomial": "u^2*z2",
+            "coefficient": "2"
+          }
+        ],
+        "negative_coefficient_count": 0
+      },
+      "generator_box_checks": 7203
+    },
+    {
+      "id": 23,
+      "pattern": "e|y|c|x",
+      "blocks": [
+        [
+          "e"
+        ],
+        [
+          "y"
+        ],
+        [
+          "c"
+        ],
+        [
+          "x"
+        ]
+      ],
+      "variables": [
+        "u",
+        "z0",
+        "z1",
+        "z2"
+      ],
+      "offset": 0,
+      "lowest_level_shift": 1,
+      "strict_gap_rule": "lambda[i+1]-lambda[i]=1+z_i",
+      "parameter_domain": "all listed variables are integers >=0",
+      "endpoints": {
+        "A": "-u - z0 - z1 - z2 - 4",
+        "B": "-u - z0 - 2",
+        "C0": "-u - z0 - z1 - 3",
+        "D": "0",
+        "E": "-u - 1",
+        "F": "0"
+      },
+      "levels": {
+        "e": "u + 1",
+        "y": "u + z0 + 2",
+        "c": "u + z0 + z1 + 3",
+        "x": "u + z0 + z1 + z2 + 4"
+      },
+      "polynomials": {
+        "N": "28 + 10*z2 + 13*z1 + 2*z1*z2 + z1^2 + 6*z0 + 2*z0*z2 + 2*z0*z1 + 20*u + 7*u*z2 + 17/2*u*z1 + u*z1*z2 + 1/2*u*z1^2 + 3*u*z0 + u*z0*z2 + u*z0*z1 + 3*u^2 + u^2*z2 + u^2*z1",
+        "H": "18 + 10*z2 + 11*z1 + 2*z1*z2 + z1^2 + 4*z0 + 2*z0*z2 + 2*z0*z1 + 13*u + 7*u*z2 + 15/2*u*z1 + u*z1*z2 + 1/2*u*z1^2 + 2*u*z0 + u*z0*z2 + u*z0*z1 + 2*u^2 + u^2*z2 + u^2*z1",
+        "L": "19 + 7*z2 + 10*z1 + 2*z1*z2 + z1^2 + 6*z0 + 2*z0*z2 + 2*z0*z1 + 17*u + 6*u*z2 + 15/2*u*z1 + u*z1*z2 + 1/2*u*z1^2 + 3*u*z0 + u*z0*z2 + u*z0*z1 + 3*u^2 + u^2*z2 + u^2*z1",
+        "N_coefficients": [
+          {
+            "monomial": "1",
+            "coefficient": "28"
+          },
+          {
+            "monomial": "z2",
+            "coefficient": "10"
+          },
+          {
+            "monomial": "z1",
+            "coefficient": "13"
+          },
+          {
+            "monomial": "z1*z2",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "z1^2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "z0",
+            "coefficient": "6"
+          },
+          {
+            "monomial": "z0*z2",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "z0*z1",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u",
+            "coefficient": "20"
+          },
+          {
+            "monomial": "u*z2",
+            "coefficient": "7"
+          },
+          {
+            "monomial": "u*z1",
+            "coefficient": "17/2"
+          },
+          {
+            "monomial": "u*z1*z2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u*z1^2",
+            "coefficient": "1/2"
+          },
+          {
+            "monomial": "u*z0",
+            "coefficient": "3"
+          },
+          {
+            "monomial": "u*z0*z2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u*z0*z1",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u^2",
+            "coefficient": "3"
+          },
+          {
+            "monomial": "u^2*z2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u^2*z1",
+            "coefficient": "1"
+          }
+        ],
+        "H_coefficients": [
+          {
+            "monomial": "1",
+            "coefficient": "18"
+          },
+          {
+            "monomial": "z2",
+            "coefficient": "10"
+          },
+          {
+            "monomial": "z1",
+            "coefficient": "11"
+          },
+          {
+            "monomial": "z1*z2",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "z1^2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "z0",
+            "coefficient": "4"
+          },
+          {
+            "monomial": "z0*z2",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "z0*z1",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u",
+            "coefficient": "13"
+          },
+          {
+            "monomial": "u*z2",
+            "coefficient": "7"
+          },
+          {
+            "monomial": "u*z1",
+            "coefficient": "15/2"
+          },
+          {
+            "monomial": "u*z1*z2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u*z1^2",
+            "coefficient": "1/2"
+          },
+          {
+            "monomial": "u*z0",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u*z0*z2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u*z0*z1",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u^2",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u^2*z2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u^2*z1",
+            "coefficient": "1"
+          }
+        ],
+        "L_coefficients": [
+          {
+            "monomial": "1",
+            "coefficient": "19"
+          },
+          {
+            "monomial": "z2",
+            "coefficient": "7"
+          },
+          {
+            "monomial": "z1",
+            "coefficient": "10"
+          },
+          {
+            "monomial": "z1*z2",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "z1^2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "z0",
+            "coefficient": "6"
+          },
+          {
+            "monomial": "z0*z2",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "z0*z1",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u",
+            "coefficient": "17"
+          },
+          {
+            "monomial": "u*z2",
+            "coefficient": "6"
+          },
+          {
+            "monomial": "u*z1",
+            "coefficient": "15/2"
+          },
+          {
+            "monomial": "u*z1*z2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u*z1^2",
+            "coefficient": "1/2"
+          },
+          {
+            "monomial": "u*z0",
+            "coefficient": "3"
+          },
+          {
+            "monomial": "u*z0*z2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u*z0*z1",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u^2",
+            "coefficient": "3"
+          },
+          {
+            "monomial": "u^2*z2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u^2*z1",
+            "coefficient": "1"
+          }
+        ]
+      },
+      "certificate": {
+        "branch": "L",
+        "alpha": "0",
+        "beta": "0",
+        "lhs": "3L-N",
+        "residual": "29 + 11*z2 + 17*z1 + 4*z1*z2 + 2*z1^2 + 12*z0 + 4*z0*z2 + 4*z0*z1 + 31*u + 11*u*z2 + 14*u*z1 + 2*u*z1*z2 + u*z1^2 + 6*u*z0 + 2*u*z0*z2 + 2*u*z0*z1 + 6*u^2 + 2*u^2*z2 + 2*u^2*z1",
+        "residual_coefficients": [
+          {
+            "monomial": "1",
+            "coefficient": "29"
+          },
+          {
+            "monomial": "z2",
+            "coefficient": "11"
+          },
+          {
+            "monomial": "z1",
+            "coefficient": "17"
+          },
+          {
+            "monomial": "z1*z2",
+            "coefficient": "4"
+          },
+          {
+            "monomial": "z1^2",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "z0",
+            "coefficient": "12"
+          },
+          {
+            "monomial": "z0*z2",
+            "coefficient": "4"
+          },
+          {
+            "monomial": "z0*z1",
+            "coefficient": "4"
+          },
+          {
+            "monomial": "u",
+            "coefficient": "31"
+          },
+          {
+            "monomial": "u*z2",
+            "coefficient": "11"
+          },
+          {
+            "monomial": "u*z1",
+            "coefficient": "14"
+          },
+          {
+            "monomial": "u*z1*z2",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u*z1^2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u*z0",
+            "coefficient": "6"
+          },
+          {
+            "monomial": "u*z0*z2",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u*z0*z1",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u^2",
+            "coefficient": "6"
+          },
+          {
+            "monomial": "u^2*z2",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u^2*z1",
+            "coefficient": "2"
+          }
+        ],
+        "negative_coefficient_count": 0
+      },
+      "generator_box_checks": 7203
+    },
+    {
+      "id": 24,
+      "pattern": "e|y|x|c",
+      "blocks": [
+        [
+          "e"
+        ],
+        [
+          "y"
+        ],
+        [
+          "x"
+        ],
+        [
+          "c"
+        ]
+      ],
+      "variables": [
+        "u",
+        "z0",
+        "z1",
+        "z2"
+      ],
+      "offset": 0,
+      "lowest_level_shift": 1,
+      "strict_gap_rule": "lambda[i+1]-lambda[i]=1+z_i",
+      "parameter_domain": "all listed variables are integers >=0",
+      "endpoints": {
+        "A": "-u - z0 - z1 - 3",
+        "B": "-u - z0 - 2",
+        "C0": "-u - z0 - z1 - z2 - 4",
+        "D": "0",
+        "E": "-u - 1",
+        "F": "0"
+      },
+      "levels": {
+        "e": "u + 1",
+        "y": "u + z0 + 2",
+        "x": "u + z0 + z1 + 3",
+        "c": "u + z0 + z1 + z2 + 4"
+      },
+      "polynomials": {
+        "N": "18 + 11*z1 + z1^2 + 4*z0 + 2*z0*z1 + 13*u + 15/2*u*z1 + 1/2*u*z1^2 + 2*u*z0 + u*z0*z1 + 2*u^2 + u^2*z1",
+        "H": "8 + 9*z1 + z1^2 + 2*z0 + 2*z0*z1 + 6*u + 13/2*u*z1 + 1/2*u*z1^2 + u*z0 + u*z0*z1 + u^2 + u^2*z1",
+        "L": "12 + 8*z1 + z1^2 + 4*z0 + 2*z0*z1 + 11*u + 13/2*u*z1 + 1/2*u*z1^2 + 2*u*z0 + u*z0*z1 + 2*u^2 + u^2*z1",
+        "N_coefficients": [
+          {
+            "monomial": "1",
+            "coefficient": "18"
+          },
+          {
+            "monomial": "z1",
+            "coefficient": "11"
+          },
+          {
+            "monomial": "z1^2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "z0",
+            "coefficient": "4"
+          },
+          {
+            "monomial": "z0*z1",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u",
+            "coefficient": "13"
+          },
+          {
+            "monomial": "u*z1",
+            "coefficient": "15/2"
+          },
+          {
+            "monomial": "u*z1^2",
+            "coefficient": "1/2"
+          },
+          {
+            "monomial": "u*z0",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u*z0*z1",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u^2",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u^2*z1",
+            "coefficient": "1"
+          }
+        ],
+        "H_coefficients": [
+          {
+            "monomial": "1",
+            "coefficient": "8"
+          },
+          {
+            "monomial": "z1",
+            "coefficient": "9"
+          },
+          {
+            "monomial": "z1^2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "z0",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "z0*z1",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u",
+            "coefficient": "6"
+          },
+          {
+            "monomial": "u*z1",
+            "coefficient": "13/2"
+          },
+          {
+            "monomial": "u*z1^2",
+            "coefficient": "1/2"
+          },
+          {
+            "monomial": "u*z0",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u*z0*z1",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u^2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u^2*z1",
+            "coefficient": "1"
+          }
+        ],
+        "L_coefficients": [
+          {
+            "monomial": "1",
+            "coefficient": "12"
+          },
+          {
+            "monomial": "z1",
+            "coefficient": "8"
+          },
+          {
+            "monomial": "z1^2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "z0",
+            "coefficient": "4"
+          },
+          {
+            "monomial": "z0*z1",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u",
+            "coefficient": "11"
+          },
+          {
+            "monomial": "u*z1",
+            "coefficient": "13/2"
+          },
+          {
+            "monomial": "u*z1^2",
+            "coefficient": "1/2"
+          },
+          {
+            "monomial": "u*z0",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u*z0*z1",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u^2",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u^2*z1",
+            "coefficient": "1"
+          }
+        ]
+      },
+      "certificate": {
+        "branch": "L",
+        "alpha": "0",
+        "beta": "0",
+        "lhs": "3L-N",
+        "residual": "18 + 13*z1 + 2*z1^2 + 8*z0 + 4*z0*z1 + 20*u + 12*u*z1 + u*z1^2 + 4*u*z0 + 2*u*z0*z1 + 4*u^2 + 2*u^2*z1",
+        "residual_coefficients": [
+          {
+            "monomial": "1",
+            "coefficient": "18"
+          },
+          {
+            "monomial": "z1",
+            "coefficient": "13"
+          },
+          {
+            "monomial": "z1^2",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "z0",
+            "coefficient": "8"
+          },
+          {
+            "monomial": "z0*z1",
+            "coefficient": "4"
+          },
+          {
+            "monomial": "u",
+            "coefficient": "20"
+          },
+          {
+            "monomial": "u*z1",
+            "coefficient": "12"
+          },
+          {
+            "monomial": "u*z1^2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u*z0",
+            "coefficient": "4"
+          },
+          {
+            "monomial": "u*z0*z1",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u^2",
+            "coefficient": "4"
+          },
+          {
+            "monomial": "u^2*z1",
+            "coefficient": "2"
+          }
+        ],
+        "negative_coefficient_count": 0
+      },
+      "generator_box_checks": 7203
+    },
+    {
+      "id": 25,
+      "pattern": "y|c|e|x",
+      "blocks": [
+        [
+          "y"
+        ],
+        [
+          "c"
+        ],
+        [
+          "e"
+        ],
+        [
+          "x"
+        ]
+      ],
+      "variables": [
+        "u",
+        "z0",
+        "z1",
+        "z2"
+      ],
+      "offset": 0,
+      "lowest_level_shift": 0,
+      "strict_gap_rule": "lambda[i+1]-lambda[i]=1+z_i",
+      "parameter_domain": "all listed variables are integers >=0",
+      "endpoints": {
+        "A": "-u - z0 - z1 - z2 - 3",
+        "B": "-u",
+        "C0": "-u - z0 - 1",
+        "D": "0",
+        "E": "-u - z0 - z1 - 2",
+        "F": "0"
+      },
+      "levels": {
+        "y": "u",
+        "c": "u + z0 + 1",
+        "e": "u + z0 + z1 + 2",
+        "x": "u + z0 + z1 + z2 + 3"
+      },
+      "polynomials": {
+        "N": "24 + 8*z2 + 11*z1 + 2*z1*z2 + z1^2 + 62/3*z0 + 6*z0*z2 + 15/2*z0*z1 + z0*z1*z2 + 1/2*z0*z1^2 + 5*z0^2 + z0^2*z2 + z0^2*z1 + 1/3*z0^3 + 20*u + 6*u*z2 + 15/2*u*z1 + u*z1*z2 + 1/2*u*z1^2 + 10*u*z0 + 2*u*z0*z2 + 2*u*z0*z1 + u*z0^2 + 4*u^2 + u^2*z2 + u^2*z1 + u^2*z0",
+        "H": "16 + 8*z2 + 9*z1 + 2*z1*z2 + z1^2 + 44/3*z0 + 6*z0*z2 + 13/2*z0*z1 + z0*z1*z2 + 1/2*z0*z1^2 + 4*z0^2 + z0^2*z2 + z0^2*z1 + 1/3*z0^3 + 14*u + 6*u*z2 + 13/2*u*z1 + u*z1*z2 + 1/2*u*z1^2 + 8*u*z0 + 2*u*z0*z2 + 2*u*z0*z1 + u*z0^2 + 3*u^2 + u^2*z2 + u^2*z1 + u^2*z0",
+        "L": "11 + 4*z2 + 11/2*z1 + z1*z2 + 1/2*z1^2 + 91/6*z0 + 5*z0*z2 + 13/2*z0*z1 + z0*z1*z2 + 1/2*z0*z1^2 + 9/2*z0^2 + z0^2*z2 + z0^2*z1 + 1/3*z0^3 + 16*u + 5*u*z2 + 13/2*u*z1 + u*z1*z2 + 1/2*u*z1^2 + 9*u*z0 + 2*u*z0*z2 + 2*u*z0*z1 + u*z0^2 + 4*u^2 + u^2*z2 + u^2*z1 + u^2*z0",
+        "N_coefficients": [
+          {
+            "monomial": "1",
+            "coefficient": "24"
+          },
+          {
+            "monomial": "z2",
+            "coefficient": "8"
+          },
+          {
+            "monomial": "z1",
+            "coefficient": "11"
+          },
+          {
+            "monomial": "z1*z2",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "z1^2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "z0",
+            "coefficient": "62/3"
+          },
+          {
+            "monomial": "z0*z2",
+            "coefficient": "6"
+          },
+          {
+            "monomial": "z0*z1",
+            "coefficient": "15/2"
+          },
+          {
+            "monomial": "z0*z1*z2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "z0*z1^2",
+            "coefficient": "1/2"
+          },
+          {
+            "monomial": "z0^2",
+            "coefficient": "5"
+          },
+          {
+            "monomial": "z0^2*z2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "z0^2*z1",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "z0^3",
+            "coefficient": "1/3"
+          },
+          {
+            "monomial": "u",
+            "coefficient": "20"
+          },
+          {
+            "monomial": "u*z2",
+            "coefficient": "6"
+          },
+          {
+            "monomial": "u*z1",
+            "coefficient": "15/2"
+          },
+          {
+            "monomial": "u*z1*z2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u*z1^2",
+            "coefficient": "1/2"
+          },
+          {
+            "monomial": "u*z0",
+            "coefficient": "10"
+          },
+          {
+            "monomial": "u*z0*z2",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u*z0*z1",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u*z0^2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u^2",
+            "coefficient": "4"
+          },
+          {
+            "monomial": "u^2*z2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u^2*z1",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u^2*z0",
+            "coefficient": "1"
+          }
+        ],
+        "H_coefficients": [
+          {
+            "monomial": "1",
+            "coefficient": "16"
+          },
+          {
+            "monomial": "z2",
+            "coefficient": "8"
+          },
+          {
+            "monomial": "z1",
+            "coefficient": "9"
+          },
+          {
+            "monomial": "z1*z2",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "z1^2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "z0",
+            "coefficient": "44/3"
+          },
+          {
+            "monomial": "z0*z2",
+            "coefficient": "6"
+          },
+          {
+            "monomial": "z0*z1",
+            "coefficient": "13/2"
+          },
+          {
+            "monomial": "z0*z1*z2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "z0*z1^2",
+            "coefficient": "1/2"
+          },
+          {
+            "monomial": "z0^2",
+            "coefficient": "4"
+          },
+          {
+            "monomial": "z0^2*z2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "z0^2*z1",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "z0^3",
+            "coefficient": "1/3"
+          },
+          {
+            "monomial": "u",
+            "coefficient": "14"
+          },
+          {
+            "monomial": "u*z2",
+            "coefficient": "6"
+          },
+          {
+            "monomial": "u*z1",
+            "coefficient": "13/2"
+          },
+          {
+            "monomial": "u*z1*z2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u*z1^2",
+            "coefficient": "1/2"
+          },
+          {
+            "monomial": "u*z0",
+            "coefficient": "8"
+          },
+          {
+            "monomial": "u*z0*z2",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u*z0*z1",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u*z0^2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u^2",
+            "coefficient": "3"
+          },
+          {
+            "monomial": "u^2*z2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u^2*z1",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u^2*z0",
+            "coefficient": "1"
+          }
+        ],
+        "L_coefficients": [
+          {
+            "monomial": "1",
+            "coefficient": "11"
+          },
+          {
+            "monomial": "z2",
+            "coefficient": "4"
+          },
+          {
+            "monomial": "z1",
+            "coefficient": "11/2"
+          },
+          {
+            "monomial": "z1*z2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "z1^2",
+            "coefficient": "1/2"
+          },
+          {
+            "monomial": "z0",
+            "coefficient": "91/6"
+          },
+          {
+            "monomial": "z0*z2",
+            "coefficient": "5"
+          },
+          {
+            "monomial": "z0*z1",
+            "coefficient": "13/2"
+          },
+          {
+            "monomial": "z0*z1*z2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "z0*z1^2",
+            "coefficient": "1/2"
+          },
+          {
+            "monomial": "z0^2",
+            "coefficient": "9/2"
+          },
+          {
+            "monomial": "z0^2*z2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "z0^2*z1",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "z0^3",
+            "coefficient": "1/3"
+          },
+          {
+            "monomial": "u",
+            "coefficient": "16"
+          },
+          {
+            "monomial": "u*z2",
+            "coefficient": "5"
+          },
+          {
+            "monomial": "u*z1",
+            "coefficient": "13/2"
+          },
+          {
+            "monomial": "u*z1*z2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u*z1^2",
+            "coefficient": "1/2"
+          },
+          {
+            "monomial": "u*z0",
+            "coefficient": "9"
+          },
+          {
+            "monomial": "u*z0*z2",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u*z0*z1",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u*z0^2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u^2",
+            "coefficient": "4"
+          },
+          {
+            "monomial": "u^2*z2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u^2*z1",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u^2*z0",
+            "coefficient": "1"
+          }
+        ]
+      },
+      "certificate": {
+        "branch": "L",
+        "alpha": "0",
+        "beta": "0",
+        "lhs": "3L-N",
+        "residual": "9 + 4*z2 + 11/2*z1 + z1*z2 + 1/2*z1^2 + 149/6*z0 + 9*z0*z2 + 12*z0*z1 + 2*z0*z1*z2 + z0*z1^2 + 17/2*z0^2 + 2*z0^2*z2 + 2*z0^2*z1 + 2/3*z0^3 + 28*u + 9*u*z2 + 12*u*z1 + 2*u*z1*z2 + u*z1^2 + 17*u*z0 + 4*u*z0*z2 + 4*u*z0*z1 + 2*u*z0^2 + 8*u^2 + 2*u^2*z2 + 2*u^2*z1 + 2*u^2*z0",
+        "residual_coefficients": [
+          {
+            "monomial": "1",
+            "coefficient": "9"
+          },
+          {
+            "monomial": "z2",
+            "coefficient": "4"
+          },
+          {
+            "monomial": "z1",
+            "coefficient": "11/2"
+          },
+          {
+            "monomial": "z1*z2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "z1^2",
+            "coefficient": "1/2"
+          },
+          {
+            "monomial": "z0",
+            "coefficient": "149/6"
+          },
+          {
+            "monomial": "z0*z2",
+            "coefficient": "9"
+          },
+          {
+            "monomial": "z0*z1",
+            "coefficient": "12"
+          },
+          {
+            "monomial": "z0*z1*z2",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "z0*z1^2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "z0^2",
+            "coefficient": "17/2"
+          },
+          {
+            "monomial": "z0^2*z2",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "z0^2*z1",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "z0^3",
+            "coefficient": "2/3"
+          },
+          {
+            "monomial": "u",
+            "coefficient": "28"
+          },
+          {
+            "monomial": "u*z2",
+            "coefficient": "9"
+          },
+          {
+            "monomial": "u*z1",
+            "coefficient": "12"
+          },
+          {
+            "monomial": "u*z1*z2",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u*z1^2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u*z0",
+            "coefficient": "17"
+          },
+          {
+            "monomial": "u*z0*z2",
+            "coefficient": "4"
+          },
+          {
+            "monomial": "u*z0*z1",
+            "coefficient": "4"
+          },
+          {
+            "monomial": "u*z0^2",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u^2",
+            "coefficient": "8"
+          },
+          {
+            "monomial": "u^2*z2",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u^2*z1",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u^2*z0",
+            "coefficient": "2"
+          }
+        ],
+        "negative_coefficient_count": 0
+      },
+      "generator_box_checks": 7203
+    },
+    {
+      "id": 26,
+      "pattern": "y|c|x|e",
+      "blocks": [
+        [
+          "y"
+        ],
+        [
+          "c"
+        ],
+        [
+          "x"
+        ],
+        [
+          "e"
+        ]
+      ],
+      "variables": [
+        "u",
+        "z0",
+        "z1",
+        "z2"
+      ],
+      "offset": 0,
+      "lowest_level_shift": 0,
+      "strict_gap_rule": "lambda[i+1]-lambda[i]=1+z_i",
+      "parameter_domain": "all listed variables are integers >=0",
+      "endpoints": {
+        "A": "-u - z0 - z1 - 2",
+        "B": "-u",
+        "C0": "-u - z0 - 1",
+        "D": "0",
+        "E": "-u - z0 - z1 - z2 - 3",
+        "F": "0"
+      },
+      "levels": {
+        "y": "u",
+        "c": "u + z0 + 1",
+        "x": "u + z0 + z1 + 2",
+        "e": "u + z0 + z1 + z2 + 3"
+      },
+      "polynomials": {
+        "N": "16 + 9*z1 + z1^2 + 44/3*z0 + 13/2*z0*z1 + 1/2*z0*z1^2 + 4*z0^2 + z0^2*z1 + 1/3*z0^3 + 14*u + 13/2*u*z1 + 1/2*u*z1^2 + 8*u*z0 + 2*u*z0*z1 + u*z0^2 + 3*u^2 + u^2*z1 + u^2*z0",
+        "H": "8 + 7*z1 + z1^2 + 26/3*z0 + 11/2*z0*z1 + 1/2*z0*z1^2 + 3*z0^2 + z0^2*z1 + 1/3*z0^3 + 8*u + 11/2*u*z1 + 1/2*u*z1^2 + 6*u*z0 + 2*u*z0*z1 + u*z0^2 + 2*u^2 + u^2*z1 + u^2*z0",
+        "L": "7 + 9/2*z1 + 1/2*z1^2 + 61/6*z0 + 11/2*z0*z1 + 1/2*z0*z1^2 + 7/2*z0^2 + z0^2*z1 + 1/3*z0^3 + 11*u + 11/2*u*z1 + 1/2*u*z1^2 + 7*u*z0 + 2*u*z0*z1 + u*z0^2 + 3*u^2 + u^2*z1 + u^2*z0",
+        "N_coefficients": [
+          {
+            "monomial": "1",
+            "coefficient": "16"
+          },
+          {
+            "monomial": "z1",
+            "coefficient": "9"
+          },
+          {
+            "monomial": "z1^2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "z0",
+            "coefficient": "44/3"
+          },
+          {
+            "monomial": "z0*z1",
+            "coefficient": "13/2"
+          },
+          {
+            "monomial": "z0*z1^2",
+            "coefficient": "1/2"
+          },
+          {
+            "monomial": "z0^2",
+            "coefficient": "4"
+          },
+          {
+            "monomial": "z0^2*z1",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "z0^3",
+            "coefficient": "1/3"
+          },
+          {
+            "monomial": "u",
+            "coefficient": "14"
+          },
+          {
+            "monomial": "u*z1",
+            "coefficient": "13/2"
+          },
+          {
+            "monomial": "u*z1^2",
+            "coefficient": "1/2"
+          },
+          {
+            "monomial": "u*z0",
+            "coefficient": "8"
+          },
+          {
+            "monomial": "u*z0*z1",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u*z0^2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u^2",
+            "coefficient": "3"
+          },
+          {
+            "monomial": "u^2*z1",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u^2*z0",
+            "coefficient": "1"
+          }
+        ],
+        "H_coefficients": [
+          {
+            "monomial": "1",
+            "coefficient": "8"
+          },
+          {
+            "monomial": "z1",
+            "coefficient": "7"
+          },
+          {
+            "monomial": "z1^2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "z0",
+            "coefficient": "26/3"
+          },
+          {
+            "monomial": "z0*z1",
+            "coefficient": "11/2"
+          },
+          {
+            "monomial": "z0*z1^2",
+            "coefficient": "1/2"
+          },
+          {
+            "monomial": "z0^2",
+            "coefficient": "3"
+          },
+          {
+            "monomial": "z0^2*z1",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "z0^3",
+            "coefficient": "1/3"
+          },
+          {
+            "monomial": "u",
+            "coefficient": "8"
+          },
+          {
+            "monomial": "u*z1",
+            "coefficient": "11/2"
+          },
+          {
+            "monomial": "u*z1^2",
+            "coefficient": "1/2"
+          },
+          {
+            "monomial": "u*z0",
+            "coefficient": "6"
+          },
+          {
+            "monomial": "u*z0*z1",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u*z0^2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u^2",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u^2*z1",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u^2*z0",
+            "coefficient": "1"
+          }
+        ],
+        "L_coefficients": [
+          {
+            "monomial": "1",
+            "coefficient": "7"
+          },
+          {
+            "monomial": "z1",
+            "coefficient": "9/2"
+          },
+          {
+            "monomial": "z1^2",
+            "coefficient": "1/2"
+          },
+          {
+            "monomial": "z0",
+            "coefficient": "61/6"
+          },
+          {
+            "monomial": "z0*z1",
+            "coefficient": "11/2"
+          },
+          {
+            "monomial": "z0*z1^2",
+            "coefficient": "1/2"
+          },
+          {
+            "monomial": "z0^2",
+            "coefficient": "7/2"
+          },
+          {
+            "monomial": "z0^2*z1",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "z0^3",
+            "coefficient": "1/3"
+          },
+          {
+            "monomial": "u",
+            "coefficient": "11"
+          },
+          {
+            "monomial": "u*z1",
+            "coefficient": "11/2"
+          },
+          {
+            "monomial": "u*z1^2",
+            "coefficient": "1/2"
+          },
+          {
+            "monomial": "u*z0",
+            "coefficient": "7"
+          },
+          {
+            "monomial": "u*z0*z1",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u*z0^2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u^2",
+            "coefficient": "3"
+          },
+          {
+            "monomial": "u^2*z1",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u^2*z0",
+            "coefficient": "1"
+          }
+        ]
+      },
+      "certificate": {
+        "branch": "L",
+        "alpha": "0",
+        "beta": "0",
+        "lhs": "3L-N",
+        "residual": "5 + 9/2*z1 + 1/2*z1^2 + 95/6*z0 + 10*z0*z1 + z0*z1^2 + 13/2*z0^2 + 2*z0^2*z1 + 2/3*z0^3 + 19*u + 10*u*z1 + u*z1^2 + 13*u*z0 + 4*u*z0*z1 + 2*u*z0^2 + 6*u^2 + 2*u^2*z1 + 2*u^2*z0",
+        "residual_coefficients": [
+          {
+            "monomial": "1",
+            "coefficient": "5"
+          },
+          {
+            "monomial": "z1",
+            "coefficient": "9/2"
+          },
+          {
+            "monomial": "z1^2",
+            "coefficient": "1/2"
+          },
+          {
+            "monomial": "z0",
+            "coefficient": "95/6"
+          },
+          {
+            "monomial": "z0*z1",
+            "coefficient": "10"
+          },
+          {
+            "monomial": "z0*z1^2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "z0^2",
+            "coefficient": "13/2"
+          },
+          {
+            "monomial": "z0^2*z1",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "z0^3",
+            "coefficient": "2/3"
+          },
+          {
+            "monomial": "u",
+            "coefficient": "19"
+          },
+          {
+            "monomial": "u*z1",
+            "coefficient": "10"
+          },
+          {
+            "monomial": "u*z1^2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u*z0",
+            "coefficient": "13"
+          },
+          {
+            "monomial": "u*z0*z1",
+            "coefficient": "4"
+          },
+          {
+            "monomial": "u*z0^2",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u^2",
+            "coefficient": "6"
+          },
+          {
+            "monomial": "u^2*z1",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u^2*z0",
+            "coefficient": "2"
+          }
+        ],
+        "negative_coefficient_count": 0
+      },
+      "generator_box_checks": 7203
+    },
+    {
+      "id": 27,
+      "pattern": "y|e|c|x",
+      "blocks": [
+        [
+          "y"
+        ],
+        [
+          "e"
+        ],
+        [
+          "c"
+        ],
+        [
+          "x"
+        ]
+      ],
+      "variables": [
+        "u",
+        "z0",
+        "z1",
+        "z2"
+      ],
+      "offset": 0,
+      "lowest_level_shift": 0,
+      "strict_gap_rule": "lambda[i+1]-lambda[i]=1+z_i",
+      "parameter_domain": "all listed variables are integers >=0",
+      "endpoints": {
+        "A": "-u - z0 - z1 - z2 - 3",
+        "B": "-u",
+        "C0": "-u - z0 - z1 - 2",
+        "D": "0",
+        "E": "-u - z0 - 1",
+        "F": "0"
+      },
+      "levels": {
+        "y": "u",
+        "e": "u + z0 + 1",
+        "c": "u + z0 + z1 + 2",
+        "x": "u + z0 + z1 + z2 + 3"
+      },
+      "polynomials": {
+        "N": "24 + 8*z2 + 11*z1 + 2*z1*z2 + z1^2 + 62/3*z0 + 6*z0*z2 + 15/2*z0*z1 + z0*z1*z2 + 1/2*z0*z1^2 + 5*z0^2 + z0^2*z2 + z0^2*z1 + 1/3*z0^3 + 20*u + 6*u*z2 + 15/2*u*z1 + u*z1*z2 + 1/2*u*z1^2 + 10*u*z0 + 2*u*z0*z2 + 2*u*z0*z1 + u*z0^2 + 4*u^2 + u^2*z2 + u^2*z1 + u^2*z0",
+        "H": "16 + 8*z2 + 9*z1 + 2*z1*z2 + z1^2 + 44/3*z0 + 6*z0*z2 + 13/2*z0*z1 + z0*z1*z2 + 1/2*z0*z1^2 + 4*z0^2 + z0^2*z2 + z0^2*z1 + 1/3*z0^3 + 14*u + 6*u*z2 + 13/2*u*z1 + u*z1*z2 + 1/2*u*z1^2 + 8*u*z0 + 2*u*z0*z2 + 2*u*z0*z1 + u*z0^2 + 3*u^2 + u^2*z2 + u^2*z1 + u^2*z0",
+        "L": "13 + 5*z2 + 8*z1 + 2*z1*z2 + z1^2 + 91/6*z0 + 5*z0*z2 + 13/2*z0*z1 + z0*z1*z2 + 1/2*z0*z1^2 + 9/2*z0^2 + z0^2*z2 + z0^2*z1 + 1/3*z0^3 + 16*u + 5*u*z2 + 13/2*u*z1 + u*z1*z2 + 1/2*u*z1^2 + 9*u*z0 + 2*u*z0*z2 + 2*u*z0*z1 + u*z0^2 + 4*u^2 + u^2*z2 + u^2*z1 + u^2*z0",
+        "N_coefficients": [
+          {
+            "monomial": "1",
+            "coefficient": "24"
+          },
+          {
+            "monomial": "z2",
+            "coefficient": "8"
+          },
+          {
+            "monomial": "z1",
+            "coefficient": "11"
+          },
+          {
+            "monomial": "z1*z2",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "z1^2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "z0",
+            "coefficient": "62/3"
+          },
+          {
+            "monomial": "z0*z2",
+            "coefficient": "6"
+          },
+          {
+            "monomial": "z0*z1",
+            "coefficient": "15/2"
+          },
+          {
+            "monomial": "z0*z1*z2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "z0*z1^2",
+            "coefficient": "1/2"
+          },
+          {
+            "monomial": "z0^2",
+            "coefficient": "5"
+          },
+          {
+            "monomial": "z0^2*z2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "z0^2*z1",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "z0^3",
+            "coefficient": "1/3"
+          },
+          {
+            "monomial": "u",
+            "coefficient": "20"
+          },
+          {
+            "monomial": "u*z2",
+            "coefficient": "6"
+          },
+          {
+            "monomial": "u*z1",
+            "coefficient": "15/2"
+          },
+          {
+            "monomial": "u*z1*z2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u*z1^2",
+            "coefficient": "1/2"
+          },
+          {
+            "monomial": "u*z0",
+            "coefficient": "10"
+          },
+          {
+            "monomial": "u*z0*z2",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u*z0*z1",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u*z0^2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u^2",
+            "coefficient": "4"
+          },
+          {
+            "monomial": "u^2*z2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u^2*z1",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u^2*z0",
+            "coefficient": "1"
+          }
+        ],
+        "H_coefficients": [
+          {
+            "monomial": "1",
+            "coefficient": "16"
+          },
+          {
+            "monomial": "z2",
+            "coefficient": "8"
+          },
+          {
+            "monomial": "z1",
+            "coefficient": "9"
+          },
+          {
+            "monomial": "z1*z2",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "z1^2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "z0",
+            "coefficient": "44/3"
+          },
+          {
+            "monomial": "z0*z2",
+            "coefficient": "6"
+          },
+          {
+            "monomial": "z0*z1",
+            "coefficient": "13/2"
+          },
+          {
+            "monomial": "z0*z1*z2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "z0*z1^2",
+            "coefficient": "1/2"
+          },
+          {
+            "monomial": "z0^2",
+            "coefficient": "4"
+          },
+          {
+            "monomial": "z0^2*z2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "z0^2*z1",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "z0^3",
+            "coefficient": "1/3"
+          },
+          {
+            "monomial": "u",
+            "coefficient": "14"
+          },
+          {
+            "monomial": "u*z2",
+            "coefficient": "6"
+          },
+          {
+            "monomial": "u*z1",
+            "coefficient": "13/2"
+          },
+          {
+            "monomial": "u*z1*z2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u*z1^2",
+            "coefficient": "1/2"
+          },
+          {
+            "monomial": "u*z0",
+            "coefficient": "8"
+          },
+          {
+            "monomial": "u*z0*z2",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u*z0*z1",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u*z0^2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u^2",
+            "coefficient": "3"
+          },
+          {
+            "monomial": "u^2*z2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u^2*z1",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u^2*z0",
+            "coefficient": "1"
+          }
+        ],
+        "L_coefficients": [
+          {
+            "monomial": "1",
+            "coefficient": "13"
+          },
+          {
+            "monomial": "z2",
+            "coefficient": "5"
+          },
+          {
+            "monomial": "z1",
+            "coefficient": "8"
+          },
+          {
+            "monomial": "z1*z2",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "z1^2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "z0",
+            "coefficient": "91/6"
+          },
+          {
+            "monomial": "z0*z2",
+            "coefficient": "5"
+          },
+          {
+            "monomial": "z0*z1",
+            "coefficient": "13/2"
+          },
+          {
+            "monomial": "z0*z1*z2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "z0*z1^2",
+            "coefficient": "1/2"
+          },
+          {
+            "monomial": "z0^2",
+            "coefficient": "9/2"
+          },
+          {
+            "monomial": "z0^2*z2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "z0^2*z1",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "z0^3",
+            "coefficient": "1/3"
+          },
+          {
+            "monomial": "u",
+            "coefficient": "16"
+          },
+          {
+            "monomial": "u*z2",
+            "coefficient": "5"
+          },
+          {
+            "monomial": "u*z1",
+            "coefficient": "13/2"
+          },
+          {
+            "monomial": "u*z1*z2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u*z1^2",
+            "coefficient": "1/2"
+          },
+          {
+            "monomial": "u*z0",
+            "coefficient": "9"
+          },
+          {
+            "monomial": "u*z0*z2",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u*z0*z1",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u*z0^2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u^2",
+            "coefficient": "4"
+          },
+          {
+            "monomial": "u^2*z2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u^2*z1",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u^2*z0",
+            "coefficient": "1"
+          }
+        ]
+      },
+      "certificate": {
+        "branch": "L",
+        "alpha": "0",
+        "beta": "0",
+        "lhs": "3L-N",
+        "residual": "15 + 7*z2 + 13*z1 + 4*z1*z2 + 2*z1^2 + 149/6*z0 + 9*z0*z2 + 12*z0*z1 + 2*z0*z1*z2 + z0*z1^2 + 17/2*z0^2 + 2*z0^2*z2 + 2*z0^2*z1 + 2/3*z0^3 + 28*u + 9*u*z2 + 12*u*z1 + 2*u*z1*z2 + u*z1^2 + 17*u*z0 + 4*u*z0*z2 + 4*u*z0*z1 + 2*u*z0^2 + 8*u^2 + 2*u^2*z2 + 2*u^2*z1 + 2*u^2*z0",
+        "residual_coefficients": [
+          {
+            "monomial": "1",
+            "coefficient": "15"
+          },
+          {
+            "monomial": "z2",
+            "coefficient": "7"
+          },
+          {
+            "monomial": "z1",
+            "coefficient": "13"
+          },
+          {
+            "monomial": "z1*z2",
+            "coefficient": "4"
+          },
+          {
+            "monomial": "z1^2",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "z0",
+            "coefficient": "149/6"
+          },
+          {
+            "monomial": "z0*z2",
+            "coefficient": "9"
+          },
+          {
+            "monomial": "z0*z1",
+            "coefficient": "12"
+          },
+          {
+            "monomial": "z0*z1*z2",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "z0*z1^2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "z0^2",
+            "coefficient": "17/2"
+          },
+          {
+            "monomial": "z0^2*z2",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "z0^2*z1",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "z0^3",
+            "coefficient": "2/3"
+          },
+          {
+            "monomial": "u",
+            "coefficient": "28"
+          },
+          {
+            "monomial": "u*z2",
+            "coefficient": "9"
+          },
+          {
+            "monomial": "u*z1",
+            "coefficient": "12"
+          },
+          {
+            "monomial": "u*z1*z2",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u*z1^2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u*z0",
+            "coefficient": "17"
+          },
+          {
+            "monomial": "u*z0*z2",
+            "coefficient": "4"
+          },
+          {
+            "monomial": "u*z0*z1",
+            "coefficient": "4"
+          },
+          {
+            "monomial": "u*z0^2",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u^2",
+            "coefficient": "8"
+          },
+          {
+            "monomial": "u^2*z2",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u^2*z1",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u^2*z0",
+            "coefficient": "2"
+          }
+        ],
+        "negative_coefficient_count": 0
+      },
+      "generator_box_checks": 7203
+    },
+    {
+      "id": 28,
+      "pattern": "y|e|x|c",
+      "blocks": [
+        [
+          "y"
+        ],
+        [
+          "e"
+        ],
+        [
+          "x"
+        ],
+        [
+          "c"
+        ]
+      ],
+      "variables": [
+        "u",
+        "z0",
+        "z1",
+        "z2"
+      ],
+      "offset": 0,
+      "lowest_level_shift": 0,
+      "strict_gap_rule": "lambda[i+1]-lambda[i]=1+z_i",
+      "parameter_domain": "all listed variables are integers >=0",
+      "endpoints": {
+        "A": "-u - z0 - z1 - 2",
+        "B": "-u",
+        "C0": "-u - z0 - z1 - z2 - 3",
+        "D": "0",
+        "E": "-u - z0 - 1",
+        "F": "0"
+      },
+      "levels": {
+        "y": "u",
+        "e": "u + z0 + 1",
+        "x": "u + z0 + z1 + 2",
+        "c": "u + z0 + z1 + z2 + 3"
+      },
+      "polynomials": {
+        "N": "16 + 9*z1 + z1^2 + 44/3*z0 + 13/2*z0*z1 + 1/2*z0*z1^2 + 4*z0^2 + z0^2*z1 + 1/3*z0^3 + 14*u + 13/2*u*z1 + 1/2*u*z1^2 + 8*u*z0 + 2*u*z0*z1 + u*z0^2 + 3*u^2 + u^2*z1 + u^2*z0",
+        "H": "8 + 7*z1 + z1^2 + 26/3*z0 + 11/2*z0*z1 + 1/2*z0*z1^2 + 3*z0^2 + z0^2*z1 + 1/3*z0^3 + 8*u + 11/2*u*z1 + 1/2*u*z1^2 + 6*u*z0 + 2*u*z0*z1 + u*z0^2 + 2*u^2 + u^2*z1 + u^2*z0",
+        "L": "8 + 6*z1 + z1^2 + 61/6*z0 + 11/2*z0*z1 + 1/2*z0*z1^2 + 7/2*z0^2 + z0^2*z1 + 1/3*z0^3 + 11*u + 11/2*u*z1 + 1/2*u*z1^2 + 7*u*z0 + 2*u*z0*z1 + u*z0^2 + 3*u^2 + u^2*z1 + u^2*z0",
+        "N_coefficients": [
+          {
+            "monomial": "1",
+            "coefficient": "16"
+          },
+          {
+            "monomial": "z1",
+            "coefficient": "9"
+          },
+          {
+            "monomial": "z1^2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "z0",
+            "coefficient": "44/3"
+          },
+          {
+            "monomial": "z0*z1",
+            "coefficient": "13/2"
+          },
+          {
+            "monomial": "z0*z1^2",
+            "coefficient": "1/2"
+          },
+          {
+            "monomial": "z0^2",
+            "coefficient": "4"
+          },
+          {
+            "monomial": "z0^2*z1",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "z0^3",
+            "coefficient": "1/3"
+          },
+          {
+            "monomial": "u",
+            "coefficient": "14"
+          },
+          {
+            "monomial": "u*z1",
+            "coefficient": "13/2"
+          },
+          {
+            "monomial": "u*z1^2",
+            "coefficient": "1/2"
+          },
+          {
+            "monomial": "u*z0",
+            "coefficient": "8"
+          },
+          {
+            "monomial": "u*z0*z1",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u*z0^2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u^2",
+            "coefficient": "3"
+          },
+          {
+            "monomial": "u^2*z1",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u^2*z0",
+            "coefficient": "1"
+          }
+        ],
+        "H_coefficients": [
+          {
+            "monomial": "1",
+            "coefficient": "8"
+          },
+          {
+            "monomial": "z1",
+            "coefficient": "7"
+          },
+          {
+            "monomial": "z1^2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "z0",
+            "coefficient": "26/3"
+          },
+          {
+            "monomial": "z0*z1",
+            "coefficient": "11/2"
+          },
+          {
+            "monomial": "z0*z1^2",
+            "coefficient": "1/2"
+          },
+          {
+            "monomial": "z0^2",
+            "coefficient": "3"
+          },
+          {
+            "monomial": "z0^2*z1",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "z0^3",
+            "coefficient": "1/3"
+          },
+          {
+            "monomial": "u",
+            "coefficient": "8"
+          },
+          {
+            "monomial": "u*z1",
+            "coefficient": "11/2"
+          },
+          {
+            "monomial": "u*z1^2",
+            "coefficient": "1/2"
+          },
+          {
+            "monomial": "u*z0",
+            "coefficient": "6"
+          },
+          {
+            "monomial": "u*z0*z1",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u*z0^2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u^2",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u^2*z1",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u^2*z0",
+            "coefficient": "1"
+          }
+        ],
+        "L_coefficients": [
+          {
+            "monomial": "1",
+            "coefficient": "8"
+          },
+          {
+            "monomial": "z1",
+            "coefficient": "6"
+          },
+          {
+            "monomial": "z1^2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "z0",
+            "coefficient": "61/6"
+          },
+          {
+            "monomial": "z0*z1",
+            "coefficient": "11/2"
+          },
+          {
+            "monomial": "z0*z1^2",
+            "coefficient": "1/2"
+          },
+          {
+            "monomial": "z0^2",
+            "coefficient": "7/2"
+          },
+          {
+            "monomial": "z0^2*z1",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "z0^3",
+            "coefficient": "1/3"
+          },
+          {
+            "monomial": "u",
+            "coefficient": "11"
+          },
+          {
+            "monomial": "u*z1",
+            "coefficient": "11/2"
+          },
+          {
+            "monomial": "u*z1^2",
+            "coefficient": "1/2"
+          },
+          {
+            "monomial": "u*z0",
+            "coefficient": "7"
+          },
+          {
+            "monomial": "u*z0*z1",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u*z0^2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u^2",
+            "coefficient": "3"
+          },
+          {
+            "monomial": "u^2*z1",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u^2*z0",
+            "coefficient": "1"
+          }
+        ]
+      },
+      "certificate": {
+        "branch": "L",
+        "alpha": "0",
+        "beta": "0",
+        "lhs": "3L-N",
+        "residual": "8 + 9*z1 + 2*z1^2 + 95/6*z0 + 10*z0*z1 + z0*z1^2 + 13/2*z0^2 + 2*z0^2*z1 + 2/3*z0^3 + 19*u + 10*u*z1 + u*z1^2 + 13*u*z0 + 4*u*z0*z1 + 2*u*z0^2 + 6*u^2 + 2*u^2*z1 + 2*u^2*z0",
+        "residual_coefficients": [
+          {
+            "monomial": "1",
+            "coefficient": "8"
+          },
+          {
+            "monomial": "z1",
+            "coefficient": "9"
+          },
+          {
+            "monomial": "z1^2",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "z0",
+            "coefficient": "95/6"
+          },
+          {
+            "monomial": "z0*z1",
+            "coefficient": "10"
+          },
+          {
+            "monomial": "z0*z1^2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "z0^2",
+            "coefficient": "13/2"
+          },
+          {
+            "monomial": "z0^2*z1",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "z0^3",
+            "coefficient": "2/3"
+          },
+          {
+            "monomial": "u",
+            "coefficient": "19"
+          },
+          {
+            "monomial": "u*z1",
+            "coefficient": "10"
+          },
+          {
+            "monomial": "u*z1^2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u*z0",
+            "coefficient": "13"
+          },
+          {
+            "monomial": "u*z0*z1",
+            "coefficient": "4"
+          },
+          {
+            "monomial": "u*z0^2",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u^2",
+            "coefficient": "6"
+          },
+          {
+            "monomial": "u^2*z1",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u^2*z0",
+            "coefficient": "2"
+          }
+        ],
+        "negative_coefficient_count": 0
+      },
+      "generator_box_checks": 7203
+    },
+    {
+      "id": 29,
+      "pattern": "y|x|c|e",
+      "blocks": [
+        [
+          "y"
+        ],
+        [
+          "x"
+        ],
+        [
+          "c"
+        ],
+        [
+          "e"
+        ]
+      ],
+      "variables": [
+        "u",
+        "z0",
+        "z1",
+        "z2"
+      ],
+      "offset": 0,
+      "lowest_level_shift": 0,
+      "strict_gap_rule": "lambda[i+1]-lambda[i]=1+z_i",
+      "parameter_domain": "all listed variables are integers >=0",
+      "endpoints": {
+        "A": "-u - z0 - 1",
+        "B": "-u",
+        "C0": "-u - z0 - z1 - 2",
+        "D": "0",
+        "E": "-u - z0 - z1 - z2 - 3",
+        "F": "0"
+      },
+      "levels": {
+        "y": "u",
+        "x": "u + z0 + 1",
+        "c": "u + z0 + z1 + 2",
+        "e": "u + z0 + z1 + z2 + 3"
+      },
+      "polynomials": {
+        "N": "8 + 26/3*z0 + 3*z0^2 + 1/3*z0^3 + 8*u + 6*u*z0 + u*z0^2 + 2*u^2 + u^2*z0",
+        "H": "2 + 11/3*z0 + 2*z0^2 + 1/3*z0^3 + 3*u + 4*u*z0 + u*z0^2 + u^2 + u^2*z0",
+        "L": "3 + 31/6*z0 + 5/2*z0^2 + 1/3*z0^3 + 6*u + 5*u*z0 + u*z0^2 + 2*u^2 + u^2*z0",
+        "N_coefficients": [
+          {
+            "monomial": "1",
+            "coefficient": "8"
+          },
+          {
+            "monomial": "z0",
+            "coefficient": "26/3"
+          },
+          {
+            "monomial": "z0^2",
+            "coefficient": "3"
+          },
+          {
+            "monomial": "z0^3",
+            "coefficient": "1/3"
+          },
+          {
+            "monomial": "u",
+            "coefficient": "8"
+          },
+          {
+            "monomial": "u*z0",
+            "coefficient": "6"
+          },
+          {
+            "monomial": "u*z0^2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u^2",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u^2*z0",
+            "coefficient": "1"
+          }
+        ],
+        "H_coefficients": [
+          {
+            "monomial": "1",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "z0",
+            "coefficient": "11/3"
+          },
+          {
+            "monomial": "z0^2",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "z0^3",
+            "coefficient": "1/3"
+          },
+          {
+            "monomial": "u",
+            "coefficient": "3"
+          },
+          {
+            "monomial": "u*z0",
+            "coefficient": "4"
+          },
+          {
+            "monomial": "u*z0^2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u^2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u^2*z0",
+            "coefficient": "1"
+          }
+        ],
+        "L_coefficients": [
+          {
+            "monomial": "1",
+            "coefficient": "3"
+          },
+          {
+            "monomial": "z0",
+            "coefficient": "31/6"
+          },
+          {
+            "monomial": "z0^2",
+            "coefficient": "5/2"
+          },
+          {
+            "monomial": "z0^3",
+            "coefficient": "1/3"
+          },
+          {
+            "monomial": "u",
+            "coefficient": "6"
+          },
+          {
+            "monomial": "u*z0",
+            "coefficient": "5"
+          },
+          {
+            "monomial": "u*z0^2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u^2",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u^2*z0",
+            "coefficient": "1"
+          }
+        ]
+      },
+      "certificate": {
+        "branch": "L",
+        "alpha": "0",
+        "beta": "0",
+        "lhs": "3L-N",
+        "residual": "1 + 41/6*z0 + 9/2*z0^2 + 2/3*z0^3 + 10*u + 9*u*z0 + 2*u*z0^2 + 4*u^2 + 2*u^2*z0",
+        "residual_coefficients": [
+          {
+            "monomial": "1",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "z0",
+            "coefficient": "41/6"
+          },
+          {
+            "monomial": "z0^2",
+            "coefficient": "9/2"
+          },
+          {
+            "monomial": "z0^3",
+            "coefficient": "2/3"
+          },
+          {
+            "monomial": "u",
+            "coefficient": "10"
+          },
+          {
+            "monomial": "u*z0",
+            "coefficient": "9"
+          },
+          {
+            "monomial": "u*z0^2",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u^2",
+            "coefficient": "4"
+          },
+          {
+            "monomial": "u^2*z0",
+            "coefficient": "2"
+          }
+        ],
+        "negative_coefficient_count": 0
+      },
+      "generator_box_checks": 7203
+    },
+    {
+      "id": 30,
+      "pattern": "y|x|e|c",
+      "blocks": [
+        [
+          "y"
+        ],
+        [
+          "x"
+        ],
+        [
+          "e"
+        ],
+        [
+          "c"
+        ]
+      ],
+      "variables": [
+        "u",
+        "z0",
+        "z1",
+        "z2"
+      ],
+      "offset": 0,
+      "lowest_level_shift": 0,
+      "strict_gap_rule": "lambda[i+1]-lambda[i]=1+z_i",
+      "parameter_domain": "all listed variables are integers >=0",
+      "endpoints": {
+        "A": "-u - z0 - 1",
+        "B": "-u",
+        "C0": "-u - z0 - z1 - z2 - 3",
+        "D": "0",
+        "E": "-u - z0 - z1 - 2",
+        "F": "0"
+      },
+      "levels": {
+        "y": "u",
+        "x": "u + z0 + 1",
+        "e": "u + z0 + z1 + 2",
+        "c": "u + z0 + z1 + z2 + 3"
+      },
+      "polynomials": {
+        "N": "8 + 26/3*z0 + 3*z0^2 + 1/3*z0^3 + 8*u + 6*u*z0 + u*z0^2 + 2*u^2 + u^2*z0",
+        "H": "2 + 11/3*z0 + 2*z0^2 + 1/3*z0^3 + 3*u + 4*u*z0 + u*z0^2 + u^2 + u^2*z0",
+        "L": "3 + 31/6*z0 + 5/2*z0^2 + 1/3*z0^3 + 6*u + 5*u*z0 + u*z0^2 + 2*u^2 + u^2*z0",
+        "N_coefficients": [
+          {
+            "monomial": "1",
+            "coefficient": "8"
+          },
+          {
+            "monomial": "z0",
+            "coefficient": "26/3"
+          },
+          {
+            "monomial": "z0^2",
+            "coefficient": "3"
+          },
+          {
+            "monomial": "z0^3",
+            "coefficient": "1/3"
+          },
+          {
+            "monomial": "u",
+            "coefficient": "8"
+          },
+          {
+            "monomial": "u*z0",
+            "coefficient": "6"
+          },
+          {
+            "monomial": "u*z0^2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u^2",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u^2*z0",
+            "coefficient": "1"
+          }
+        ],
+        "H_coefficients": [
+          {
+            "monomial": "1",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "z0",
+            "coefficient": "11/3"
+          },
+          {
+            "monomial": "z0^2",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "z0^3",
+            "coefficient": "1/3"
+          },
+          {
+            "monomial": "u",
+            "coefficient": "3"
+          },
+          {
+            "monomial": "u*z0",
+            "coefficient": "4"
+          },
+          {
+            "monomial": "u*z0^2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u^2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u^2*z0",
+            "coefficient": "1"
+          }
+        ],
+        "L_coefficients": [
+          {
+            "monomial": "1",
+            "coefficient": "3"
+          },
+          {
+            "monomial": "z0",
+            "coefficient": "31/6"
+          },
+          {
+            "monomial": "z0^2",
+            "coefficient": "5/2"
+          },
+          {
+            "monomial": "z0^3",
+            "coefficient": "1/3"
+          },
+          {
+            "monomial": "u",
+            "coefficient": "6"
+          },
+          {
+            "monomial": "u*z0",
+            "coefficient": "5"
+          },
+          {
+            "monomial": "u*z0^2",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "u^2",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u^2*z0",
+            "coefficient": "1"
+          }
+        ]
+      },
+      "certificate": {
+        "branch": "L",
+        "alpha": "0",
+        "beta": "0",
+        "lhs": "3L-N",
+        "residual": "1 + 41/6*z0 + 9/2*z0^2 + 2/3*z0^3 + 10*u + 9*u*z0 + 2*u*z0^2 + 4*u^2 + 2*u^2*z0",
+        "residual_coefficients": [
+          {
+            "monomial": "1",
+            "coefficient": "1"
+          },
+          {
+            "monomial": "z0",
+            "coefficient": "41/6"
+          },
+          {
+            "monomial": "z0^2",
+            "coefficient": "9/2"
+          },
+          {
+            "monomial": "z0^3",
+            "coefficient": "2/3"
+          },
+          {
+            "monomial": "u",
+            "coefficient": "10"
+          },
+          {
+            "monomial": "u*z0",
+            "coefficient": "9"
+          },
+          {
+            "monomial": "u*z0^2",
+            "coefficient": "2"
+          },
+          {
+            "monomial": "u^2",
+            "coefficient": "4"
+          },
+          {
+            "monomial": "u^2*z0",
+            "coefficient": "2"
+          }
+        ],
+        "negative_coefficient_count": 0
+      },
+      "generator_box_checks": 7203
+    }
+  ],
+  "known_point": {
+    "x": 2,
+    "y": 1,
+    "c": 2,
+    "e": 2,
+    "f": 0,
+    "parameters": {
+      "pattern": 0,
+      "u": 1,
+      "z0": 0
+    },
+    "expected_NHL": [
+      18,
+      6,
+      11
+    ],
+    "computed_NHL": [
+      18,
+      6,
+      11
+    ]
+  }
+}

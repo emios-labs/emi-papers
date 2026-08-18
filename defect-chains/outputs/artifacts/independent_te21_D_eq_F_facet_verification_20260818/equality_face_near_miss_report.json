@@ -1,0 +1,799 @@
+{
+  "zero_residual_slots": 369,
+  "boundary_assignments": 328,
+  "boundary_zero_coordinate_incidents": 580,
+  "boundary_equalities": 0,
+  "boundary_min": 1,
+  "coverage_rows": 2304,
+  "coverage_e1": 288,
+  "coverage_min": 1,
+  "coverage_max": 500,
+  "face_count": 297,
+  "face_failures": [],
+  "base_records": [
+    {
+      "id": 0,
+      "pattern": "y|xce",
+      "params": [
+        0,
+        0
+      ],
+      "endpoints": {
+        "A": -1,
+        "B": 0,
+        "C0": -1,
+        "D": 0,
+        "E": -1,
+        "F": 0
+      },
+      "NHL": [
+        8,
+        2,
+        3
+      ],
+      "H_interval_empty": false,
+      "L_interval_empty": false,
+      "e": 1
+    },
+    {
+      "id": 1,
+      "pattern": "yc|xe",
+      "params": [
+        0,
+        0
+      ],
+      "endpoints": {
+        "A": -2,
+        "B": -1,
+        "C0": -1,
+        "D": 0,
+        "E": -2,
+        "F": 0
+      },
+      "NHL": [
+        14,
+        6,
+        7
+      ],
+      "H_interval_empty": false,
+      "L_interval_empty": false,
+      "e": 2
+    },
+    {
+      "id": 2,
+      "pattern": "yce|x",
+      "params": [
+        0,
+        0
+      ],
+      "endpoints": {
+        "A": -2,
+        "B": -1,
+        "C0": -1,
+        "D": 0,
+        "E": -1,
+        "F": 0
+      },
+      "NHL": [
+        12,
+        6,
+        6
+      ],
+      "H_interval_empty": false,
+      "L_interval_empty": false,
+      "e": 1
+    },
+    {
+      "id": 3,
+      "pattern": "ye|xc",
+      "params": [
+        0,
+        0
+      ],
+      "endpoints": {
+        "A": -2,
+        "B": -1,
+        "C0": -2,
+        "D": 0,
+        "E": -1,
+        "F": 0
+      },
+      "NHL": [
+        14,
+        6,
+        8
+      ],
+      "H_interval_empty": false,
+      "L_interval_empty": false,
+      "e": 1
+    },
+    {
+      "id": 4,
+      "pattern": "c|y|xe",
+      "params": [
+        0,
+        0,
+        0
+      ],
+      "endpoints": {
+        "A": -3,
+        "B": -2,
+        "C0": -1,
+        "D": 0,
+        "E": -3,
+        "F": 0
+      },
+      "NHL": [
+        18,
+        8,
+        9
+      ],
+      "H_interval_empty": false,
+      "L_interval_empty": false,
+      "e": 3
+    },
+    {
+      "id": 5,
+      "pattern": "c|ye|x",
+      "params": [
+        0,
+        0,
+        0
+      ],
+      "endpoints": {
+        "A": -3,
+        "B": -2,
+        "C0": -1,
+        "D": 0,
+        "E": -2,
+        "F": 0
+      },
+      "NHL": [
+        16,
+        8,
+        8
+      ],
+      "H_interval_empty": false,
+      "L_interval_empty": false,
+      "e": 2
+    },
+    {
+      "id": 6,
+      "pattern": "ce|y|x",
+      "params": [
+        0,
+        0,
+        0
+      ],
+      "endpoints": {
+        "A": -3,
+        "B": -2,
+        "C0": -1,
+        "D": 0,
+        "E": -1,
+        "F": 0
+      },
+      "NHL": [
+        12,
+        6,
+        6
+      ],
+      "H_interval_empty": false,
+      "L_interval_empty": false,
+      "e": 1
+    },
+    {
+      "id": 7,
+      "pattern": "e|y|xc",
+      "params": [
+        0,
+        0,
+        0
+      ],
+      "endpoints": {
+        "A": -3,
+        "B": -2,
+        "C0": -3,
+        "D": 0,
+        "E": -1,
+        "F": 0
+      },
+      "NHL": [
+        18,
+        8,
+        12
+      ],
+      "H_interval_empty": false,
+      "L_interval_empty": false,
+      "e": 1
+    },
+    {
+      "id": 8,
+      "pattern": "e|yc|x",
+      "params": [
+        0,
+        0,
+        0
+      ],
+      "endpoints": {
+        "A": -3,
+        "B": -2,
+        "C0": -2,
+        "D": 0,
+        "E": -1,
+        "F": 0
+      },
+      "NHL": [
+        16,
+        8,
+        10
+      ],
+      "H_interval_empty": false,
+      "L_interval_empty": false,
+      "e": 1
+    },
+    {
+      "id": 9,
+      "pattern": "y|c|xe",
+      "params": [
+        0,
+        0,
+        0
+      ],
+      "endpoints": {
+        "A": -2,
+        "B": 0,
+        "C0": -1,
+        "D": 0,
+        "E": -2,
+        "F": 0
+      },
+      "NHL": [
+        16,
+        8,
+        7
+      ],
+      "H_interval_empty": false,
+      "L_interval_empty": false,
+      "e": 2
+    },
+    {
+      "id": 10,
+      "pattern": "y|ce|x",
+      "params": [
+        0,
+        0,
+        0
+      ],
+      "endpoints": {
+        "A": -2,
+        "B": 0,
+        "C0": -1,
+        "D": 0,
+        "E": -1,
+        "F": 0
+      },
+      "NHL": [
+        14,
+        8,
+        6
+      ],
+      "H_interval_empty": false,
+      "L_interval_empty": false,
+      "e": 1
+    },
+    {
+      "id": 11,
+      "pattern": "y|e|xc",
+      "params": [
+        0,
+        0,
+        0
+      ],
+      "endpoints": {
+        "A": -2,
+        "B": 0,
+        "C0": -2,
+        "D": 0,
+        "E": -1,
+        "F": 0
+      },
+      "NHL": [
+        16,
+        8,
+        8
+      ],
+      "H_interval_empty": false,
+      "L_interval_empty": false,
+      "e": 1
+    },
+    {
+      "id": 12,
+      "pattern": "y|x|ce",
+      "params": [
+        0,
+        0,
+        0
+      ],
+      "endpoints": {
+        "A": -1,
+        "B": 0,
+        "C0": -2,
+        "D": 0,
+        "E": -2,
+        "F": 0
+      },
+      "NHL": [
+        8,
+        2,
+        3
+      ],
+      "H_interval_empty": false,
+      "L_interval_empty": false,
+      "e": 2
+    },
+    {
+      "id": 13,
+      "pattern": "y|xc|e",
+      "params": [
+        0,
+        0,
+        0
+      ],
+      "endpoints": {
+        "A": -1,
+        "B": 0,
+        "C0": -1,
+        "D": 0,
+        "E": -2,
+        "F": 0
+      },
+      "NHL": [
+        8,
+        2,
+        3
+      ],
+      "H_interval_empty": false,
+      "L_interval_empty": false,
+      "e": 2
+    },
+    {
+      "id": 14,
+      "pattern": "y|xe|c",
+      "params": [
+        0,
+        0,
+        0
+      ],
+      "endpoints": {
+        "A": -1,
+        "B": 0,
+        "C0": -2,
+        "D": 0,
+        "E": -1,
+        "F": 0
+      },
+      "NHL": [
+        8,
+        2,
+        3
+      ],
+      "H_interval_empty": false,
+      "L_interval_empty": false,
+      "e": 1
+    },
+    {
+      "id": 15,
+      "pattern": "yc|e|x",
+      "params": [
+        0,
+        0,
+        0
+      ],
+      "endpoints": {
+        "A": -3,
+        "B": -1,
+        "C0": -1,
+        "D": 0,
+        "E": -2,
+        "F": 0
+      },
+      "NHL": [
+        22,
+        14,
+        11
+      ],
+      "H_interval_empty": false,
+      "L_interval_empty": false,
+      "e": 2
+    },
+    {
+      "id": 16,
+      "pattern": "yc|x|e",
+      "params": [
+        0,
+        0,
+        0
+      ],
+      "endpoints": {
+        "A": -2,
+        "B": -1,
+        "C0": -1,
+        "D": 0,
+        "E": -3,
+        "F": 0
+      },
+      "NHL": [
+        14,
+        6,
+        7
+      ],
+      "H_interval_empty": false,
+      "L_interval_empty": false,
+      "e": 3
+    },
+    {
+      "id": 17,
+      "pattern": "ye|c|x",
+      "params": [
+        0,
+        0,
+        0
+      ],
+      "endpoints": {
+        "A": -3,
+        "B": -1,
+        "C0": -2,
+        "D": 0,
+        "E": -1,
+        "F": 0
+      },
+      "NHL": [
+        22,
+        14,
+        13
+      ],
+      "H_interval_empty": false,
+      "L_interval_empty": false,
+      "e": 1
+    },
+    {
+      "id": 18,
+      "pattern": "ye|x|c",
+      "params": [
+        0,
+        0,
+        0
+      ],
+      "endpoints": {
+        "A": -2,
+        "B": -1,
+        "C0": -3,
+        "D": 0,
+        "E": -1,
+        "F": 0
+      },
+      "NHL": [
+        14,
+        6,
+        8
+      ],
+      "H_interval_empty": false,
+      "L_interval_empty": false,
+      "e": 1
+    },
+    {
+      "id": 19,
+      "pattern": "c|e|y|x",
+      "params": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "endpoints": {
+        "A": -4,
+        "B": -3,
+        "C0": -1,
+        "D": 0,
+        "E": -2,
+        "F": 0
+      },
+      "NHL": [
+        16,
+        8,
+        8
+      ],
+      "H_interval_empty": false,
+      "L_interval_empty": false,
+      "e": 2
+    },
+    {
+      "id": 20,
+      "pattern": "c|y|e|x",
+      "params": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "endpoints": {
+        "A": -4,
+        "B": -2,
+        "C0": -1,
+        "D": 0,
+        "E": -3,
+        "F": 0
+      },
+      "NHL": [
+        28,
+        18,
+        14
+      ],
+      "H_interval_empty": false,
+      "L_interval_empty": false,
+      "e": 3
+    },
+    {
+      "id": 21,
+      "pattern": "c|y|x|e",
+      "params": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "endpoints": {
+        "A": -3,
+        "B": -2,
+        "C0": -1,
+        "D": 0,
+        "E": -4,
+        "F": 0
+      },
+      "NHL": [
+        18,
+        8,
+        9
+      ],
+      "H_interval_empty": false,
+      "L_interval_empty": false,
+      "e": 4
+    },
+    {
+      "id": 22,
+      "pattern": "e|c|y|x",
+      "params": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "endpoints": {
+        "A": -4,
+        "B": -3,
+        "C0": -2,
+        "D": 0,
+        "E": -1,
+        "F": 0
+      },
+      "NHL": [
+        16,
+        8,
+        10
+      ],
+      "H_interval_empty": false,
+      "L_interval_empty": false,
+      "e": 1
+    },
+    {
+      "id": 23,
+      "pattern": "e|y|c|x",
+      "params": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "endpoints": {
+        "A": -4,
+        "B": -2,
+        "C0": -3,
+        "D": 0,
+        "E": -1,
+        "F": 0
+      },
+      "NHL": [
+        28,
+        18,
+        19
+      ],
+      "H_interval_empty": false,
+      "L_interval_empty": false,
+      "e": 1
+    },
+    {
+      "id": 24,
+      "pattern": "e|y|x|c",
+      "params": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "endpoints": {
+        "A": -3,
+        "B": -2,
+        "C0": -4,
+        "D": 0,
+        "E": -1,
+        "F": 0
+      },
+      "NHL": [
+        18,
+        8,
+        12
+      ],
+      "H_interval_empty": false,
+      "L_interval_empty": false,
+      "e": 1
+    },
+    {
+      "id": 25,
+      "pattern": "y|c|e|x",
+      "params": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "endpoints": {
+        "A": -3,
+        "B": 0,
+        "C0": -1,
+        "D": 0,
+        "E": -2,
+        "F": 0
+      },
+      "NHL": [
+        24,
+        16,
+        11
+      ],
+      "H_interval_empty": false,
+      "L_interval_empty": false,
+      "e": 2
+    },
+    {
+      "id": 26,
+      "pattern": "y|c|x|e",
+      "params": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "endpoints": {
+        "A": -2,
+        "B": 0,
+        "C0": -1,
+        "D": 0,
+        "E": -3,
+        "F": 0
+      },
+      "NHL": [
+        16,
+        8,
+        7
+      ],
+      "H_interval_empty": false,
+      "L_interval_empty": false,
+      "e": 3
+    },
+    {
+      "id": 27,
+      "pattern": "y|e|c|x",
+      "params": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "endpoints": {
+        "A": -3,
+        "B": 0,
+        "C0": -2,
+        "D": 0,
+        "E": -1,
+        "F": 0
+      },
+      "NHL": [
+        24,
+        16,
+        13
+      ],
+      "H_interval_empty": false,
+      "L_interval_empty": false,
+      "e": 1
+    },
+    {
+      "id": 28,
+      "pattern": "y|e|x|c",
+      "params": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "endpoints": {
+        "A": -2,
+        "B": 0,
+        "C0": -3,
+        "D": 0,
+        "E": -1,
+        "F": 0
+      },
+      "NHL": [
+        16,
+        8,
+        8
+      ],
+      "H_interval_empty": false,
+      "L_interval_empty": false,
+      "e": 1
+    },
+    {
+      "id": 29,
+      "pattern": "y|x|c|e",
+      "params": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "endpoints": {
+        "A": -1,
+        "B": 0,
+        "C0": -2,
+        "D": 0,
+        "E": -3,
+        "F": 0
+      },
+      "NHL": [
+        8,
+        2,
+        3
+      ],
+      "H_interval_empty": false,
+      "L_interval_empty": false,
+      "e": 3
+    },
+    {
+      "id": 30,
+      "pattern": "y|x|e|c",
+      "params": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "endpoints": {
+        "A": -1,
+        "B": 0,
+        "C0": -3,
+        "D": 0,
+        "E": -2,
+        "F": 0
+      },
+      "NHL": [
+        8,
+        2,
+        3
+      ],
+      "H_interval_empty": false,
+      "L_interval_empty": false,
+      "e": 2
+    }
+  ],
+  "first_failures": []
+}

@@ -1,0 +1,17 @@
+Independent modular replay of outputs/code/lambda_l2e_independent_replay_20260818.py
+
+LEGAL_INTERVAL_REFLECTION 165
+STATE_INTERVAL_REPLAY (173613, 6355899, 173613, 3751704, 173613, 5193861, 9, Counter({'D<F': 73194, 'D=F': 27225}), 330)
+ACTUAL_LINEAR_EXTENSION_DUAL_REPLAY (101, 0)
+REALIZABILITY_ENDPOINT_DOMAIN_AUDIT (101, 18)
+HEAVY_CANONICAL_RELABEL_AUDIT (0, 0, 0, [])
+CLOSED_THIRD_COMPLEMENT_AUDIT (1326, 33)
+STATUS ALL_INDEPENDENT_L2E_REFLECTION_ASSERTIONS_PASSED
+
+Interpretation of tuple fields:
+STATE_INTERVAL_REPLAY = (state interval triples, strict-tail checks, orientation checks, chain-cut checks, diagonal checks, threshold-boundary hits, empty checks, canonical facet counts, max N).
+ACTUAL_LINEAR_EXTENSION_DUAL_REPLAY = (actual realizable small-poset cases, singleton cases); m<=3, all 101 cases pass and singleton count is 0.
+REALIZABILITY_ENDPOINT_DOMAIN_AUDIT = (actual cases, cases requiring q/r swap); m<=3, 18 swaps.
+HEAVY_CANONICAL_RELABEL_AUDIT found no finite raw interval state with all three strict heavy hypotheses and t<s through m=8; the relabel implication is checked symbolically from the strict-tail definition, and the state/tail map is checked independently.
+
+A preliminary all-in-one invocation timed out after 300 seconds while attempting exhaustive linear-extension permutations through m=5 (no assertion failure or mathematical mismatch; stdout had already completed the m<=8 state audit). The modular rerun above reduced the actual-poset permutation component to m<=3 and completed PASS; this is an implementation/resource stall only, not a proof step.
